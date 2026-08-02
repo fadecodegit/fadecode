@@ -35,7 +35,6 @@
     });
   }
 
-  /** Chart.js — solo si existe un canvas en la página */
   function initChartsIfPresent() {
     const canvas = document.querySelector("[data-chart]");
     if (!canvas || typeof Chart === "undefined") return;
