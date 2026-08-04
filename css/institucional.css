@@ -1,9 +1,3 @@
-/* ==========================================================================
-   Institucional.css
-   Estilos específicos de la página "Institucional" (historia, vínculos, etc.)
-   Se suma a styles.css — usa las mismas variables (:root) ya definidas ahí.
-   ========================================================================== */
-
 :root {
   --color-heading-primary: #1c5d99;   /* Título "Escuela Técnica N° 1" */
   --color-heading-secondary: #2e86c1; /* Subtítulos de cada bloque */
@@ -26,7 +20,7 @@
 .inst-hero__media {
   position: relative;
   width: 100%;
-  height: 15rem; /* alto fijo en mobile: evita que la imagen "rompa" el layout */
+  height: 15rem; 
   overflow: hidden;
 }
 
@@ -38,12 +32,6 @@
   object-fit: cover;
   object-position: center;
 }
-
-/* ============================================================
-   ETIQUETA PARA VOS: reemplazá el src de .inst-hero__img más
-   abajo en el HTML por la ruta a tu imagen de la fachada de
-   la escuela (foto real del edificio).
-   ============================================================ */
 
 .inst-hero__overlay {
   position: absolute;
@@ -72,12 +60,6 @@
   object-fit: contain;
 }
 
-/* ============================================================
-   ETIQUETA PARA VOS: reemplazá el src de .inst-hero__emblem-img
-   más abajo en el HTML por la ruta a tu imagen del engranaje /
-   escudo dorado.
-   ============================================================ */
-
 .inst-hero__content {
   position: absolute;
   top: 0;
@@ -96,8 +78,6 @@
   max-width: 14rem;
 }
 
-/* Texto y botón del hero: en mobile bajan debajo de la imagen,
-   en desktop se superponen sobre la foto (como en el prototipo). */
 .inst-hero__text {
   margin: 0.9rem 0 0;
   color: var(--color-text-dark);
@@ -177,18 +157,13 @@
   margin-bottom: 0;
 }
 
-/* Título largo (desktop) vs. corto (mobile) para "Vínculos..." */
 .inst-block__title--long {
   display: none;
 }
 
 .inst-block__title--short {
   display: inline;
-}
 
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px (no se define tablet a propósito)               */
-/* -------------------------------------------------------------------------- */
 
 @media (min-width: 1024px) {
   .inst-hero__media {
@@ -240,7 +215,7 @@
   }
 
   .inst-hero__body {
-    display: none; /* en desktop el texto y botón viven sobre la imagen */
+    display: none; 
   }
 
   .inst-content {
@@ -269,4 +244,5 @@
   .inst-block__title--short {
     display: none;
   }
+}
 }
