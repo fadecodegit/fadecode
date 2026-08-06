@@ -1,0 +1,183 @@
+:root {
+  --color-heading-secondary: #2e86c1; /* mismo azul usado en institucional.css */
+}
+
+.ubi-card {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-hero-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Título "Ubicación" con línea celeste                                       */
+/* -------------------------------------------------------------------------- */
+
+.ubi-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.ubi-title__text {
+  margin: 0;
+  color: var(--color-heading-secondary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ubi-title__line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-heading-secondary);
+  opacity: 0.55;
+}
+
+.ubi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "media"
+    "info"
+    "list";
+  gap: 1.5rem;
+}
+
+.ubi-media {
+  grid-area: media;
+}
+
+.ubi-info {
+  grid-area: info;
+}
+
+.ubi-list {
+  grid-area: list;
+}
+
+/* Mapa */
+.ubi-map {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Info (subtítulo + párrafo) */
+.ubi-info__subtitle {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-dark);
+}
+
+.ubi-info__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  text-align: center;
+  color: var(--color-text-dark);
+}
+
+/* Lista de contacto (pin, teléfono, mail, directora) */
+.ubi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.ubi-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.ubi-list__icon {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--color-text-dark);
+}
+
+.ubi-list__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ubi-list__text {
+  margin: 0;
+  padding-top: 0.15rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--color-text-dark);
+}
+
+.ubi-list__text a {
+  transition: var(--transition-base);
+}
+
+.ubi-list__text a:hover {
+  opacity: 0.7;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop — min-width 1024px                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .ubi-card {
+    padding: 2.5rem 3rem;
+  }
+
+  .ubi-title {
+    margin-bottom: 2rem;
+  }
+
+  .ubi-title__text {
+    font-size: 1.6rem;
+  }
+
+  .ubi-grid {
+    grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+    grid-template-areas:
+      "media info"
+      "list  info";
+    column-gap: 3rem;
+    row-gap: 2rem;
+    align-items: start;
+  }
+
+  .ubi-map {
+    aspect-ratio: 1 / 1;
+  }
+
+  .ubi-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .ubi-info__subtitle {
+    font-size: 1.15rem;
+  }
+
+  .ubi-info__text {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
