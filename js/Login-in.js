@@ -71,10 +71,6 @@
       try {
         const datos = validateAndCollect();
 
-        // ETIQUETA PARA VOS: acá es donde iría el pedido real de login
-        // (fetch/AJAX) contra tu backend cuando lo tengas listo. El backend
-        // es el que en definitiva confirma si la cédula/contraseña son correctas;
-        // este script solo evita mandar campos vacíos.
         console.log("Formulario de login listo para enviar:", datos);
 
         showGeneralMessage("Verificando datos…", "success");
