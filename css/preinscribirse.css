@@ -1,0 +1,171 @@
+:root {
+  --color-section-heading: #2e86c1; 
+}
+
+.pre-card {
+  max-width: 34rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Secciones del formulario (fieldset + legend)                               */
+/* -------------------------------------------------------------------------- */
+
+.pre-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.pre-fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+.pre-fieldset__legend {
+  padding: 0 0 0.85rem;
+  margin: 0 0 1rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(24, 24, 24, 0.1);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-section-heading);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Select (Curso / Calidad de conexión)                                      */
+/* -------------------------------------------------------------------------- */
+
+.auth-field__input--select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23181818' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M5 7.5l5 5 5-5'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Input de archivo (Comprobante de requisitos previos)                       */
+/* -------------------------------------------------------------------------- */
+
+.auth-field__hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(24, 24, 24, 0.55);
+}
+
+.auth-field__input--file {
+  padding: 0.55rem 0.7rem;
+  cursor: pointer;
+}
+
+.auth-field__input--file::file-selector-button {
+  margin-right: 0.75rem;
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary-brown);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.auth-field__input--file::file-selector-button:hover {
+  opacity: 0.9;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Modal de confirmación ("tu solicitud será revisada")                       */
+/* -------------------------------------------------------------------------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(24, 24, 24, 0.55);
+  z-index: 1000;
+}
+
+.modal-overlay[hidden] {
+  display: none !important;
+}
+
+.modal-box {
+  width: 100%;
+  max-width: 24rem;
+  padding: 2rem 1.75rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card-hover);
+  text-align: center;
+  animation: modal-pop 0.2s ease;
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-box__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background-color: rgba(46, 134, 193, 0.12);
+  color: var(--color-section-heading);
+}
+
+.modal-box__icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.modal-box__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.modal-box__text {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+
+.modal-box .auth-btn {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop — min-width 1024px                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .pre-fieldset__legend {
+    font-size: 1.1rem;
+  }
+}
