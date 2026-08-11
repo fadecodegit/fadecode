@@ -1,0 +1,121 @@
+/* Se carga solo en Noticias.html, además de /css/styles.css */
+
+.news-card {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-hero-card);
+  border: 2px solid var(--color-offers-accent);
+  border-radius: var(--radius-lg);
+}
+
+.news-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+}
+
+.news-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+  white-space: nowrap;
+}
+
+.news-card__rule {
+  flex: 1;
+  height: 2px;
+  border: none;
+  margin: 0;
+  background-color: var(--color-offers-accent-soft);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.news-item__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #eef2f4;
+}
+
+.news-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-item__body {
+  padding: 1rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.news-item__date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-offers-accent);
+}
+
+.news-item__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+}
+
+.news-item__summary {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .news-card {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem 1.75rem;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop — min-width 1024px */
+@media (min-width: 1024px) {
+  .news-card {
+    max-width: 68rem;
+    padding: 2.25rem 2.5rem;
+  }
+
+  .news-card__title {
+    font-size: 1.15rem;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
