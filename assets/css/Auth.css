@@ -1,0 +1,181 @@
+.auth-card {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.auth-field {
+  margin-bottom: 1.35rem;
+}
+
+.auth-field:last-of-type {
+  margin-bottom: 0;
+}
+
+.auth-field__label {
+  display: block;
+  margin-bottom: 0.55rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.auth-field__input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: rgba(24, 24, 24, 0.07);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: var(--transition-base);
+}
+
+.auth-field__input::placeholder {
+  color: rgba(24, 24, 24, 0.35);
+}
+
+.auth-field__input:focus-visible {
+  outline: 2px solid var(--color-primary-brown);
+  outline-offset: 1px;
+  background-color: rgba(24, 24, 24, 0.03);
+}
+
+.auth-field__input.is-invalid {
+  outline: 2px solid #c0392b;
+  background-color: rgba(192, 57, 43, 0.06);
+}
+
+.auth-field__error {
+  min-height: 1.1rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: #c0392b;
+}
+
+/* Campo Edad: caja angosta, como en el prototipo */
+.auth-field--age .auth-field__input {
+  width: 4.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Términos y condiciones                                                     */
+/* -------------------------------------------------------------------------- */
+
+.auth-terms {
+  margin-bottom: 1.35rem;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  transition: var(--transition-base);
+}
+
+.auth-terms.is-invalid {
+  background-color: rgba(192, 57, 43, 0.06);
+}
+
+.auth-terms__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-text-dark);
+  cursor: pointer;
+}
+
+.auth-terms__check input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-primary-brown);
+  cursor: pointer;
+}
+
+.auth-terms__check a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth-terms__privacy {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(24, 24, 24, 0.65);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mensaje general del formulario (éxito / error)                             */
+/* -------------------------------------------------------------------------- */
+
+.auth-form-message {
+  min-height: 1.2rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.auth-form-message--success {
+  color: #1e7e34;
+}
+
+.auth-form-message--error {
+  color: #c0392b;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Botones                                                                    */
+/* -------------------------------------------------------------------------- */
+
+.auth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.auth-btn {
+  flex: 1 1 8rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: rgba(24, 24, 24, 0.08);
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.auth-btn:hover,
+.auth-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+  background-color: rgba(24, 24, 24, 0.12);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop — min-width 1024px                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .auth-card {
+    padding: 2.5rem 2.75rem;
+  }
+
+  .auth-field__label {
+    font-size: 1rem;
+  }
+
+  .auth-field__input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - Escuela Técnica N° 1</title>
+
+    <!-- Carga la librería Chart.js desde un CDN. No requiere instalación local. -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        [LOGO ANEP]
+        [LOGO UTU]
+        [ICONO NUBE]
+        <span>Po / Es</span>
+        [ICONO CAMPANA NOTIFICACIONES]
+    </header>
+
+    <aside>
+        <h2>Edition</h2>
+        <ul>
+            <li><a href="institucion.html">[ICONO CASA] Institucional</a></li>
+            <li><a href="ubicacion.html">[ICONO UBICACION] Ubicacion UTU</a></li>
+            <li><a href="../OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
+
+            <li><a href="#">[ICONO LIBRO] Institucional</a></li>
+            <li><a href="eventos.html">[ICONO ESTRELLA] Eventos</a></li>
+            <li><a href="laboratorio.html">[ICONO MATRAZ] Laboratorio</a></li>
+            <li><a href="#">[ICONO ASTERISCO] Normativas</a></li>
+            <li><a href="#">[ICONO MAS] Anexos</a></li>
+            <li><a href="preinscribirse.html">[ICONO PERSONA] Preinscribirse</a></li>
+            <li><a href="iniciar-sesion.html">[ICONO LLAVE] Log in</a></li>
+            <li><a href="sugerencias.html">[ICONO ENGRANAJE] Sugerencias</a></li>
+            <li><a href="#">[ICONO GRAFICO] Estadisticas</a></li>
+        </ul>
+
+        <h2>Others</h2>
+        <ul>
+            <li><a href="#">[ICONO SOBRE] Email</a></li>
+            <li><a href="#">[ICONO CAMPANA] Notificaciones</a></li>
+            <li><a href="#">[ICONO CALENDARIO] Calendario</a></li>
+            <li><a href="#">[ICONO ARCHIVOS] Archivos subidos</a></li>
+            <li><a href="#">[ICONO CHAT] Chats</a></li>
+        </ul>
+
+        <div>
+            [ICONO USUARIO]
+            <p>User</p>
+            <p>Admin</p>
+            [ICONO SALIR]
+        </div>
+    </aside>
+
+    <main>
+        <section>
+            <div>
+                <p>Estudiantes</p>
+                <p>1109</p>
+            </div>
+
+            <div>
+                <p>Docentes</p>
+                <p>209</p>
+            </div>
+
+            <div>
+                <p>No Docentes</p>
+                <p>15</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Estudiantes por curso</h2>
+
+            <!-- Cada gráfico necesita su propio <canvas> con un id único -->
+            <canvas id="graficoEstudiantes" width="400" height="400"></canvas>
+        </section>
+
+        <section>
+            <h2>Docentes — situación laboral</h2>
+
+            <canvas id="graficoDocentesLaboral" width="500" height="200"></canvas>
+        </section>
+
+        <section>
+            <h2>Docentes, no docentes y docencia indirecta — por género</h2>
+
+            <div>
+                <h3>Docentes</h3>
+                <canvas id="graficoGeneroDocentes" width="250" height="250"></canvas>
+                <p>209 personas en total</p>
+            </div>
+
+            <div>
+                <h3>No docentes</h3>
+                <canvas id="graficoGeneroNoDocentes" width="250" height="250"></canvas>
+                <p>15 personas en total</p>
+            </div>
+
+            <div>
+                <h3>Docencia Indirecta</h3>
+                <canvas id="graficoGeneroDocenciaIndirecta" width="250" height="250"></canvas>
+                <p>15 personas en total</p>
+            </div>
+        </section>
+    </main>
+
+    <!--
+        Este script corre DESPUÉS de que el HTML de arriba ya existe,
+        así que document.getElementById encuentra los <canvas> sin problema.
+        Cada "new Chart(...)" toma los datos tal cual están escritos acá.
+        Si más adelante estos números vienen de una base de datos o de una API,
+        hay que reemplazar estos arrays fijos por los datos que traigas,
+        y llamar a chart.update() cada vez que cambien.
+    -->
+    <script>
+        // Gráfico 1: Estudiantes por curso (torta)
+        new Chart(document.getElementById('graficoEstudiantes'), {
+            type: 'pie',
+            options: { responsive: false },
+            data: {
+                labels: ['BT - 413 (35%)', 'EMB - 297 (25%)', 'BTP - 216 (22%)', 'CTT - 95 (8%)', 'FPB - 85 (7%)', 'CPI - 25 (2%)', 'Tecnologo - 15 (1%)'],
+                datasets: [{
+                    data: [413, 297, 216, 95, 85, 25, 15],
+                    backgroundColor: ['#29b6f6', '#26a69a', '#ef5350', '#c58a2e', '#8e24aa', '#5c6bc0', '#66bb6a']
+                }]
+            }
+        });
+
+        // Gráfico 2: Docentes - situación laboral (barra horizontal apilada)
+        new Chart(document.getElementById('graficoDocentesLaboral'), {
+            type: 'bar',
+            data: {
+                labels: ['Docentes'],
+                datasets: [
+                    { label: 'Interinos - 154 (74%)', data: [154], backgroundColor: '#29b6f6' },
+                    { label: 'Efectivos - 29 (14%)', data: [29], backgroundColor: '#26a69a' },
+                    { label: 'Suplentes - 24 (12%)', data: [24], backgroundColor: '#ef5350' }
+                ]
+            },
+            options: {
+                responsive: false,
+                indexAxis: 'y',
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true }
+                }
+            }
+        });
+
+        // Gráfico 3: Género - Docentes
+        new Chart(document.getElementById('graficoGeneroDocentes'), {
+            type: 'pie',
+            options: { responsive: false },
+            data: {
+                labels: ['Hombres - 92 (44%)', 'Mujeres - 117 (56%)'],
+                datasets: [{
+                    data: [92, 117],
+                    backgroundColor: ['#29b6f6', '#ef5350']
+                }]
+            }
+        });
+
+        // Gráfico 4: Género - No docentes
+        new Chart(document.getElementById('graficoGeneroNoDocentes'), {
+            type: 'pie',
+            options: { responsive: false },
+            data: {
+                labels: ['Hombres - 3 (20%)', 'Mujeres - 12 (80%)'],
+                datasets: [{
+                    data: [3, 12],
+                    backgroundColor: ['#29b6f6', '#ef5350']
+                }]
+            }
+        });
+
+        // Gráfico 5: Género - Docencia Indirecta
+        new Chart(document.getElementById('graficoGeneroDocenciaIndirecta'), {
+            type: 'pie',
+            options: { responsive: false },
+            data: {
+                labels: ['Hombres - 7 (37%)', 'Mujeres - 12 (63%)'],
+                datasets: [{
+                    data: [7, 12],
+                    backgroundColor: ['#29b6f6', '#ef5350']
+                }]
+            }
+        });
+    </script>
+
+</body>
+</html>
+

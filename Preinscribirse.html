@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preinscribirse | Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/preinscribirse.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container-fluid site-header__inner">
+            <div class="site-header__brand-row">
+                <a class="site-brand" href="institucional.html">
+                    <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
+                </a>
+                <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
+                <button class="navbar-toggler site-nav-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavCollapse" aria-controls="siteNavCollapse" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse site-nav-collapse" id="siteNavCollapse">
+                <div class="site-nav-row">
+                    <ul class="site-nav-list">
+                        <li><a href="OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
+                        <li><a href="Noticias.html">Noticias</a></li>
+                        <li><a href="Eventos.html">Eventos</a></li>
+                        <li><a href="Laboratorio.html">Laboratorio</a></li>
+                        <li><a href="Institucional.html">Normativas</a></li>
+                    </ul>
+                    <div class="site-nav-actions">
+                        <a class="btn-nav btn-nav--preinscribir" href="Preinscribirse.html">Preinscribirse</a>
+                        <a class="btn-nav btn-nav--login" href="Login-in.html">Login in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+
+        <!-- ================= FORMULARIO DE PREINSCRIPCIÓN ================= -->
+        <section aria-labelledby="pre-heading">
+            <h1 id="pre-heading" class="visually-hidden">Preinscribirse</h1>
+
+            <form class="auth-card pre-card" id="preForm" action="#" method="post" novalidate>
+
+                <!-- Datos de acceso -->
+                <fieldset class="pre-fieldset">
+                    <legend class="pre-fieldset__legend">Datos de acceso</legend>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-cedula">Cedula</label>
+                        <input class="auth-field__input" type="text" id="pre-cedula" name="cedula" inputmode="numeric" autocomplete="username" required>
+                        <p class="auth-field__error" id="pre-cedula-error" role="alert"></p>
+                    </div>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-password">Contraseña</label>
+                        <input class="auth-field__input" type="password" id="pre-password" name="password" autocomplete="new-password" required>
+                        <p class="auth-field__error" id="pre-password-error" role="alert"></p>
+                    </div>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-curso">Curso</label>
+                        <select class="auth-field__input auth-field__input--select" id="pre-curso" name="curso" required>
+                            <option value="" selected disabled hidden>Seleccioná un curso</option>
+                            <option value="administracion">Administración</option>
+                            <option value="agrario">Agrario</option>
+                            <option value="bienestar-y-salud">Bienestar y Salud</option>
+                            <option value="construccion-muebles-por-diseno">Construcción de Muebles por Diseño</option>
+                            <option value="construccion">Construcción</option>
+                            <option value="deporte-y-recreacion">Deporte y Recreación</option>
+                            <option value="electromecanica">Electromecánica</option>
+                            <option value="estetica-capilar">Estética Capilar</option>
+                            <option value="gastronomia">Gastronomía</option>
+                            <option value="informatica">Informática</option>
+                            <option value="instalaciones-electricas">Instalaciones Eléctricas</option>
+                            <option value="mecanica-en-produccion">Mecánica en Producción</option>
+                        </select>
+                        <p class="auth-field__error" id="pre-curso-error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <!-- Datos de Conectividad y Ubicación -->
+                <fieldset class="pre-fieldset">
+                    <legend class="pre-fieldset__legend">Datos de Conectividad y Ubicación</legend>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-pais-ciudad">País y ciudad de residencia</label>
+                        <input class="auth-field__input" type="text" id="pre-pais-ciudad" name="pais_ciudad" placeholder="Ej: Uruguay, Bella Unión" required>
+                        <p class="auth-field__hint">Se usa para calcular la zona horaria en las clases en vivo.</p>
+                        <p class="auth-field__error" id="pre-pais-ciudad-error" role="alert"></p>
+                    </div>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-conexion">Calidad de conexión a internet</label>
+                        <select class="auth-field__input auth-field__input--select" id="pre-conexion" name="conexion" required>
+                            <option value="" selected disabled hidden>Seleccioná una opción</option>
+                            <option value="fibra">Fibra óptica</option>
+                            <option value="datos_moviles">Datos móviles</option>
+                            <option value="adsl">ADSL</option>
+                            <option value="otra">Otra / No estoy seguro</option>
+                        </select>
+                        <p class="auth-field__hint">Nos ayuda a prever problemas técnicos en las clases virtuales.</p>
+                        <p class="auth-field__error" id="pre-conexion-error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <!-- Requisitos Académicos -->
+                <fieldset class="pre-fieldset">
+                    <legend class="pre-fieldset__legend">Requisitos Académicos</legend>
+
+                    <div class="auth-field">
+                        <label class="auth-field__label" for="pre-comprobante">Comprobante de requisitos previos</label>
+                        <input class="auth-field__input auth-field__input--file" type="file" id="pre-comprobante" name="comprobante" accept=".pdf,.jpg,.jpeg,.png">
+                        <p class="auth-field__hint">Solo si el curso exige secundaria completa u otro nivel aprobado. Formatos: PDF o JPG.</p>
+                        <p class="auth-field__error" id="pre-comprobante-error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <!-- Datos de Control Interno -->
+                <fieldset class="pre-fieldset">
+                    <legend class="pre-fieldset__legend">Datos de Control Interno</legend>
+
+                    <div class="auth-terms">
+                        <label class="auth-terms__check">
+                            <input type="checkbox" id="pre-terminos" name="terminos" required>
+                            <span>Acepto las normas de comportamiento virtual y la <a href="#">Política de Privacidad</a>.</span>
+                        </label>
+                        <p class="auth-field__error" id="pre-terminos-error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <p class="auth-form-message" id="auth-form-message" role="alert" aria-live="assertive"></p>
+
+                <div class="auth-actions">
+                    <button class="auth-btn" type="submit">Inscribirse</button>
+                    <button class="auth-btn" type="reset">Limpiar</button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ================= MODAL DE CONFIRMACIÓN ================= -->
+    <div class="modal-overlay" id="preModalOverlay" hidden>
+        <div class="modal-box" role="alertdialog" aria-modal="true" aria-labelledby="preModalTitle" aria-describedby="preModalText">
+            <div class="modal-box__icon" aria-hidden="true">
+                <img src="Iconos/map-pin.png" alt="" width="24" height="24">
+            </div>
+            <h2 id="preModalTitle" class="modal-box__title">¡Solicitud enviada!</h2>
+            <p id="preModalText" class="modal-box__text">
+                Tu solicitud de preinscripción será revisada por una autoridad de la escuela. Te vamos a contactar por los datos que dejaste una vez que sea evaluada.
+            </p>
+            <button class="auth-btn" type="button" id="preModalCloseBtn">Entendido</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container-fluid site-footer__main">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <div class="site-footer__brand">
+                        <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo site-brand__logo--footer" width="320" height="64">
+                        <p class="site-footer__school">Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
+                        <p class="site-footer__location">Bella Unión - Uruguay</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Vínculos</h2>
+                    <ul class="site-footer__links">
+                        <li><a href="Anexo-BaltasarBrum.html">Anexo Baltasar Brum</a></li>
+                        <li><a href="Anexo-TomasGomensoro.html">Anexo T. Gomensoro</a></li>
+                        <li><a href="Anexo-Polideportivo.html">Polideportivo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Contacto</h2>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/clock-hour-3W.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>Lun a Vie: 08:00 - 22:00</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/map-pin.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>Av. Artigas y Pedro Acosta, Bella Unión, Artigas, Uruguay</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/phoneIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>4779 2025</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Redes Sociales</h2>
+                    <div class="site-footer__social">
+                        <a class="social-link" href="#" aria-label="Instagram">
+                            <img src="Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
+                        </a>
+                        <a class="social-link" href="#" aria-label="Facebook">
+                            <img src="Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        </a>
+                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
+                            <img src="Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
+                        </a>
+                    </div>
+                    <div class="site-footer__cta-row">
+                        <a class="btn-footer-cta d-md-none" href="admin/panel.html">Estadísticas</a>
+                        <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer__copyright">
+            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/preinscribirse.js"></script>
+</body>
+</html>
+
+
