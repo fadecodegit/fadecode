@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ubicación | Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
+    <title>Laboratorio — Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/UbicacionUTU.css">
+    <link rel="stylesheet" href="assets/css/Laboratorio.css">
 </head>
 <body>
 
@@ -31,7 +29,7 @@
                         <li><a href="OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
                         <li><a href="Noticias.html">Noticias</a></li>
                         <li><a href="Eventos.html">Eventos</a></li>
-                        <li><a href="Laboratorio.html">Laboratorio</a></li>
+                        <li><a class="is-active" href="Laboratorio.html">Laboratorio</a></li>
                         <li><a href="Normativas.html">Normativas</a></li>
                     </ul>
                     <div class="site-nav-actions">
@@ -45,59 +43,44 @@
 
     <main class="site-main">
 
-        <!-- ================= UBICACIÓN ================= -->
-        <section class="ubi-card" aria-labelledby="ubi-heading">
+        <!-- ================= LABORATORIO ================= -->
+        <section class="lab-card" aria-labelledby="lab-heading">
 
-            <div class="ubi-title">
-                <h1 id="ubi-heading" class="ubi-title__text">Ubicación</h1>
-                <span class="ubi-title__line" aria-hidden="true"></span>
+            <div class="lab-title">
+                <h1 id="lab-heading" class="lab-title__text">Laboratorio</h1>
+                <span class="lab-title__line" aria-hidden="true"></span>
             </div>
 
-            <div class="ubi-grid">
-                <div class="ubi-media">
-                    <img
-                        class="ubi-map"
-                        src="Imagenes_UTU/Ubicacion_UTU.png"
-                        alt="Mapa de ubicación de la Escuela Técnica N°1">
+            <div class="lab-carousel" data-carousel>
+
+                <div class="lab-carousel__stage">
+
+                    <button class="lab-carousel__arrow lab-carousel__arrow--prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                            <path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="lab-carousel__content">
+                        <div class="lab-carousel__image-wrapper">
+                            <!-- REEMPLAZAR: el src de esta imagen se actualiza dinámicamente desde el array "slides" en Laboratorio.js -->
+                            <img class="lab-carousel__image" src="" alt="" data-carousel-image>
+                        </div>
+                        <p class="lab-carousel__description" data-carousel-description></p>
+                    </div>
+
+                    <button class="lab-carousel__arrow lab-carousel__arrow--next" type="button" aria-label="Imagen siguiente" data-carousel-next>
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+                            <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
                 </div>
 
-                <!-- Información -->
-                <div class="ubi-info">
-                    <p class="ubi-info__subtitle">Bella Unión Uruguay Escuela Técnica SGO</p>
-                    <p class="ubi-info__text">
-                        Escuela Técnica 1 "Maestro Técnico Sergio González Olaizola", ubicada en la ciudad de Bella Unión, departamento de Artigas, en plena zona de triple frontera entre Uruguay, Argentina y Brasil. Ofrece formación técnica y tecnológica en diversas áreas —incluyendo la agraria, con énfasis en producción agropecuaria—, acorde a la realidad productiva de la región norte del país. Cuenta además con anexos en las localidades de Tomás Gomensoro y Baltasar Brum, así como con el Anexo Polideportivo dentro de la propia ciudad de Bella Unión, ampliando así su alcance educativo a toda la zona.
-                    </p>
-                </div>
-
-                <!-- Datos de contacto -->
-                <ul class="ubi-list">
-                    <li class="ubi-list__item">
-                        <span class="ubi-list__icon" aria-hidden="true">
-                            <img src="Iconos/map-pin.png" alt="" width="18" height="18">
-                        </span>
-                        <p class="ubi-list__text">Av. Artigas s/n esquina Pedro Acosta, Bella Unión, Artigas</p>
-                    </li>
-                    <li class="ubi-list__item">
-                        <span class="ubi-list__icon" aria-hidden="true">
-                            <img src="Iconos/phoneIcon.png" alt="" width="18" height="18">
-                        </span>
-                        <p class="ubi-list__text"><a href="tel:+59847792025">4779 2025</a></p>
-                    </li>
-                    <li class="ubi-list__item">
-                        <span class="ubi-list__icon" aria-hidden="true">
-                            <img src="Iconos/mailIcon.png" alt="" width="18" height="18">
-                        </span>
-                        <p class="ubi-list__text"><a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a></p>
-                    </li>
-                    <li class="ubi-list__item">
-                        <span class="ubi-list__icon" aria-hidden="true">
-                            <img src="Iconos/usericon.png" alt="" width="18" height="18">
-                        </span>
-                        <p class="ubi-list__text">Directora: Cristina Mantuani.</p>
-                    </li>
-                </ul>
+                <div class="lab-carousel__dots" role="tablist" aria-label="Seleccionar imagen" data-carousel-dots></div>
 
             </div>
+
         </section>
 
     </main>
@@ -138,7 +121,7 @@
                     </div>
                     <div class="site-footer__contact-item">
                         <img src="Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
-                        <p>ubellaunion@gmail.com</p>
+                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
                     </div>
                 </div>
 
@@ -170,7 +153,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/Laboratorio.js"></script>
 </body>
 </html>
-
-
