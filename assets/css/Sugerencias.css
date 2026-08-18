@@ -1,0 +1,146 @@
+:root {
+  --color-heading-cyan: #1fa7c9;
+  --color-suggestion-card: #ddeef8;
+  --color-suggestion-border: rgba(31, 167, 201, 0.25);
+}
+
+.sug-card {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-suggestion-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Título "Sugerencias" con línea celeste                                     */
+/* -------------------------------------------------------------------------- */
+
+.sug-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.sug-title__text {
+  margin: 0;
+  color: var(--color-heading-cyan);
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sug-title__line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-heading-cyan);
+  opacity: 0.55;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Textarea                                                                   */
+/* -------------------------------------------------------------------------- */
+
+.sug-textarea {
+  display: block;
+  width: 100%;
+  min-height: 14rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-suggestion-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-card-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: var(--transition-base);
+}
+
+.sug-textarea::placeholder {
+  color: rgba(24, 24, 24, 0.35);
+}
+
+.sug-textarea:focus-visible {
+  outline: 2px solid var(--color-heading-cyan);
+  outline-offset: 1px;
+}
+
+.sug-textarea.is-invalid {
+  outline: 2px solid #c0392b;
+}
+
+.sug-error {
+  min-height: 1.1rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Botones                                                                    */
+/* -------------------------------------------------------------------------- */
+
+.sug-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.sug-btn {
+  padding: 0.7rem 1.75rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-card-bg);
+  color: var(--color-text-dark);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-base);
+}
+
+.sug-btn:hover,
+.sug-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.sug-form-message {
+  min-height: 1.2rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sug-form-message--success {
+  color: #1e7e34;
+}
+
+.sug-form-message--error {
+  color: #c0392b;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Desktop — min-width 1024px                                                 */
+/* -------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+  .sug-card {
+    padding: 2.25rem 2.5rem;
+  }
+
+  .sug-title__text {
+    font-size: 1.4rem;
+  }
+
+  .sug-textarea {
+    min-height: 18rem;
+    font-size: 1rem;
+  }
+}
