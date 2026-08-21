@@ -3,226 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polideportivo Bella Union - Escuela Técnica N° 1</title>
+    <title>Polideportivo Bella Unión — Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Anexo-Polideportivo.css">
 </head>
 <body>
 
-    <header>
-        [LOGO ANEP]
-        [LOGO UTU]
-        <span>Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</span>
+    <header class="site-header">
+        <div class="container-fluid site-header__inner">
+            <div class="site-header__brand-row">
+                <a class="site-brand" href="Institucional.html">
+                    <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
+                </a>
+                <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
+                <button class="navbar-toggler site-nav-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNavCollapse" aria-controls="siteNavCollapse" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse site-nav-collapse" id="siteNavCollapse">
+                <div class="site-nav-row">
+                    <ul class="site-nav-list">
+                        <li><a href="OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
+                        <li><a href="Noticias.html">Noticias</a></li>
+                        <li><a href="Error.html">Eventos</a></li>
+                        <li><a href="Laboratorio.html">Laboratorio</a></li>
+                        <li><a href="Normativas.html">Normativas</a></li>
+                    </ul>
+                    <div class="site-nav-actions">
+                        <a class="btn-nav btn-nav--preinscribir" href="Preinscribirse.html">Preinscribirse</a>
+                        <a class="btn-nav btn-nav--login" href="Login-in.html">Login in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
+    <main class="site-main">
 
-            <li><a href="#">Noticias</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Laboratorio</a></li>
-            <li><a href="#">Normativas</a></li>
-        </ul>
-        <button>Preinscribirse</button>
-        <button>Login in</button>
-    </nav>
+        <!-- ================= ANEXO POLIDEPORTIVO ================= -->
+        <section class="poli-card" aria-labelledby="poli-heading">
 
-    <main>
-        <section>
-            <h1>Polideportivo Bella Union</h1>
+            <h1 id="poli-heading" class="poli-title">Polideportivo Bella Union</h1>
 
-            <p>Inauguración: 12/11/2021</p>
+            <!-- ============ FICHA DE DATOS ============ -->
+            <div class="poli-panel poli-panel--datos">
+                <dl class="poli-datos">
+                    <div class="poli-datos__row">
+                        <dt>Inauguración:</dt>
+                        <dd>12/11/2021</dd>
+                    </div>
+                    <div class="poli-datos__row">
+                        <dt>Coordinadora Directiva por ANEP:</dt>
+                        <dd>Cindy Castro</dd>
+                    </div>
+                    <div class="poli-datos__row">
+                        <dt>Dirección:</dt>
+                        <dd>Martín Dermit s/n entre Av. Gral J. Artigas y Gral. F. Rivera</dd>
+                    </div>
+                    <div class="poli-datos__row">
+                        <dt>Teléfono:</dt>
+                        <dd>4779-8112</dd>
+                    </div>
+                </dl>
+            </div>
 
-            <p>Coordinadora Directiva por ANEP: Cindy Castro</p>
+            <!-- ============ MARCO INSTITUCIONAL ============ -->
+            <div class="poli-panel">
+                <h2 class="poli-subtitle">Marco Institucional</h2>
 
-            <p>Dirección: Martín Dermit s/n entre Av. Gral J. Artigas y Gral. F. Rivera</p>
+                <p class="poli-text">
+                    Los Polideportivos constituyen una política educativa de la ANEP y se rigen por el
+                    presente reglamento, en el marco del Proyecto de Infraestructura Educativa
+                    desarrollado mediante la modalidad de Participación Público-Privada (PPP2),
+                    conforme a la Ley N.° 18.786.
+                </p>
+                <p class="poli-text">
+                    En este contexto, la Administración Nacional de Educación Pública (ANEP) ejerce
+                    como autoridad pública concedente y mantiene la titularidad de la función
+                    educativa y comunitaria.
+                </p>
+                <p class="poli-text">
+                    Por su parte, el socio privado asume, según lo estipulado en el contrato PPP, las
+                    responsabilidades de diseño, financiamiento, construcción y mantenimiento
+                    integral de la infraestructura.
+                </p>
+                <p class="poli-text">
+                    Independientemente de la modalidad de ejecución (PPP2), la gestión
+                    pedagógica, educativa, deportiva y comunitaria de los centros es competencia de
+                    la ANEP-UTU, y en algunos centros en articulación con la SND.
+                </p>
+                <p class="poli-text">
+                    Las funciones específicas de gestión asignadas a cada cargo se detallan en las
+                    Resoluciones N.° 826/2021 (Expediente 2021-25-4-000243) para el Coordinador
+                    Directivo y N.° 827/2021 (Expediente 2021-25-4-000244) para el Coordinador
+                    Ejecutivo, establecidas por la ANEP-UTU el 15 de abril de 2021 en acuerdo con la
+                    SND.
+                </p>
+                <p class="poli-text">
+                    El uso de las instalaciones, la asignación de carga horaria, la planificación de
+                    actividades y la definición de prioridades de acceso se regirán por la "Preceptiva
+                    de uso", documento que rige las pautas de funcionamiento desde el inicio de la
+                    gestión de los polideportivos.
+                </p>
+                <p class="poli-text">
+                    Este reglamento fue actualizado en abril de 2025, y se complementa con los
+                    acuerdos interinstitucionales vigentes.
+                </p>
+                <p class="poli-text">
+                    Todas las acciones tendrán como pilar fundamental el beneficio de la comunidad
+                    educativa y su entorno local.
+                </p>
+                <p class="poli-text">
+                    La referencia jerárquica directa para los Coordinadores de los Polideportivos será
+                    el equipo técnico integrado por la Inspección del Área de Cultura Física de ANEP-
+                    UTU (para el Coordinador/a Directivo/a), y la Coordinación del Área de Deporte y
+                    Educación de la SND (para el Coordinador/a Ejecutivo/a); cuyas autoridades
+                    trabajarán de manera coordinada y conjunta.
+                </p>
+            </div>
 
-            <p>Teléfono: 4779-8112</p>
+            <!-- ============ MODELO DE GESTIÓN Y ROLES ============ -->
+            <div class="poli-panel">
+                <h2 class="poli-subtitle">Modelo de Gestion y Roles</h2>
+
+                <h3 class="poli-subsubtitle">Modalidades de conducción de los centros:</h3>
+                <p class="poli-text">
+                    Gestión Unificada ANEP: centros donde ambas funciones (Coordinación Directiva
+                    y Ejecutiva) son ejercidas por cargos ANEP (Toledo, Progreso, Treinta y Tres y
+                    Rivera).
+                </p>
+                <p class="poli-text">
+                    Gestión Mixta: centros donde la gestión se realiza mediante un cargo ANEP-UTU
+                    (rol Directivo) y un cargo de la SND (rol Ejecutivo). Estos son: Ciudad del Plata,
+                    Young, Carmelo, Salto, Paysandú y Bella Unión.
+                </p>
+
+                <h3 class="poli-subsubtitle">Pautas generales de rol:</h3>
+                <p class="poli-text">
+                    Para el uso de las instalaciones es obligatoria la presencia de referentes
+                    institucionales (docentes o funcionarios) del organismo asignado según el
+                    cronograma.
+                </p>
+                <p class="poli-text">
+                    Cada coordinador/a es responsable directo de la planificación, supervisión y
+                    control de las actividades desarrolladas por su respectivo organismo (ANEP-UTU
+                    o SND). El desempeño de esta gestión deberá enmarcarse directamente en la
+                    "Preceptiva de Uso de los Polideportivos" establecida por la ANEP-UTU.
+                </p>
+            </div>
+
+            <!-- ============ HORARIOS ============ -->
+            <div class="poli-panel">
+                <h2 class="poli-subtitle">Horarios</h2>
+
+                <div class="poli-table-wrapper">
+                    <table class="poli-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Periodo</th>
+                                <th scope="col">Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes a viernes (año lectivo)</td>
+                                <td>8:00 a 24:00 hs</td>
+                            </tr>
+                            <tr>
+                                <td>Lunes a viernes (período vacacional)</td>
+                                <td>9:00 a 24:00 hs</td>
+                            </tr>
+                            <tr>
+                                <td>Sábados y Domingos</td>
+                                <td>8:00 a 23:00 hs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ============ DESIGNACIÓN DE HORARIOS Y PRIORIDADES ============ -->
+            <div class="poli-panel">
+                <h2 class="poli-subtitle">Designación de Horarios y Prioridades</h2>
+
+                <div class="poli-table-wrapper">
+                    <table class="poli-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Franja Horaria</th>
+                                <th scope="col">Prioridad de uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lunes a viernes, 08:00 a 17:00 hs</td>
+                                <td>Anep</td>
+                            </tr>
+                            <tr>
+                                <td>Lunes a viernes, 17:00 a 24:00 hs</td>
+                                <td>SND</td>
+                            </tr>
+                            <tr>
+                                <td>Fines de semana (todo el horario)</td>
+                                <td>SND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ============ ACCESOS RÁPIDOS ============ -->
+            <div class="poli-links">
+                <a class="poli-link-btn" href="Figuras-Polideportivo.html">Figuras Importantes</a>
+                <a class="poli-link-btn" href="Actividades-Polideportivo.html">Actividades</a>
+            </div>
+
         </section>
 
-        <section>
-            <h2>Marco Institucional</h2>
-
-            <p>
-                Los Polideportivos constituyen una política educativa de la ANEP y se rigen por el presente
-                reglamento, en el marco del Proyecto de Infraestructura Educativa desarrollado mediante la
-                modalidad de Participación Público-Privada (PPP2), conforme a la Ley N.° 18.786. En este contexto,
-                la Administración Nacional de Educación Pública (ANEP) ejerce como autoridad pública concedente y
-                mantiene la titularidad de la función educativa y comunitaria.
-            </p>
-
-            <p>
-                Por su parte, el socio privado asume, según lo estipulado en el contrato PPP, las responsabilidades
-                de diseño, financiamiento, construcción y mantenimiento integral de la infraestructura.
-            </p>
-
-            <p>
-                Independientemente de la modalidad de ejecución (PPP2), la gestión pedagógica, educativa, deportiva
-                y comunitaria de los centros es competencia de la ANEP-UTU, y en algunos centros en articulación con
-                la SND.
-            </p>
-
-            <p>
-                Las funciones específicas de gestión asignadas a cada cargo se detallan en las Resoluciones N.°
-                826/2021 (Expediente 2021-25-4-000243) para el Coordinador Directivo y N.° 827/2021 (Expediente
-                2021-25-4-000244) para el Coordinador Ejecutivo, establecidas por ANEP-UTU el 15 de abril de 2021
-                en acuerdo con la SND.
-            </p>
-
-            <p>
-                El uso de las instalaciones, la asignación de carga horaria, la planificación de actividades y la
-                definición de prioridades de acceso se regirán por la "Preceptiva de uso", documento que rige las
-                pautas de funcionamiento desde el inicio de la gestión de los polideportivos.
-            </p>
-
-            <p>
-                Este reglamento fue actualizado en abril de 2025, y se complementa con los acuerdos
-                interinstitucionales vigentes.
-            </p>
-
-            <p>
-                Todas las acciones tendrán como pilar fundamental el beneficio de la comunidad educativa y su
-                entorno local.
-            </p>
-
-            <p>
-                La referencia jerárquica directa para los Coordinadores de los Polideportivos será el equipo técnico
-                integrado por la Inspección del Área de Cultura Física de ANEP-UTU (para el Coordinador/a
-                Directivo/a), y la Coordinación del Área de Deporte y Educación de la SND (para el Coordinador/a
-                Ejecutivo/a); cuyas autoridades trabajarán de manera coordinada y conjunta.
-            </p>
-        </section>
-
-        <section>
-            <h2>Modelo de Gestion y Roles</h2>
-
-            <h3>Modalidades de conducción de los centros:</h3>
-
-            <p>
-                Gestión Unificada ANEP: centros donde ambas funciones (Coordinación Directiva y Ejecutiva) son
-                ejercidas por cargos ANEP (Toledo, Progreso, Treinta y Tres y Rivera).
-            </p>
-
-            <p>
-                Gestión Mixta: centros donde la gestión se realiza mediante un cargo ANEP-UTU (rol Directivo) y un
-                cargo de la SND (rol Ejecutivo). Estos son: Ciudad del Plata, Young, Carmelo, Salto, Paysandú y
-                Bella Unión.
-            </p>
-
-            <h3>Pautas generales de rol:</h3>
-
-            <p>
-                Para el uso de las instalaciones es obligatoria la presencia de referentes institucionales (docentes
-                o funcionarios) del organismo asignado según el cronograma.
-            </p>
-
-            <p>
-                Cada coordinador/a es responsable directo de la planificación, supervisión y control de las
-                actividades desarrolladas por su respectivo organismo (ANEP-UTU o SND). El desempeño de esta gestión
-                deberá enmarcarse directamente en la "Preceptiva de Uso de los Polideportivos" establecida por la
-                ANEP-UTU.
-            </p>
-        </section>
-
-        <section>
-            <h2>Horarios</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Periodo</th>
-                        <th>Horario</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lunes a viernes (año lectivo)</td>
-                        <td>8:00 a 24:00 hs</td>
-                    </tr>
-                    <tr>
-                        <td>Lunes a viernes (período vacacional)</td>
-                        <td>9:00 a 24:00 hs</td>
-                    </tr>
-                    <tr>
-                        <td>Sabados y Domingos</td>
-                        <td>8:00 a 23:00 hs</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Designación de Horarios y Prioridades</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Franja Horaria</th>
-                        <th>Prioridad de uso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lunes a viernes, 08:00 a 17:00 hs</td>
-                        <td>Anep</td>
-                    </tr>
-                    <tr>
-                        <td>Lunes a viernes, 17:00 a 24:00 hs</td>
-                        <td>SND</td>
-                    </tr>
-                    <tr>
-                        <td>Fines de semana (todo el horario)</td>
-                        <td>SND</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <button>Figuras Importantes</button>
-            <button>Actividades</button>
-        </section>
     </main>
 
-    <footer>
-        <div>
-            [LOGO ANEP]
-            [LOGO UTU]
+    <footer class="site-footer">
+        <div class="container-fluid site-footer__main">
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <div class="site-footer__brand">
+                        <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo site-brand__logo--footer" width="320" height="64">
+                        <p class="site-footer__school">Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
+                        <p class="site-footer__location">Bella Unión - Uruguay</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Vínculos</h2>
+                    <ul class="site-footer__links">
+                        <li><a href="Anexo-BaltasarBrum.html">Anexo Baltasar Brum</a></li>
+                        <li><a href="Anexo-TomasGomensoro.html">Anexo T. Gomensoro</a></li>
+                        <li><a href="Anexo-Polideportivo.html">Polideportivo</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Contacto</h2>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/clock-hour-3W.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>Lun a Vie: 08:00 - 22:00</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/map-pin.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>Av. Artigas y Pedro Acosta, Bella Unión, Artigas, Uruguay</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/phoneIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <span>4779 2025</span>
+                    </div>
+                    <div class="site-footer__contact-item">
+                        <img src="Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
+                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 site-footer__block">
+                    <h2 class="site-footer__heading">Redes Sociales</h2>
+                    <div class="site-footer__social">
+                        <a class="social-link" href="#" aria-label="Instagram">
+                            <img src="Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
+                        </a>
+                        <a class="social-link" href="#" aria-label="Facebook">
+                            <img src="Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        </a>
+                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
+                            <img src="Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
+                        </a>
+                    </div>
+                    <div class="site-footer__cta-row">
+                        <a class="btn-footer-cta d-md-none" href="admin/panel.html">Estadísticas</a>
+                        <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <p>Escuela Técnica N° 1 "Mtro. Téc. Sergio González Olaizola"</p>
-            <p>Bella Unión - Uruguay</p>
-        </div>
-
-        <div>
-            <h3>Vínculos</h3>
-            <ul>
-                <li><a href="#">Anexo Baltasar Brum</a></li>
-                <li><a href="#">Anexo T. Gomensoro</a></li>
-                <li><a href="#">Polideportivo</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h3>Contacto</h3>
-            <p>Lun a Vie: 08:00 - 22:00</p>
-            <p>Av. Artigas y Pedro Acosta, Bella Unión, Artigas, Uruguay</p>
-            <p>4779 2025</p>
-            <p>ubellaunion@gmail.com</p>
-        </div>
-
-        <div>
-            <h3>Redes Sociales</h3>
-            <a href="#"><img src="Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true"></a>
-            <a href="#"><img src="Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true"></a>
-            <a href="#">[LOGO WHATSAPP]</a>
-        </div>
-
-        <div>
-            <p>© 2026 Escuela Técnica N° 1 "Mtro. Téc. Sergio González Olaizola" - 2025 ANEP. Todos los derechos reservados.</p>
-            <button>Sugerencias</button>
+        <div class="site-footer__copyright">
+            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/javascript/main.js"></script>
+    <script src="assets/javascript/Anexo-Polideportivo.js"></script>
 </body>
 </html>
