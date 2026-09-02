@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio — Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
+    <title>Error — Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Laboratorio.css">
+    <link rel="stylesheet" href="assets/css/Error.css">
 </head>
 <body>
 
@@ -28,9 +28,9 @@
                     <ul class="site-nav-list">
                         <li><a href="OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
                         <li><a href="Noticias.html">Noticias</a></li>
-                        <li><a href="Eventos.html">Eventos</a></li>
-                        <li><a class="is-active" href="Laboratorio.html">Laboratorio</a></li>
-                        <li><a href="Normativas.html">Normativas</a></li>
+                        <li><a href="Error.html">Eventos</a></li>
+                        <li><a href="Laboratorio.html">Laboratorio</a></li>
+                        <li><a href="Institucional.html">Normativas</a></li>
                     </ul>
                     <div class="site-nav-actions">
                         <a class="btn-nav btn-nav--preinscribir" href="Preinscribirse.html">Preinscribirse</a>
@@ -43,55 +43,23 @@
 
     <main class="site-main">
 
-        <!-- ================= LABORATORIO ================= -->
-        <section class="lab-card" aria-labelledby="lab-heading">
+        <!-- ================= PÁGINA DE ERROR ================= -->
+        <section class="err-card" aria-labelledby="err-heading">
 
-            <div class="lab-title">
-                <h1 id="lab-heading" class="lab-title__text">Laboratorio</h1>
-                <span class="lab-title__line" aria-hidden="true"></span>
+            <div class="err-icon-wrapper">
+                <img class="err-icon" src="Iconos/Alerta.png" alt="" aria-hidden="true">
             </div>
 
-            <div class="lab-carousel" data-carousel>
+            <p class="err-code" data-error-code>Error</p>
+            <h1 id="err-heading" class="err-title" data-error-title>Algo salió mal</h1>
+            <p class="err-message" data-error-message>
+                No pudimos cargar esta página. Puede que el contenido todavía no esté disponible
+                o que haya ocurrido un problema al procesar tu solicitud.
+            </p>
 
-                <div class="lab-carousel__stage">
-
-                    <button class="lab-carousel__arrow lab-carousel__arrow--prev" type="button" aria-label="Imagen anterior" data-carousel-prev>
-                        <img src="Iconos/Izquierda.png" alt="" aria-hidden="true">
-                    </button>
-
-                    <div class="lab-carousel__content">
-
-                        <figure class="lab-carousel__slide is-active" data-carousel-slide>
-                            <div class="lab-carousel__image-wrapper">
-                                <img class="lab-carousel__image" src="Recursos UTU/Laboratorio1.jpeg" alt="Foto del laboratorio 1">
-                            </div>
-                            <figcaption class="lab-carousel__description">Descripción de la imagen 1</figcaption>
-                        </figure>
-
-                        <figure class="lab-carousel__slide" data-carousel-slide>
-                            <div class="lab-carousel__image-wrapper">
-                                <img class="lab-carousel__image" src="Recursos UTU/Laboratorio2.jpeg" alt="Foto del laboratorio 2">
-                            </div>
-                            <figcaption class="lab-carousel__description">Descripción de la imagen 2</figcaption>
-                        </figure>
-
-                        <figure class="lab-carousel__slide" data-carousel-slide>
-                            <div class="lab-carousel__image-wrapper">
-                                <img class="lab-carousel__image" src="Recursos UTU/Laboratorio3.jpeg" alt="Foto del laboratorio 3">
-                            </div>
-                            <figcaption class="lab-carousel__description">Descripción de la imagen 3</figcaption>
-                        </figure>
-
-                    </div>
-
-                    <button class="lab-carousel__arrow lab-carousel__arrow--next" type="button" aria-label="Imagen siguiente" data-carousel-next>
-                        <img src="Iconos/Derecha.PNG" alt="" aria-hidden="true">
-                    </button>
-
-                </div>
-
-                <div class="lab-carousel__dots" role="tablist" aria-label="Seleccionar imagen" data-carousel-dots></div>
-
+            <div class="err-actions">
+                <a class="err-btn err-btn--primary" href="Institucional.html">Volver al inicio</a>
+                <button class="err-btn err-btn--secondary" type="button" data-error-back>Volver atrás</button>
             </div>
 
         </section>
@@ -166,6 +134,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/javascript/main.js"></script>
-    <script src="assets/javascript/Laboratorio.js"></script>
+    <script src="assets/javascript/Error.js"></script>
 </body>
 </html>
