@@ -1,0 +1,142 @@
+:root {
+  --color-heading-cyan: #1fa7c9;
+  --color-pfig-card: #ddeef8;
+  --color-pfig-item-bg: #ffffff;
+  --color-pfig-image-bg: #e6e6e6;
+}
+
+.pfig-card {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-pfig-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+/* Título "Polideportivo" con línea celeste */
+.pfig-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.pfig-title__text {
+  margin: 0;
+  color: var(--color-heading-cyan);
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pfig-title__line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-heading-cyan);
+  opacity: 0.55;
+}
+/* Grilla de figuras */
+.pfig-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pfig-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-pfig-item-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.pfig-item__image-wrapper {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--color-pfig-image-bg);
+  flex-shrink: 0;
+}
+
+.pfig-item__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pfig-item__name {
+  margin: 0.35rem 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.pfig-item__cargo {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-heading-cyan);
+}
+
+.pfig-item__contacto {
+  margin: 0.5rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(24, 24, 24, 0.08);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.83rem;
+  color: var(--color-text-dark);
+}
+
+.pfig-item__contacto a {
+  color: var(--color-text-dark);
+  transition: var(--transition-base);
+}
+
+.pfig-item__contacto a:hover {
+  opacity: 0.7;
+}
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .pfig-card {
+    padding: 2rem 2.25rem;
+  }
+
+  .pfig-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pfig-item {
+    flex: 1 1 15rem;
+    max-width: 17rem;
+  }
+}
+/* Desktop — min-width 1024px */
+@media (min-width: 1024px) {
+  .pfig-card {
+    padding: 2.5rem 2.75rem;
+  }
+
+  .pfig-title__text {
+    font-size: 1.4rem;
+  }
+
+  .pfig-item__image-wrapper {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .pfig-item__name {
+    font-size: 1.05rem;
+  }
+}
