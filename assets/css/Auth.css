@@ -58,15 +58,11 @@
   color: #c0392b;
 }
 
-/* Campo Edad: caja angosta, como en el prototipo */
+/* Estilo del campo de edad. */
 .auth-field--age .auth-field__input {
   width: 4.5rem;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Términos y condiciones                                                     */
-/* -------------------------------------------------------------------------- */
-
+/* Términos y condiciones */
 .auth-terms {
   margin-bottom: 1.35rem;
   padding: 0.75rem;
@@ -108,11 +104,7 @@
   line-height: 1.45;
   color: rgba(24, 24, 24, 0.65);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Mensaje general del formulario (éxito / error)                             */
-/* -------------------------------------------------------------------------- */
-
+/* Mensaje general del formulario (éxito / error) */
 .auth-form-message {
   min-height: 1.2rem;
   margin: 0.5rem 0 0;
@@ -128,11 +120,7 @@
 .auth-form-message--error {
   color: #c0392b;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Botones                                                                    */
-/* -------------------------------------------------------------------------- */
-
+/* Botones */
 .auth-actions {
   display: flex;
   flex-wrap: wrap;
@@ -161,10 +149,30 @@
   background-color: rgba(24, 24, 24, 0.12);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
+.auth-recaptcha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
 
+.auth-forgot {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.auth-forgot a {
+  color: var(--color-offers-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.auth-forgot a:hover {
+  opacity: 0.85;
+}
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .auth-card {
     padding: 2.5rem 2.75rem;

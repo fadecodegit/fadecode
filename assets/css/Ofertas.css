@@ -81,11 +81,7 @@
   font-weight: 600;
   line-height: 1.25;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Tablet — min-width 577px                                                   */
-/* -------------------------------------------------------------------------- */
-
+/* Tablet — min-width 577px */
 @media (min-width: 577px) {
   .offers-card {
     max-width: 90%;
@@ -97,11 +93,7 @@
     width: calc(25% - 0.7rem);
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .offers-card {
     max-width: 56rem;
@@ -116,11 +108,7 @@
     width: calc(25% - 0.7rem);
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Ofertas Educativas — reflujo en mobile chico (< 577px)                     */
-/* -------------------------------------------------------------------------- */
-
+/* Ofertas Educativas — reflujo en mobile chico (< 577px) */
 @media (max-width: 576.98px) {
   .offer-item--gastronomia {
     order: 99;

@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  /** Error a medida: además del mensaje, guarda a qué campo pertenece */
+  /** Error del campo validado. */
   function FormError(fieldId, message) {
     this.name = "FormError";
     this.fieldId = fieldId;
@@ -45,6 +45,9 @@
       if (termsBlock) termsBlock.classList.add("is-invalid");
       const checkbox = document.getElementById("pre-terminos");
       if (checkbox) checkbox.focus();
+    } else if (fieldId === "pre-recaptcha") {
+      const recaptchaBlock = document.querySelector(".pre-recaptcha");
+      if (recaptchaBlock) recaptchaBlock.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }
 
@@ -77,11 +80,6 @@
       throw new FormError("pre-pais-ciudad", "Ingresá tu país y ciudad de residencia.");
     }
 
-    const conexion = getValue("pre-conexion");
-    if (!conexion) {
-      throw new FormError("pre-conexion", "Seleccioná la calidad de tu conexión a internet.");
-    }
-
     // El comprobante es opcional
     const comprobanteInput = document.getElementById("pre-comprobante");
     const comprobante = comprobanteInput && comprobanteInput.files.length > 0
@@ -93,7 +91,13 @@
       throw new FormError("pre-terminos", "Tenés que aceptar las normas y la política de privacidad para continuar.");
     }
 
-    return { cedula, password, curso, paisCiudad, conexion, comprobante };
+    // reCAPTCHA: requiere que el widget de Google esté cargado y resuelto.
+    const recaptchaResponse = typeof grecaptcha !== "undefined" ? grecaptcha.getResponse() : "";
+    if (!recaptchaResponse) {
+      throw new FormError("pre-recaptcha", "Completá el reCAPTCHA para continuar.");
+    }
+
+    return { cedula, password, curso, paisCiudad, comprobante, recaptchaResponse };
   }
 
   function openModal() {
@@ -142,6 +146,7 @@
         console.log("Preinscripción lista para enviar:", datos);
 
         form.reset();
+        if (typeof grecaptcha !== "undefined") grecaptcha.reset();
         openModal();
       } catch (err) {
         if (err instanceof FormError) {
@@ -152,6 +157,10 @@
           showGeneralMessage("Ocurrió un error inesperado. Intentá nuevamente.", "error");
         }
       }
+    });
+
+    form.addEventListener("reset", () => {
+      if (typeof grecaptcha !== "undefined") grecaptcha.reset();
     });
   }
 

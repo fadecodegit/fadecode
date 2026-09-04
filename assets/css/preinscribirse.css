@@ -5,11 +5,7 @@
 .pre-card {
   max-width: 34rem;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Secciones del formulario (fieldset + legend)                               */
-/* -------------------------------------------------------------------------- */
-
+/* Secciones del formulario (fieldset + legend) */
 .pre-fieldset {
   border: none;
   padding: 0;
@@ -29,11 +25,7 @@
   font-weight: 700;
   color: var(--color-section-heading);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Select (Curso / Calidad de conexión)                                      */
-/* -------------------------------------------------------------------------- */
-
+/* Select (Curso) */
 .auth-field__input--select {
   appearance: none;
   -webkit-appearance: none;
@@ -44,11 +36,7 @@
   padding-right: 2.5rem;
   cursor: pointer;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Input de archivo (Comprobante de requisitos previos)                       */
-/* -------------------------------------------------------------------------- */
-
+/* Input de archivo (Comprobante de requisitos previos) */
 .auth-field__hint {
   margin: 0.4rem 0 0;
   font-size: 0.78rem;
@@ -78,11 +66,11 @@
 .auth-field__input--file::file-selector-button:hover {
   opacity: 0.9;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Modal de confirmación ("tu solicitud será revisada")                       */
-/* -------------------------------------------------------------------------- */
-
+/* Verificación reCAPTCHA */
+.pre-recaptcha {
+  margin-bottom: 1.75rem;
+}
+/* Modal de confirmación ("tu solicitud será revisada") */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -159,11 +147,7 @@
 .modal-box .auth-btn {
   width: 100%;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .pre-fieldset__legend {
     font-size: 1.1rem;

@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  /** Error a medida: además del mensaje, guarda a qué campo pertenece */
   function FormError(fieldId, message) {
     this.name = "FormError";
     this.fieldId = fieldId;
@@ -18,6 +17,8 @@
     form.querySelectorAll(".auth-field__error").forEach((el) => {
       el.textContent = "";
     });
+    const recaptchaError = document.getElementById("login-recaptcha-error");
+    if (recaptchaError) recaptchaError.textContent = "";
     form.querySelectorAll(".auth-field__input").forEach((el) => {
       el.classList.remove("is-invalid");
     });
@@ -46,6 +47,15 @@
     el.classList.add(type === "success" ? "auth-form-message--success" : "auth-form-message--error");
   }
 
+  function validateRecaptcha(errorElId) {
+    if (typeof grecaptcha === "undefined" || !grecaptcha.getResponse()) {
+      const errorEl = document.getElementById(errorElId);
+      if (errorEl) errorEl.textContent = "Completá el reCAPTCHA antes de continuar.";
+      throw new FormError("login-recaptcha", "Completá el reCAPTCHA antes de continuar.");
+    }
+    return grecaptcha.getResponse();
+  }
+
   function validateAndCollect() {
     const cedula = getValue("login-cedula");
     if (!cedula) {
@@ -57,7 +67,9 @@
       throw new FormError("login-password", "Ingresá tu contraseña.");
     }
 
-    return { cedula, password };
+    const recaptchaToken = validateRecaptcha("login-recaptcha-error");
+
+    return { cedula, password, recaptchaToken };
   }
 
   function initLoginForm() {

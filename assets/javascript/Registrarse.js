@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  /** Error a medida: además del mensaje, guarda a qué campo pertenece */
+  /** Error del campo validado. */
   function FormError(fieldId, message) {
     this.name = "FormError";
     this.fieldId = fieldId;
@@ -15,7 +15,7 @@
   }
 
   function isValidEmail(value) {
-    // Chequeo simple: algo@algo.algo
+    // Valida el formato del correo.
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
 
@@ -23,6 +23,8 @@
     form.querySelectorAll(".auth-field__error").forEach((el) => {
       el.textContent = "";
     });
+    const recaptchaError = document.getElementById("reg-recaptcha-error");
+    if (recaptchaError) recaptchaError.textContent = "";
     form.querySelectorAll(".auth-field__input, .auth-terms").forEach((el) => {
       el.classList.remove("is-invalid");
     });
@@ -104,7 +106,13 @@
       throw new FormError("reg-terminos", "Tenés que aceptar los Términos y Condiciones para continuar.");
     }
 
-    return { nombre, cedula, correo, password, edad };
+    if (typeof grecaptcha === "undefined" || !grecaptcha.getResponse()) {
+      const recaptchaError = document.getElementById("reg-recaptcha-error");
+      if (recaptchaError) recaptchaError.textContent = "Completá el reCAPTCHA antes de continuar.";
+      throw new FormError("reg-recaptcha", "Completá el reCAPTCHA antes de continuar.");
+    }
+
+    return { nombre, cedula, correo, password, edad, recaptchaToken: grecaptcha.getResponse() };
   }
 
   function initRegistroForm() {

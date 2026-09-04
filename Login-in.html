@@ -8,13 +8,14 @@
     <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/auth.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
     <header class="site-header">
         <div class="container-fluid site-header__inner">
             <div class="site-header__brand-row">
-                <a class="site-brand" href="institucional.html">
+                <a class="site-brand" href="index.html">
                     <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
                 </a>
                 <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
@@ -43,7 +44,7 @@
 
     <main class="site-main">
 
-        <!-- ================= FORMULARIO DE LOGIN ================= -->
+        <!-- FORMULARIO DE LOGIN -->
         <section aria-labelledby="login-heading">
             <h1 id="login-heading" class="visually-hidden">Iniciar Sesión</h1>
 
@@ -63,9 +64,18 @@
 
                 <p class="auth-form-message" id="auth-form-message" role="alert" aria-live="assertive"></p>
 
+                <div class="auth-recaptcha">
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <p class="auth-field__error" id="login-recaptcha-error" role="alert"></p>
+                </div>
+
                 <div class="auth-actions">
                     <button class="auth-btn" type="submit">Iniciar Sesion</button>
                 </div>
+
+                <p class="auth-forgot">
+                    <a href="#">¿Olvidó su contraseña?</a>
+                </p>
 
             </form>
         </section>
@@ -126,7 +136,7 @@
                         </a>
                     </div>
                     <div class="site-footer__cta-row">
-                        <a class="btn-footer-cta d-md-none" href="admin/panel.html">Estadísticas</a>
+
                         <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
                     </div>
                 </div>
@@ -140,7 +150,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/javascript/main.js"></script>
-    <script src="assets/javascript/login.js"></script>
+    <script src="assets/javascript/Login-in.js"></script>
 </body>
 </html>
+
 
