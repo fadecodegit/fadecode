@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración — Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
+    <link rel="icon" href="/Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="institucional" data-label="Institucional">
+                            <img src="/Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="anexoeditor" data-label="Ubicacion UTU">
+                            <img src="/Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="ofertaseducativas" data-label="Ofertas Educativas">
+                            <img src="/Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="dashboard" data-label="Estadísticas">
+                            <img src="/Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="usuarios" data-label="Ver Usuarios">
+                            <img src="/Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="normativa" data-label="Normativas">
+                            <img src="/Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="evento" data-label="Eventos">
+                            <img src="/Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="noticia" data-label="Noticias">
+                            <img src="/Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="#" data-view="laboratorio" data-label="Laboratorio">
+                            <img src="/Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="/Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <img class="admin-nav__chevron" src="/Iconos/chevron-down.png" alt="" aria-hidden="true">
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="#" data-view="anexoeditor" data-label="Anexo Tomás Gomensoro">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="#" data-view="anexoeditor" data-label="Anexo Baltasar Brum">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <img class="admin-nav__chevron" src="/Iconos/chevron-down.png" alt="" aria-hidden="true">
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="#" data-view="polideportivo-inicio" data-label="Polideportivo — Inicio">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="#" data-view="polideportivo-figuras" data-label="Polideportivo — Figuras importantes">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="#" data-view="polideportivo-actividades" data-label="Polideportivo — Actividades">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="/Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="/Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="/Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="/Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <!-- DASHBOARD / ESTADÍSTICAS -->
+                <section class="admin-view" id="view-dashboard" data-view-panel>
+
+                    <div class="admin-stats-row">
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">Estudiantes</span>
+                            <span class="admin-stat-box__value">1109</span>
+                        </div>
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">Docentes</span>
+                            <span class="admin-stat-box__value">209</span>
+                        </div>
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">No Docentes</span>
+                            <span class="admin-stat-box__value">15</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Estudiantes por curso</h2>
+                        <div class="admin-chart-row">
+                            <div class="admin-chart-row__canvas-wrap">
+                                <canvas id="chartEstudiantesPorCurso"></canvas>
+                            </div>
+                            <ul class="admin-legend">
+                                <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>BT - 413 (35%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>EMB - 297 (25%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>BTP - 216 (22%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#c9971f"></span>CTT - 95 (8%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#8e2450"></span>FPB - 85 (7%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#4b3fd1"></span>CPI - 25 (2%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>Tecnólogo - 15 (1%)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Docentes — situación laboral</h2>
+                        <div class="admin-bar-wrap">
+                            <canvas id="chartDocentesLaboral" height="60"></canvas>
+                        </div>
+                        <ul class="admin-legend" style="margin-top: 1rem;">
+                            <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Interinos - 154 (74%)</li>
+                            <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>Efectivos - 29 (14%)</li>
+                            <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Suplentes - 26 (12%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Docentes, no docentes y docencia indirecta — por género</h2>
+                        <div class="admin-gender-grid">
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">Docentes</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroDocentes"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">209 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 92 (44%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 117 (56%)</li>
+                                </ul>
+                            </div>
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">No docentes</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroNoDocentes"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">15 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 3 (20%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 12 (80%)</li>
+                                </ul>
+                            </div>
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">Docencia Indirecta</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroIndirecta"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">19 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 7 (37%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 12 (63%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- VER USUARIOS -->
+                <section class="admin-view" id="view-usuarios" data-view-panel hidden>
+                    <h1 class="admin-view__title">Usuarios registrados</h1>
+
+                    <div class="admin-users-toolbar">
+                        <div class="admin-users-tabs" role="tablist" aria-label="Tipo de usuario">
+                            <button class="admin-users-tab is-active" type="button" role="tab" id="tab-estudiantes" aria-selected="true" aria-controls="panel-estudiantes" data-users-tab="estudiantes">Estudiantes</button>
+                            <button class="admin-users-tab" type="button" role="tab" id="tab-admins" aria-selected="false" aria-controls="panel-admins" data-users-tab="admins">Administradores</button>
+                        </div>
+                        <div class="admin-users-search">
+                            <input type="search" id="usuariosSearch" placeholder="Buscar por nombre, cédula o email..." aria-label="Buscar usuarios">
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card admin-users-panel" id="panel-estudiantes" role="tabpanel" aria-labelledby="tab-estudiantes">
+                        <div class="admin-users-table-wrap">
+                            <table class="admin-users-table" id="tablaEstudiantes">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Nombre completo</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">País</th>
+                                        <th scope="col">Fecha de registro</th>
+                                        <th scope="col">Curso actual</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyEstudiantes">
+                                    <!-- Filas cargadas desde /api/alumnos (backend SQL) -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="admin-users-empty" id="estudiantesEmpty" hidden>No hay estudiantes registrados todavía.</p>
+                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Alumnos</code> + tabla de usuarios vía backend.</p>
+                    </div>
+
+                    <div class="admin-panel-card admin-users-panel" id="panel-admins" role="tabpanel" aria-labelledby="tab-admins" hidden>
+                        <div class="admin-users-table-wrap">
+                            <table class="admin-users-table" id="tablaAdmins">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Nombre completo</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">País</th>
+                                        <th scope="col">Fecha de registro</th>
+                                        <th scope="col">Cargo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyAdmins">
+                                    <!-- Filas cargadas desde /api/administradores (backend SQL) -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="admin-users-empty" id="adminsEmpty" hidden>No hay administradores registrados todavía.</p>
+                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Administradores</code> + tabla de usuarios vía backend.</p>
+                    </div>
+                </section>
+
+                <!-- CREAR EVENTO -->
+                <section class="admin-view" id="view-evento" data-view-panel hidden>
+                    <h1 class="admin-view__title">Crear Evento</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formEvento">
+                            <h2 class="admin-form-card__title">Datos del evento</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="eventoColor">Color del recuadro de fecha</label>
+                                <div class="admin-color-row">
+                                    <input type="color" id="eventoColor" value="#d9d9d9">
+                                    <span class="admin-field__hint">Así se va a ver el fondo de arriba de la tarjeta.</span>
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="eventoFecha">Fecha / horario</label>
+                                <input type="text" id="eventoFecha" placeholder="Ej: Viernes 21 de agosto — Tarde">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="eventoDescripcion">Descripción</label>
+                                <textarea id="eventoDescripcion" placeholder="Contá de qué se trata el evento..."></textarea>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <article class="admin-preview-event">
+                                <div class="admin-preview-event__date" id="previewEventoDate">Fecha</div>
+                                <p class="admin-preview-event__description" id="previewEventoDescription">Descripcion</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CREAR NOTICIA -->
+                <section class="admin-view" id="view-noticia" data-view-panel hidden>
+                    <h1 class="admin-view__title">Crear Noticia</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formNoticia">
+                            <h2 class="admin-form-card__title">Datos de la noticia</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="noticiaImagen">Imagen</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="noticiaThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="noticiaImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="noticiaFecha">Fecha</label>
+                                <input type="text" id="noticiaFecha" placeholder="Ej: Agosto 2026">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="noticiaSubtitulo">Subtítulo</label>
+                                <input type="text" id="noticiaSubtitulo" placeholder="Título corto de la noticia">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="noticiaTexto">Texto</label>
+                                <textarea id="noticiaTexto" placeholder="Escribí el resumen de la noticia..."></textarea>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <article class="admin-preview-news">
+                                <div class="admin-preview-news__image" id="previewNoticiaImageWrap">
+                                    <img id="previewNoticiaImage" src="" alt="">
+                                </div>
+                                <div class="admin-preview-news__body">
+                                    <span class="admin-preview-news__date" id="previewNoticiaDate">Fecha</span>
+                                    <h3 class="admin-preview-news__title" id="previewNoticiaTitle">Subtítulo</h3>
+                                    <p class="admin-preview-news__summary" id="previewNoticiaSummary">Texto de la noticia.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- LABORATORIO — GALERÍA IMAGEN + TEXTO -->
+                <section class="admin-view" id="view-laboratorio" data-view-panel hidden>
+                    <h1 class="admin-view__title">Laboratorio — Imágenes y explicaciones</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formLaboratorio">
+                            <h2 class="admin-form-card__title">Agregar imagen</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="labImagen">Imagen</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="labThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="labImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="labTexto">Texto explicativo</label>
+                                <textarea id="labTexto" placeholder="Explicá qué se hace en esa parte del laboratorio..."></textarea>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="labAddBtn">+ Agregar a la lista</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa (así se van a ver en Laboratorio.html)</p>
+                            <div class="admin-lab-gallery" id="labGallery">
+                                <p class="admin-lab-gallery__empty" id="labGalleryEmpty">Todavía no agregaste ninguna imagen.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-form-actions admin-form-actions--wide">
+                        <button type="button" class="admin-btn admin-btn--primary" id="labUploadAllBtn">Subir todo</button>
+                    </div>
+                </section>
+
+                <!-- OFERTAS EDUCATIVAS — GRILLA DE ÍCONOS -->
+                <section class="admin-view" id="view-ofertaseducativas" data-view-panel hidden>
+                    <h1 class="admin-view__title">Ofertas Educativas</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formOfertaEducativa">
+                            <h2 class="admin-form-card__title">Agregar oferta</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="ofertaIcono">Ícono</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="ofertaIconoThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="ofertaIcono" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="ofertaNombre">Texto</label>
+                                <input type="text" id="ofertaNombre" placeholder="Ej: Informatica">
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="ofertaAddBtn">+ Agregar a la grilla</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+
+                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa (así se van a ver en Ofertas Educativas)</p>
+                            <div class="admin-preview-ofertas">
+                                <div class="admin-preview-ofertas__grid" id="previewOfertasGrid">
+                                    <p class="admin-preview-ofertas__empty" id="previewOfertasEmpty">Todavía no agregaste ninguna oferta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CREAR NORMATIVA -->
+                <section class="admin-view" id="view-normativa" data-view-panel hidden>
+                    <h1 class="admin-view__title">Crear Normativa</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formNormativa">
+                            <h2 class="admin-form-card__title">Encabezado de la normativa</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="normativaTitulo">Subtítulo</label>
+                                <input type="text" id="normativaTitulo" placeholder="Ej: Uniforme">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="normativaTextoIntro">Texto</label>
+                                <textarea id="normativaTextoIntro" placeholder="Explicá de qué se trata esta normativa..."></textarea>
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Agregar contenido</h2>
+
+                            <div class="admin-form-actions" style="margin-bottom: 1.1rem;">
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="normBtnImagen" data-block-type="imagen">Imagen</button>
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="normBtnTexto" data-block-type="texto">Texto</button>
+                            </div>
+
+                            <!-- Bloque de imagen. -->
+                            <div id="normBlockImagen">
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="normImagenArchivo">Imagen</label>
+                                    <div class="admin-file-drop">
+                                        <div class="admin-file-drop__thumb" id="normImagenThumb">
+                                            <img src="" alt="">
+                                        </div>
+                                        <input type="file" id="normImagenArchivo" accept="image/*">
+                                    </div>
+                                </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="normImagenSubtitulo">Subtítulo</label>
+                                    <input type="text" id="normImagenSubtitulo" placeholder="Ej: Ciclo Básico">
+                                </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="normImagenTexto">Texto</label>
+                                    <textarea id="normImagenTexto" placeholder="Explicá este punto..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Bloque de texto. -->
+                            <div id="normBlockTexto" hidden>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="normTextoSubtitulo">Subtítulo</label>
+                                    <input type="text" id="normTextoSubtitulo" placeholder="Ej: Inasistencias">
+                                </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="normTextoTexto">Texto</label>
+                                    <textarea id="normTextoTexto" placeholder="Escribí el contenido de este punto..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="normAddBlockBtn">+ Agregar a la normativa</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+
+                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-normativa">
+                                <h2 class="admin-preview-normativa__title" id="previewNormativaTitulo">Subtítulo</h2>
+                                <p class="admin-preview-normativa__intro" id="previewNormativaIntro">Texto introductorio.</p>
+                                <div class="admin-preview-normativa__blocks" id="previewNormativaBlocks">
+                                    <p class="admin-preview-normativa__empty" id="previewNormativaEmpty">Todavía no agregaste contenido.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ubicación UTU y anexos. -->
+                <section class="admin-view" id="view-anexoeditor" data-view-panel hidden>
+                    <h1 class="admin-view__title" id="anexoEditorViewTitle">Editar página</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formAnexoEditor">
+                            <h2 class="admin-form-card__title">Encabezado</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTitulo">Título</label>
+                                <input type="text" id="anexoTitulo" placeholder="Ej: Tomas Gomensoro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoImagen">Imagen (mapa o foto)</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="anexoImagenThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="anexoImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTexto">Texto</label>
+                                <textarea id="anexoTexto" placeholder="Descripción de la ubicación..."></textarea>
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Datos de contacto</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoLocalizacion">Localización</label>
+                                <input type="text" id="anexoLocalizacion" placeholder="Dirección completa">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTelefono">Teléfono</label>
+                                <input type="text" id="anexoTelefono" placeholder="Ej: 4779 2025">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoCorreo">Correo</label>
+                                <input type="text" id="anexoCorreo" placeholder="Ej: ubellaunion@gmail.com">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoDirector">Director/a</label>
+                                <input type="text" id="anexoDirector" placeholder="Ej: Directora: Cristina Mantuani.">
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-anexo">
+                                <div class="admin-preview-anexo__title-row">
+                                    <h2 class="admin-preview-anexo__title" id="previewAnexoTitulo">Título</h2>
+                                    <span class="admin-preview-anexo__rule"></span>
+                                </div>
+
+                                <div class="admin-preview-anexo__content">
+                                    <div class="admin-preview-anexo__image" id="previewAnexoImageWrap">
+                                        <img id="previewAnexoImage" src="" alt="">
+                                    </div>
+                                    <p class="admin-preview-anexo__text" id="previewAnexoTexto">Descripción del anexo/ubicación.</p>
+                                </div>
+
+                                <div class="admin-preview-anexo__info">
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="/Iconos/map-pin.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoLocalizacion">Localización</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="/Iconos/phoneIcon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoTelefono">Teléfono</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="/Iconos/mailIcon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoCorreo">Correo</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="/Iconos/usericon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoDirector">Director/a</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- INSTITUCIONAL — IMAGEN + SECCIONES -->
+                <section class="admin-view" id="view-institucional" data-view-panel hidden>
+                    <h1 class="admin-view__title">Institucional — Contenido de la página</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formInstitucional">
+                            <h2 class="admin-form-card__title">Imagen de portada</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="instImagen">Imagen</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="instImagenThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="instImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="instHeroTitulo">Título (va sobre la imagen)</label>
+                                <input type="text" id="instHeroTitulo" placeholder="Ej: Bienvenidos a la Escuela Técnica N°1">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="instHeroTexto">Texto de bienvenida (va sobre la imagen)</label>
+                                <textarea id="instHeroTexto" placeholder="Escribí el texto de bienvenida que va sobre la imagen..."></textarea>
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Agregar sección</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="instSubtitulo">Subtítulo</label>
+                                <input type="text" id="instSubtitulo" placeholder="Ej: Orígenes e historia">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="instTexto">Texto</label>
+                                <textarea id="instTexto" placeholder="Escribí el contenido de esta sección..."></textarea>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="instAddBtn">+ Agregar sección</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+
+                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-institucional">
+                                <div class="admin-preview-institucional__image" id="previewInstImageWrap">
+                                    <img id="previewInstImage" src="" alt="">
+                                    <div class="admin-preview-institucional__hero">
+                                        <h2 class="admin-preview-institucional__hero-title" id="previewInstHeroTitulo">Título</h2>
+                                        <p class="admin-preview-institucional__hero-text" id="previewInstHeroTexto">Texto de bienvenida.</p>
+                                        <span class="admin-preview-institucional__hero-btn">Ubicación</span>
+                                    </div>
+                                </div>
+                                <div class="admin-preview-institucional__sections" id="previewInstSections">
+                                    <p class="admin-preview-institucional__empty" id="previewInstEmpty">Todavía no agregaste ninguna sección.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- POLIDEPORTIVO — INICIO -->
+                <section class="admin-view" id="view-polideportivo-inicio" data-view-panel hidden>
+                    <h1 class="admin-view__title">Polideportivo — Inicio</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formPolideportivo">
+                            <h2 class="admin-form-card__title">Datos básicos</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidTitulo">Título</label>
+                                <input type="text" id="polidTitulo" placeholder="Ej: Polideportivo Bella Union">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidInauguracion">Inauguración</label>
+                                <input type="text" id="polidInauguracion" placeholder="Ej: 12/11/2021">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidCoordinador">Coordinador/a</label>
+                                <input type="text" id="polidCoordinador" placeholder="Ej: Coordinadora Directiva por ANEP: Cindy Castro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidDireccion">Dirección</label>
+                                <input type="text" id="polidDireccion" placeholder="Ej: Martín Dermit s/n entre Av. Gral J. Artigas y Gral. F. Rivera">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidTelefono">Teléfono</label>
+                                <input type="text" id="polidTelefono" placeholder="Ej: 4779-8112">
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Agregar contenido</h2>
+
+                            <div class="admin-form-actions" style="margin-bottom: 1.1rem;">
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="polidBtnTexto" data-block-type="texto">Texto</button>
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="polidBtnTabla" data-block-type="tabla">Tabla</button>
+                            </div>
+
+                            <!-- Bloque TEXTO: subtítulo + párrafo (Marco Institucional, Modelo de Gestión, etc.) -->
+                            <div id="polidBlockTexto">
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTextoSubtitulo">Subtítulo</label>
+                                    <input type="text" id="polidTextoSubtitulo" placeholder="Ej: Marco Institucional">
+                                </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTextoTexto">Texto</label>
+                                    <textarea id="polidTextoTexto" placeholder="Escribí el contenido de esta sección..."></textarea>
+                                </div>
+                                <div class="admin-form-actions">
+                                    <button type="button" class="admin-btn admin-btn--primary" id="polidAddTextoBtn">+ Agregar sección</button>
+                                </div>
+                            </div>
+
+                            <!-- Bloque TABLA: subtítulo + 2 columnas + filas (Horarios, Prioridades, etc.) -->
+                            <div id="polidBlockTabla" hidden>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaSubtitulo">Subtítulo</label>
+                                    <input type="text" id="polidTablaSubtitulo" placeholder="Ej: Horarios">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaCol1">Columna 1</label>
+                                    <input type="text" id="polidTablaCol1" placeholder="Ej: Período">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaCol2">Columna 2</label>
+                                    <input type="text" id="polidTablaCol2" placeholder="Ej: Horario">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label">Agregar fila</label>
+                                    <div class="admin-color-row">
+                                        <input type="text" id="polidFilaValor1" placeholder="Ej: Lunes a viernes (año lectivo)">
+                                        <input type="text" id="polidFilaValor2" placeholder="Ej: 8:00 a 24:00 hs">
+                                    </div>
+                                    <div class="admin-form-actions">
+                                        <button type="button" class="admin-btn admin-btn--secondary" id="polidAddFilaBtn">Añadir fila</button>
+                                    </div>
+                                    <ul class="admin-polid-pending-rows" id="polidPendingRows"></ul>
+                                </div>
+
+                                <div class="admin-form-actions">
+                                    <button type="button" class="admin-btn admin-btn--primary" id="polidAddTablaBtn">+ Agregar tabla</button>
+                                </div>
+                            </div>
+
+                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-polideportivo">
+                                <h2 class="admin-preview-polideportivo__title" id="previewPolidTitulo">Título</h2>
+
+                                <div class="admin-preview-polideportivo__meta">
+                                    <p id="previewPolidInauguracion">Inauguración: —</p>
+                                    <p id="previewPolidCoordinador">Coordinador/a: —</p>
+                                    <p id="previewPolidDireccion">Dirección: —</p>
+                                    <p id="previewPolidTelefono">Teléfono: —</p>
+                                </div>
+
+                                <div class="admin-preview-polideportivo__sections" id="previewPolidSections">
+                                    <p class="admin-preview-polideportivo__empty" id="previewPolidEmpty">Todavía no agregaste contenido.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- polideportivo — figuras importantes -->
+                <section class="admin-view" id="view-polideportivo-figuras" data-view-panel hidden>
+                    <h1 class="admin-view__title">Polideportivo — Figuras importantes</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formFiguras">
+                            <h2 class="admin-form-card__title">Agregar figura</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraFoto">Foto</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="figuraFotoThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="figuraFoto" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraNombre">Nombre</label>
+                                <input type="text" id="figuraNombre" placeholder="Ej: Cindy Castro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraCargo">Cargo</label>
+                                <input type="text" id="figuraCargo" placeholder="Ej: Coordinadora Directiva por ANEP">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraTelefono">Número de contacto</label>
+                                <input type="text" id="figuraTelefono" placeholder="Ej: 4779-8112">
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="figuraAddBtn">+ Agregar figura</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-figuras">
+                                <div class="admin-preview-figuras__grid" id="previewFigurasGrid">
+                                    <p class="admin-preview-figuras__empty" id="previewFigurasEmpty">Todavía no agregaste ninguna figura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-form-actions admin-form-actions--wide">
+                        <button type="button" class="admin-btn admin-btn--primary" id="figuraUploadAllBtn">Subir todo</button>
+                    </div>
+                </section>
+
+                <!-- polideportivo — actividades -->
+                <section class="admin-view" id="view-polideportivo-actividades" data-view-panel hidden>
+                    <h1 class="admin-view__title">Polideportivo — Actividades</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formActividades">
+                            <h2 class="admin-form-card__title">Texto arriba de las actividades</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadesIntro">Texto</label>
+                                <textarea id="actividadesIntro" placeholder="Ej: Conocé las disciplinas deportivas que se desarrollan en el Polideportivo Bella Unión..."></textarea>
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Agregar actividad</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadImagen">Imagen</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="actividadImagenThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="actividadImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadNombre">Nombre de la actividad</label>
+                                <input type="text" id="actividadNombre" placeholder="Ej: Karate">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadInstructor">Instructor</label>
+                                <input type="text" id="actividadInstructor" placeholder="Dejalo vacío si todavía no hay instructor confirmado">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadFechas">Fechas / horario</label>
+                                <input type="text" id="actividadFechas" placeholder="Ej: Lunes y Miércoles, 18:00 a 19:30 hs (opcional)">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="actividadDescripcion">Descripción breve</label>
+                                <textarea id="actividadDescripcion" placeholder="Contá brevemente de qué se trata la actividad..."></textarea>
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="actividadAddBtn">+ Agregar actividad</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-actividades">
+                                <div class="admin-preview-actividades__title-row">
+                                    <h2 class="admin-preview-actividades__title">Polideportivo</h2>
+                                    <span class="admin-preview-actividades__rule"></span>
+                                </div>
+                                <p class="admin-preview-actividades__intro" id="previewActividadesIntro">Texto arriba de las actividades.</p>
+                                <div class="admin-preview-actividades__grid" id="previewActividadesGrid">
+                                    <p class="admin-preview-actividades__empty" id="previewActividadesEmpty">Todavía no agregaste ninguna actividad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-form-actions admin-form-actions--wide">
+                        <button type="button" class="admin-btn admin-btn--primary" id="actividadUploadAllBtn">Subir todo</button>
+                    </div>
+                </section>
+
+                <!-- PLACEHOLDER (resto de secciones) -->
+                <section class="admin-view" id="view-placeholder" data-view-panel hidden>
+                    <div class="admin-empty-state">
+                        <h1 class="admin-empty-state__title" id="placeholderTitle">Sección</h1>
+                        <p class="admin-empty-state__text">Todavía no armamos esta parte del panel. Vamos completándola de a poco.</p>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="/admin/admin.js"></script>
+</body>
+</html>
