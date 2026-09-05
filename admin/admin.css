@@ -107,13 +107,16 @@
 
 .admin-nav__chevron {
   margin-left: auto;
-  width: 0.8rem !important;
-  height: 0.8rem !important;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-0.15rem);
   transition: transform 0.2s ease;
 }
 
 .admin-nav__toggle[aria-expanded="true"] .admin-nav__chevron {
-  transform: rotate(180deg);
+  transform: rotate(225deg) translateY(-0.15rem);
 }
 
 .admin-nav__submenu {
