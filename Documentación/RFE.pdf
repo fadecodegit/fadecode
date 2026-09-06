@@ -1,0 +1,28 @@
+1. RFE de Identidad y Vocabulario (Restricciones de Terminolatría):
+
+RFE-01 (Uso estricto de terminología en el proceso de interés):
+Está estrictamente prohibido utilizar la palabra "preinscripción" o "inscripción" para la lista de cursos; el sistema debe usar únicamente el término "Lista de interés" (derivado de RF.8 y RNF.8).
+
+RFE-02 (Aviso legal de cupo):
+Cualquier botón o módulo de registro de interés debe incluir un texto aclaratorio visible señalando que la anotación no garantiza el cupo (derivado de RF.8).
+
+2. RFE de Seguridad y Protección de Menores
+
+RFE-03 (Autorización para menores de edad):
+Si el usuario registrado es menor de edad, el sistema exige de forma obligatoria la autorización explicita de un adulto responsable para completar el registro (derivado de RF.10 y RNF.5).
+
+RFE-04 (Consentimiento para difusión de imagen):
+No se puede almacenar o utilizar la imagen/foto de un estudiante (especialmente menores) en folletos o difusión sin una gestión previa de consentimiento firmado o registrado (derivado de RF.11 y RNF.5).
+
+3. RFE Operativas y Organizacionales
+
+RFE-05 (Abstracción de asignaturas por turno):
+El módulo de horarios por turno (del 1 al 5) debe limitar su información a franjas horarias y grupos; no se permite mapear o asociar asignaturas fijas a los turnos en el sistema debido a su variabilidad durante el año lectivo (derivado de RF.4).
+
+RFE-06 (Uso compartido del Polideportivo):
+La sección del polideportivo debe aclarar explícitamente en su contenido publicable que las instalaciones son compartidas con otras instituciones de la zona (derivado de RF.13).
+
+4. RFE de Formato e Identidad Visual
+
+RFE-07 (Formato de documentos descargables):
+Toda la documentación o programas de asignaturas adjuntos para descarga deben servirse exclusivamente en formato PDF para asegurar compatibilidad (derivado de RF.9 y RNF.7).
