@@ -1,5 +1,5 @@
 :root {
-  --color-heading-secondary: #2e86c1; /* mismo azul usado en institucional.css */
+  --color-heading-secondary: #2e86c1; /* Color secundario de los títulos. */
 }
 
 .ubi-card {
@@ -10,11 +10,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Título "Ubicación" con línea celeste                                       */
-/* -------------------------------------------------------------------------- */
-
+/* Título "Ubicación" con línea celeste */
 .ubi-title {
   display: flex;
   align-items: center;
@@ -133,11 +129,7 @@
 .ubi-list__text a:hover {
   opacity: 0.7;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .ubi-card {
     padding: 2.5rem 3rem;

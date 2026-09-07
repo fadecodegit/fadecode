@@ -1,0 +1,266 @@
+:root {
+  --color-heading-cyan: #1fa7c9;
+  --color-oferta-banner: #1c7ca1;
+  --color-oferta-banner-icon-bg: rgba(255, 255, 255, 0.18);
+  --color-oferta-image-bg: #d9d9d9;
+}
+
+.oferta-page {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+/* Banner: ícono + título + subtítulo */
+
+.oferta-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-oferta-banner);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  color: #ffffff;
+}
+
+.oferta-banner__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-oferta-banner-icon-bg);
+}
+
+.oferta-banner__icon img {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.oferta-banner__text {
+  min-width: 0;
+}
+
+.oferta-banner__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.oferta-banner__subtitle {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* Contenedor de descripción y secciones. */
+
+.oferta-body {
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-card-bg, #ffffff);
+  border-radius: var(--radius-xl, 1.75rem);
+  box-shadow: var(--shadow-card, 0 4px 14px rgba(24, 24, 24, 0.12));
+}
+
+.oferta-descripcion {
+  margin: 0 0 1.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+/* Secciones de la oferta educativa. */
+
+.oferta-section {
+  margin-bottom: 1.75rem;
+}
+
+.oferta-section:last-child {
+  margin-bottom: 0;
+}
+
+.oferta-section__title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading-cyan);
+}
+
+.oferta-section__image {
+  width: 100%;
+  min-height: 16rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-oferta-image-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oferta-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.oferta-tabs__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.oferta-tabs__control {
+  display: none;
+}
+
+.oferta-tabs__panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.oferta-tabs__panel {
+  display: block;
+}
+
+.oferta-tabs__panel-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading-cyan);
+}
+
+/* Tablet — min-width 577px */
+
+
+@media (min-width: 577px) {
+  .oferta-page {
+    max-width: 90%;
+  }
+
+  .oferta-banner {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .oferta-banner__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .oferta-section__image {
+    min-height: 18rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 1023.98px) {
+  .oferta-tabs__control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .oferta-tabs__label {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    background-color: #1fa7c9;
+    opacity: 0.45;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .oferta-tabs__label:hover {
+    opacity: 0.7;
+  }
+
+  .oferta-tabs__panel {
+    display: none;
+  }
+
+  .oferta-tabs__panel-title {
+    display: none;
+  }
+
+  /* Muestra el panel del año que esté seleccionado */
+  #ofertaAnio1:checked ~ .oferta-tabs__panels #ofertaPanel1,
+  #ofertaAnio2:checked ~ .oferta-tabs__panels #ofertaPanel2,
+  #ofertaAnio3:checked ~ .oferta-tabs__panels #ofertaPanel3 {
+    display: block;
+  }
+
+  /* Resalta la pestaña del año que esté seleccionado */
+  #ofertaAnio1:checked ~ .oferta-tabs__control .oferta-tabs__label--1,
+  #ofertaAnio2:checked ~ .oferta-tabs__control .oferta-tabs__label--2,
+  #ofertaAnio3:checked ~ .oferta-tabs__control .oferta-tabs__label--3 {
+    opacity: 1;
+  }
+}
+
+/* Desktop — min-width 1024px */
+
+@media (min-width: 1024px) {
+  .oferta-page {
+    max-width: 64rem;
+  }
+
+  .oferta-banner {
+    padding: 1.75rem 2rem;
+  }
+
+  .oferta-banner__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .oferta-banner__icon img {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .oferta-banner__title {
+    font-size: 1.2rem;
+  }
+
+  .oferta-banner__subtitle {
+    font-size: 0.85rem;
+  }
+
+  .oferta-descripcion {
+    font-size: 0.98rem;
+  }
+
+  .oferta-section__title {
+    font-size: 1.05rem;
+  }
+
+  .oferta-section__image {
+    min-height: 22rem;
+  }
+
+  .oferta-tabs__control {
+    display: none;
+  }
+
+  .oferta-tabs__panel {
+    display: block;
+  }
+
+  .oferta-tabs__panel-title {
+    display: block;
+  }
+}

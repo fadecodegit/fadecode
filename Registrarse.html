@@ -8,13 +8,14 @@
     <link rel="icon" href="Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/auth.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
     <header class="site-header">
         <div class="container-fluid site-header__inner">
             <div class="site-header__brand-row">
-                <a class="site-brand" href="institucional.html">
+                <a class="site-brand" href="index.html">
                     <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
                 </a>
                 <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
@@ -44,16 +45,22 @@
 
     <main class="site-main">
 
-        <!-- ================= FORMULARIO DE REGISTRO ================= -->
+        <!-- FORMULARIO DE REGISTRO -->
         <section aria-labelledby="auth-heading">
             <h1 id="auth-heading" class="visually-hidden">Registrarse</h1>
 
             <form class="auth-card" action="#" method="post" novalidate>
 
                 <div class="auth-field">
-                    <label class="auth-field__label" for="reg-nombre">Nombre y Apellido</label>
-                    <input class="auth-field__input" type="text" id="reg-nombre" name="nombre_apellido" autocomplete="name" required>
+                    <label class="auth-field__label" for="reg-nombre">Nombre</label>
+                    <input class="auth-field__input" type="text" id="reg-nombre" name="nombre" autocomplete="given-name" required>
                     <p class="auth-field__error" id="reg-nombre-error" role="alert"></p>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-field__label" for="reg-apellido">Apellido</label>
+                    <input class="auth-field__input" type="text" id="reg-apellido" name="apellido" autocomplete="family-name" required>
+                    <p class="auth-field__error" id="reg-apellido-error" role="alert"></p>
                 </div>
 
                 <div class="auth-field">
@@ -80,10 +87,10 @@
                     <p class="auth-field__error" id="reg-confirm-password-error" role="alert"></p>
                 </div>
 
-                <div class="auth-field auth-field--age">
-                    <label class="auth-field__label" for="reg-edad">Edad</label>
-                    <input class="auth-field__input" type="number" id="reg-edad" name="edad" min="0" max="120" required>
-                    <p class="auth-field__error" id="reg-edad-error" role="alert"></p>
+                <div class="auth-field">
+                    <label class="auth-field__label" for="reg-fecha-nacimiento">Fecha de nacimiento</label>
+                    <input class="auth-field__input" type="date" id="reg-fecha-nacimiento" name="fecha_nacimiento" required>
+                    <p class="auth-field__error" id="reg-fecha-nacimiento-error" role="alert"></p>
                 </div>
 
                 <div class="auth-terms">
@@ -98,6 +105,11 @@
                 </div>
 
                 <p class="auth-form-message" id="auth-form-message" role="alert" aria-live="assertive"></p>
+
+                <div class="auth-recaptcha">
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    <p class="auth-field__error" id="reg-recaptcha-error" role="alert"></p>
+                </div>
 
                 <div class="auth-actions">
                     <button class="auth-btn" type="submit">Registrarse</button>
@@ -163,7 +175,6 @@
                         </a>
                     </div>
                     <div class="site-footer__cta-row">
-                        <a class="btn-footer-cta d-md-none" href="admin/panel.html">Estadísticas</a>
                         <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
                     </div>
                 </div>
@@ -180,5 +191,3 @@
     <script src="assets/javascript/registrarse.js"></script>
 </body>
 </html>
-
-

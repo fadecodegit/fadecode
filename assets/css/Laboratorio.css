@@ -184,7 +184,7 @@
   }
 }
 
-/* Desktop — min-width 1024px    */
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .lab-card {
     max-width: 62rem;
