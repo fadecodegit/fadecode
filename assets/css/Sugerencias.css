@@ -12,11 +12,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Título "Sugerencias" con línea celeste                                     */
-/* -------------------------------------------------------------------------- */
-
+/* Título "Sugerencias" con línea celeste */
 .sug-title {
   display: flex;
   align-items: center;
@@ -38,11 +34,7 @@
   background-color: var(--color-heading-cyan);
   opacity: 0.55;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Textarea                                                                   */
-/* -------------------------------------------------------------------------- */
-
+/* Textarea */
 .sug-textarea {
   display: block;
   width: 100%;
@@ -78,11 +70,7 @@
   font-size: 0.85rem;
   color: #c0392b;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Botones                                                                    */
-/* -------------------------------------------------------------------------- */
-
+/* Botones */
 .sug-actions {
   display: flex;
   flex-wrap: wrap;
@@ -125,11 +113,7 @@
 .sug-form-message--error {
   color: #c0392b;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .sug-card {
     padding: 2.25rem 2.5rem;

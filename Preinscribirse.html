@@ -15,7 +15,7 @@
     <header class="site-header">
         <div class="container-fluid site-header__inner">
             <div class="site-header__brand-row">
-                <a class="site-brand" href="institucional.html">
+                <a class="site-brand" href="index.html">
                     <img src="Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
                 </a>
                 <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
@@ -44,7 +44,7 @@
 
     <main class="site-main">
 
-        <!-- ================= FORMULARIO DE PREINSCRIPCIÓN ================= -->
+        <!-- FORMULARIO DE PREINSCRIPCIÓN -->
         <section aria-labelledby="pre-heading">
             <h1 id="pre-heading" class="visually-hidden">Preinscribirse</h1>
 
@@ -87,28 +87,15 @@
                     </div>
                 </fieldset>
 
-                <!-- Datos de Conectividad y Ubicación -->
+                <!-- Datos de Ubicación -->
                 <fieldset class="pre-fieldset">
-                    <legend class="pre-fieldset__legend">Datos de Conectividad y Ubicación</legend>
+                    <legend class="pre-fieldset__legend">Datos de Ubicación</legend>
 
                     <div class="auth-field">
                         <label class="auth-field__label" for="pre-pais-ciudad">País y ciudad de residencia</label>
                         <input class="auth-field__input" type="text" id="pre-pais-ciudad" name="pais_ciudad" placeholder="Ej: Uruguay, Bella Unión" required>
                         <p class="auth-field__hint">Se usa para calcular la zona horaria en las clases en vivo.</p>
                         <p class="auth-field__error" id="pre-pais-ciudad-error" role="alert"></p>
-                    </div>
-
-                    <div class="auth-field">
-                        <label class="auth-field__label" for="pre-conexion">Calidad de conexión a internet</label>
-                        <select class="auth-field__input auth-field__input--select" id="pre-conexion" name="conexion" required>
-                            <option value="" selected disabled hidden>Seleccioná una opción</option>
-                            <option value="fibra">Fibra óptica</option>
-                            <option value="datos_moviles">Datos móviles</option>
-                            <option value="adsl">ADSL</option>
-                            <option value="otra">Otra / No estoy seguro</option>
-                        </select>
-                        <p class="auth-field__hint">Nos ayuda a prever problemas técnicos en las clases virtuales.</p>
-                        <p class="auth-field__error" id="pre-conexion-error" role="alert"></p>
                     </div>
                 </fieldset>
 
@@ -137,6 +124,12 @@
                     </div>
                 </fieldset>
 
+                <!-- Verificación anti-bots. -->
+                <div class="pre-recaptcha">
+                    <div class="g-recaptcha" data-sitekey="TU_SITE_KEY_AQUI"></div>
+                    <p class="auth-field__error" id="pre-recaptcha-error" role="alert"></p>
+                </div>
+
                 <p class="auth-form-message" id="auth-form-message" role="alert" aria-live="assertive"></p>
 
                 <div class="auth-actions">
@@ -149,7 +142,7 @@
 
     </main>
 
-    <!-- ================= MODAL DE CONFIRMACIÓN ================= -->
+    <!-- MODAL DE CONFIRMACIÓN -->
     <div class="modal-overlay" id="preModalOverlay" hidden>
         <div class="modal-box" role="alertdialog" aria-modal="true" aria-labelledby="preModalTitle" aria-describedby="preModalText">
             <div class="modal-box__icon" aria-hidden="true">
@@ -217,7 +210,7 @@
                         </a>
                     </div>
                     <div class="site-footer__cta-row">
-                        <a class="btn-footer-cta d-md-none" href="admin/panel.html">Estadísticas</a>
+
                         <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
                     </div>
                 </div>
@@ -230,9 +223,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="assets/javascript/main.js"></script>
     <script src="assets/javascript/preinscribirse.js"></script>
 </body>
 </html>
-
-

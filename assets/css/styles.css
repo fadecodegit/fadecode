@@ -59,11 +59,7 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Header / Navbar                                                            */
-/* -------------------------------------------------------------------------- */
-
+/* Header / Navbar */
 .site-header {
   background-color: var(--color-primary-brown);
   color: var(--color-text-light);
@@ -148,7 +144,6 @@ ul {
 
 .hero-action.is-pressed,
 .btn-nav.is-pressed,
-.btn-footer-cta.is-pressed,
 .social-link.is-pressed {
   transform: translateY(0);
   box-shadow: var(--shadow-card);
@@ -227,11 +222,7 @@ ul {
   transform: translateY(-2px);
   box-shadow: var(--shadow-card);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Main / Hero                                                                */
-/* -------------------------------------------------------------------------- */
-
+/* Main / Hero */
 .site-main {
   flex: 1;
   padding: 1.25rem 1rem 2rem;
@@ -293,11 +284,7 @@ ul {
 .hero-action--guest {
   min-height: 4rem;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Footer                                                                     */
-/* -------------------------------------------------------------------------- */
-
+/* Footer */
 .site-footer {
   background-color: var(--color-dark-footer);
   color: var(--color-text-light);
@@ -408,27 +395,6 @@ ul {
   margin-top: 1.5rem;
 }
 
-.btn-footer-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45rem 1.15rem;
-  border: none;
-  border-radius: var(--radius-pill);
-  background-color: var(--color-card-bg);
-  color: var(--color-text-dark);
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: var(--transition-base);
-}
-
-.btn-footer-cta:hover,
-.btn-footer-cta:active {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card);
-  color: var(--color-text-dark);
-}
-
 .site-footer__copyright {
   padding: 0.85rem 1rem 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -445,11 +411,7 @@ ul {
 .site-footer__block:last-child {
   margin-bottom: 0;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Tablet — min-width 577px                                                   */
-/* -------------------------------------------------------------------------- */
-
+/* Tablet — min-width 577px */
 @media (min-width: 577px) {
   .site-header__inner {
     padding: 0.85rem 1.5rem 0;
@@ -511,11 +473,7 @@ ul {
     margin-bottom: 0;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .site-header__brand-row {
     align-items: center;

@@ -1,0 +1,9 @@
+Cambio en la base de datos
+Correcciones del MER aplicadas:
+Se agregaron correcciones en la redacción de las entidades, modificamos sus nombres para que las entidades sean en plural y sus atributos en singular, esto se hace para seguir buenas prácticas y mantener una lógica entre el pasaje a tablas y el diagrama.
+También se corrigieron algunas cardinalidades y totalidades del diagrama ya que investigando y analizando el diagrama con el grupo nos dimos cuenta que no se respetaba la lógica del diagrama en el pasaje a tablas.
+Se agregaron los atributos requeridos a la tabla “Alumnos” debido a que nos vimos en la obligación de que si un alumno es menor necesita el permiso de sus papás y también necesitamos saber si es menor o no.
+
+Correcciones del pasaje a tablas:
+Se corrigieron errores ortográficos en los nombres de las tablas y se evitó utilizar símbolos como el tilde o las mayúsculas para mantener una buena práctica y una fácil comprensión dentro de la base de datos.
+Desarrollando oralmente con los compañeros del equipo vimos la lógica aplicada de la normalización de las tablas y no logramos distinguir ninguna redundancia en ellas, por lo tanto decidimos no cambiar prácticamente nada que afecte en las normalizaciones ni la creación de las tablas.
