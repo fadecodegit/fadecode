@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/Estadisticas.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link is-active" href="Estadisticas.html" aria-current="page">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-dashboard">
+
+                    <div class="admin-stats-row">
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">Estudiantes</span>
+                            <span class="admin-stat-box__value">1109</span>
+                        </div>
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">Docentes</span>
+                            <span class="admin-stat-box__value">209</span>
+                        </div>
+                        <div class="admin-stat-box">
+                            <span class="admin-stat-box__label">No Docentes</span>
+                            <span class="admin-stat-box__value">15</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Estudiantes por curso</h2>
+                        <div class="admin-chart-row">
+                            <div class="admin-chart-row__canvas-wrap">
+                                <canvas id="chartEstudiantesPorCurso"></canvas>
+                            </div>
+                            <ul class="admin-legend">
+                                <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>BT - 413 (35%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>EMB - 297 (25%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>BTP - 216 (22%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#c9971f"></span>CTT - 95 (8%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#8e2450"></span>FPB - 85 (7%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#4b3fd1"></span>CPI - 25 (2%)</li>
+                                <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>Tecnólogo - 15 (1%)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Docentes — situación laboral</h2>
+                        <div class="admin-bar-wrap">
+                            <canvas id="chartDocentesLaboral" height="60"></canvas>
+                        </div>
+                        <ul class="admin-legend" style="margin-top: 1rem;">
+                            <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Interinos - 154 (74%)</li>
+                            <li><span class="admin-legend__dot" style="background-color:#2ecc71"></span>Efectivos - 29 (14%)</li>
+                            <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Suplentes - 26 (12%)</li>
+                        </ul>
+                    </div>
+
+                    <div class="admin-panel-card">
+                        <h2 class="admin-panel-card__title">Docentes, no docentes y docencia indirecta — por género</h2>
+                        <div class="admin-gender-grid">
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">Docentes</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroDocentes"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">209 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 92 (44%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 117 (56%)</li>
+                                </ul>
+                            </div>
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">No docentes</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroNoDocentes"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">15 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 3 (20%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 12 (80%)</li>
+                                </ul>
+                            </div>
+                            <div class="admin-gender-item">
+                                <h3 class="admin-gender-item__title">Docencia Indirecta</h3>
+                                <div class="admin-gender-item__canvas-wrap">
+                                    <canvas id="chartGeneroIndirecta"></canvas>
+                                </div>
+                                <p class="admin-gender-item__total">19 personas en total</p>
+                                <ul class="admin-legend">
+                                    <li><span class="admin-legend__dot" style="background-color:#29abe2"></span>Hombres - 7 (37%)</li>
+                                    <li><span class="admin-legend__dot" style="background-color:#e0592a"></span>Mujeres - 12 (63%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="Adminjs/graficos.js"></script>
+</body>
+</html>

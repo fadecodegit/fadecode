@@ -1,0 +1,142 @@
+/* Polideportivo — Inicio: datos básicos + secciones de texto/tabla */
+
+.admin-preview-polideportivo {
+  width: 100%;
+  max-width: 26rem;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-hero-card);
+  border: 1px solid var(--color-hero-card-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-preview-polideportivo__title {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.admin-preview-polideportivo__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--admin-border-soft);
+}
+
+.admin-preview-polideportivo__meta p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+}
+
+.admin-preview-polideportivo__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-preview-polideportivo__empty {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(24, 24, 24, 0.5);
+  text-align: center;
+}
+
+.admin-polid-section {
+  position: relative;
+}
+
+.admin-polid-section__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-polid-section__subtitle {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+.admin-polid-section__text {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+  white-space: pre-line;
+}
+
+.admin-polid-section__remove {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: rgba(24, 24, 24, 0.4);
+  cursor: pointer;
+}
+
+.admin-polid-section__remove:hover {
+  color: rgba(24, 24, 24, 0.8);
+}
+
+.admin-polid-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.admin-polid-table th,
+.admin-polid-table td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--admin-border-soft);
+}
+
+.admin-polid-table th {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.admin-polid-pending-rows {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-polid-pending-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-hero-card);
+  font-size: 0.78rem;
+  color: var(--color-text-dark);
+}
+
+.admin-polid-pending-row button {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: rgba(24, 24, 24, 0.45);
+  cursor: pointer;
+}
+
+.admin-polid-pending-row button:hover {
+  color: rgba(24, 24, 24, 0.8);
+}

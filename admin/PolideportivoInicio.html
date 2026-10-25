@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Inicio Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/PolideportivoInicio.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="true">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos is-open">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="true">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu is-open">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2 is-active" href="PolideportivoInicio.html" aria-current="page">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-polideportivo-inicio">
+                    <h1 class="admin-view__title">Polideportivo — Inicio</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formPolideportivo">
+                            <h2 class="admin-form-card__title">Datos básicos</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidTitulo">Título</label>
+                                <input type="text" id="polidTitulo" placeholder="Ej: Polideportivo Bella Union">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidInauguracion">Inauguración</label>
+                                <input type="text" id="polidInauguracion" placeholder="Ej: 12/11/2021">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidCoordinador">Coordinador/a</label>
+                                <input type="text" id="polidCoordinador" placeholder="Ej: Coordinadora Directiva por ANEP: Cindy Castro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidDireccion">Dirección</label>
+                                <input type="text" id="polidDireccion" placeholder="Ej: Martín Dermit s/n entre Av. Gral J. Artigas y Gral. F. Rivera">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="polidTelefono">Teléfono</label>
+                                <input type="text" id="polidTelefono" placeholder="Ej: 4779-8112">
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Agregar contenido</h2>
+
+                            <div class="admin-form-actions" style="margin-bottom: 1.1rem;">
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="polidBtnTexto" data-block-type="texto">Texto</button>
+                                <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="polidBtnTabla" data-block-type="tabla">Tabla</button>
+                            </div>
+
+                            <!-- Bloque TEXTO: subtítulo + párrafo (Marco Institucional, Modelo de Gestión, etc.) -->
+                            <div id="polidBlockTexto">
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTextoSubtitulo">Subtítulo</label>
+                                    <input type="text" id="polidTextoSubtitulo" placeholder="Ej: Marco Institucional">
+                                </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTextoTexto">Texto</label>
+                                    <textarea id="polidTextoTexto" placeholder="Escribí el contenido de esta sección..."></textarea>
+                                </div>
+                                <div class="admin-form-actions">
+                                    <button type="button" class="admin-btn admin-btn--primary" id="polidAddTextoBtn">+ Agregar sección</button>
+                                </div>
+                            </div>
+
+                            <!-- Bloque TABLA: subtítulo + 2 columnas + filas (Horarios, Prioridades, etc.) -->
+                            <div id="polidBlockTabla" hidden>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaSubtitulo">Subtítulo</label>
+                                    <input type="text" id="polidTablaSubtitulo" placeholder="Ej: Horarios">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaCol1">Columna 1</label>
+                                    <input type="text" id="polidTablaCol1" placeholder="Ej: Período">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="polidTablaCol2">Columna 2</label>
+                                    <input type="text" id="polidTablaCol2" placeholder="Ej: Horario">
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label">Agregar fila</label>
+                                    <div class="admin-color-row">
+                                        <input type="text" id="polidFilaValor1" placeholder="Ej: Lunes a viernes (año lectivo)">
+                                        <input type="text" id="polidFilaValor2" placeholder="Ej: 8:00 a 24:00 hs">
+                                    </div>
+                                    <div class="admin-form-actions">
+                                        <button type="button" class="admin-btn admin-btn--secondary" id="polidAddFilaBtn">Añadir fila</button>
+                                    </div>
+                                    <ul class="admin-polid-pending-rows" id="polidPendingRows"></ul>
+                                </div>
+
+                                <div class="admin-form-actions">
+                                    <button type="button" class="admin-btn admin-btn--primary" id="polidAddTablaBtn">+ Agregar tabla</button>
+                                </div>
+                            </div>
+
+                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-polideportivo">
+                                <h2 class="admin-preview-polideportivo__title" id="previewPolidTitulo">Título</h2>
+
+                                <div class="admin-preview-polideportivo__meta">
+                                    <p id="previewPolidInauguracion">Inauguración: —</p>
+                                    <p id="previewPolidCoordinador">Coordinador/a: —</p>
+                                    <p id="previewPolidDireccion">Dirección: —</p>
+                                    <p id="previewPolidTelefono">Teléfono: —</p>
+                                </div>
+
+                                <div class="admin-preview-polideportivo__sections" id="previewPolidSections">
+                                    <p class="admin-preview-polideportivo__empty" id="previewPolidEmpty">Todavía no agregaste contenido.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/vista-previa.js"></script>
+    <script src="Adminjs/PolideportivoInicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* Laboratorio: galería de imagen + texto explicativo */
+
+.admin-lab-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.admin-lab-gallery__empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(24, 24, 24, 0.5);
+  text-align: center;
+}
+
+.admin-lab-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 20rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-lab-item__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #eef2f4;
+}
+
+.admin-lab-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-lab-item__text {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-dark);
+}
+
+.admin-lab-item__remove {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(24, 24, 24, 0.55);
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-lab-item__remove:hover {
+  background-color: rgba(24, 24, 24, 0.75);
+}

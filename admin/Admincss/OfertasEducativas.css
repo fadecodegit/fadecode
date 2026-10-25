@@ -1,0 +1,78 @@
+/* Ofertas Educativas: grilla de ícono + texto */
+
+.admin-preview-ofertas {
+  width: 100%;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-offers-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-preview-ofertas__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 0.75rem;
+  justify-content: center;
+}
+
+.admin-preview-ofertas__empty {
+  margin: 0;
+  width: 100%;
+  font-size: 0.82rem;
+  color: rgba(24, 24, 24, 0.5);
+  text-align: center;
+}
+
+.admin-oferta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: calc(33.333% - 0.5rem);
+  text-align: center;
+}
+
+.admin-oferta-item__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 5.5rem;
+  aspect-ratio: 1 / 1;
+  padding: 0.85rem;
+  background-color: var(--color-offers-icon-bg);
+  border-radius: 0.85rem;
+}
+
+.admin-oferta-item__icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.admin-oferta-item__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.admin-oferta-item__remove {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(24, 24, 24, 0.55);
+  color: #ffffff;
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.admin-oferta-item__remove:hover {
+  background-color: rgba(24, 24, 24, 0.75);
+}

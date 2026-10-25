@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexo Baltasar Brum Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/Anexo.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="true">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos is-open">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub is-active" href="AnexoBaltasarBrum.html" aria-current="page">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-anexoeditor">
+                    <h1 class="admin-view__title" id="anexoEditorViewTitle">Editar página — Anexo Baltasar Brum</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formAnexoEditor">
+                            <h2 class="admin-form-card__title">Encabezado</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTitulo">Título</label>
+                                <input type="text" id="anexoTitulo" placeholder="Ej: Tomas Gomensoro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoImagen">Imagen (mapa o foto)</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="anexoImagenThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="anexoImagen" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTexto">Texto</label>
+                                <textarea id="anexoTexto" placeholder="Descripción de la ubicación..."></textarea>
+                            </div>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Datos de contacto</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoLocalizacion">Localización</label>
+                                <input type="text" id="anexoLocalizacion" placeholder="Dirección completa">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoTelefono">Teléfono</label>
+                                <input type="text" id="anexoTelefono" placeholder="Ej: 4779 2025">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoCorreo">Correo</label>
+                                <input type="text" id="anexoCorreo" placeholder="Ej: ubellaunion@gmail.com">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="anexoDirector">Director/a</label>
+                                <input type="text" id="anexoDirector" placeholder="Ej: Directora: Cristina Mantuani.">
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-anexo">
+                                <div class="admin-preview-anexo__title-row">
+                                    <h2 class="admin-preview-anexo__title" id="previewAnexoTitulo">Título</h2>
+                                    <span class="admin-preview-anexo__rule"></span>
+                                </div>
+
+                                <div class="admin-preview-anexo__content">
+                                    <div class="admin-preview-anexo__image" id="previewAnexoImageWrap">
+                                        <img id="previewAnexoImage" src="" alt="">
+                                    </div>
+                                    <p class="admin-preview-anexo__text" id="previewAnexoTexto">Descripción del anexo/ubicación.</p>
+                                </div>
+
+                                <div class="admin-preview-anexo__info">
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoLocalizacion">Localización</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="../Iconos/phoneIcon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoTelefono">Teléfono</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoCorreo">Correo</span>
+                                    </div>
+                                    <div class="admin-preview-anexo__info-item">
+                                        <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                                        <span id="previewAnexoDirector">Director/a</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/vista-previa.js"></script>
+    <script src="Adminjs/Anexo.js"></script>
+</body>
+</html>

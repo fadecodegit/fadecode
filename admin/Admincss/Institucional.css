@@ -1,0 +1,132 @@
+/* Institucional: imagen de portada + secciones subtítulo/texto */
+
+.admin-preview-institucional {
+  width: 100%;
+  max-width: 26rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+}
+
+.admin-preview-institucional__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #2b2b2b;
+}
+
+.admin-preview-institucional__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  opacity: 0.75;
+  position: relative;
+  z-index: 0;
+}
+
+.admin-preview-institucional__image.has-image img {
+  display: block;
+}
+
+.admin-preview-institucional__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(24, 24, 24, 0.25);
+  pointer-events: none;
+}
+
+.admin-preview-institucional__hero {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem 1.1rem;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.admin-preview-institucional__hero-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.admin-preview-institucional__hero-text {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.admin-preview-institucional__hero-btn {
+  align-self: flex-start;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-preview-institucional__sections {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-preview-institucional__empty {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(24, 24, 24, 0.5);
+  text-align: center;
+}
+
+.admin-preview-institucional__section-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Subtítulo siempre en el celeste del sistema de diseño: no es editable
+   desde el panel, así se mantiene consistente en toda la página. */
+.admin-preview-institucional__subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+.admin-preview-institucional__text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  white-space: pre-line;
+}
+
+.admin-preview-institucional__remove {
+  flex-shrink: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: rgba(24, 24, 24, 0.4);
+  cursor: pointer;
+}
+
+.admin-preview-institucional__remove:hover {
+  color: rgba(24, 24, 24, 0.8);
+}

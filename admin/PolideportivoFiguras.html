@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polideportivo Figuras importantes Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/PolideportivoFiguras.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="true">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos is-open">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="true">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu is-open">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2 is-active" href="PolideportivoFiguras.html" aria-current="page">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-polideportivo-figuras">
+                    <h1 class="admin-view__title">Polideportivo — Figuras importantes</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formFiguras">
+                            <h2 class="admin-form-card__title">Agregar figura</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraFoto">Foto</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="figuraFotoThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="figuraFoto" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraNombre">Nombre</label>
+                                <input type="text" id="figuraNombre" placeholder="Ej: Cindy Castro">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraCargo">Cargo</label>
+                                <input type="text" id="figuraCargo" placeholder="Ej: Coordinadora Directiva por ANEP">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="figuraTelefono">Número de contacto</label>
+                                <input type="text" id="figuraTelefono" placeholder="Ej: 4779-8112">
+                            </div>
+
+                            <div class="admin-form-actions">
+                                <button type="button" class="admin-btn admin-btn--primary" id="figuraAddBtn">+ Agregar figura</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-figuras">
+                                <div class="admin-preview-figuras__grid" id="previewFigurasGrid">
+                                    <p class="admin-preview-figuras__empty" id="previewFigurasEmpty">Todavía no agregaste ninguna figura.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-form-actions admin-form-actions--wide">
+                        <button type="button" class="admin-btn admin-btn--primary" id="figuraUploadAllBtn">Subir todo</button>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/vista-previa.js"></script>
+    <script src="Adminjs/PolideportivoFiguras.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@ class Conexion {
     // Datos de conexión de XAMPP
     private string $host = "localhost";
     private string $puerto = "3306";
-    private string $baseDatos = "bd_proyecto_utu"; 
+    private string $baseDatos = "bd_proyecto"; 
     private string $usuario = "root";
     private string $clave = "";
 

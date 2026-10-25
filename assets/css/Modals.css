@@ -1,0 +1,76 @@
+/* Ventanas emergentes (html/Modals/). Las inserta formularioModal.js. */
+
+/* Capa que cubre toda la pantalla: frena los clics pero deja hacer scroll */
+.modal-exito {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Cubo blanco en el centro de la pantalla */
+.modal-exito__caja {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 3rem 2.5rem;
+  background-color: #ffffff;
+  border: 2px solid var(--color-primary-brown);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card-hover);
+  text-align: center;
+}
+
+.modal-exito__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.modal-exito__icono img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-exito__texto {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary-brown);
+}
+
+/* Botón grande, marrón y redondeado */
+.modal-exito__btn {
+  min-width: 12rem;
+  padding: 0.95rem 3rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-brown);
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.modal-exito__btn:hover,
+.modal-exito__btn:focus-visible {
+  color: #ffffff;
+  filter: brightness(0.92);
+  transform: translateY(-2px);
+}
+
+/* El botón recibe el foco al abrirse: contorno marrón suave en vez del negro del navegador */
+.modal-exito__btn:focus-visible {
+  outline: 3px solid rgba(184, 139, 92, 0.35);
+  outline-offset: 3px;
+}

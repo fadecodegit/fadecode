@@ -1,0 +1,138 @@
+/* Estadísticas: totales y gráficos (Chart.js lee estos colores desde graficos.js) */
+
+:root {
+  --color-chart-blue: #29abe2;
+  --color-chart-green: #2ecc71;
+  --color-chart-orange: #e0592a;
+  --color-chart-mustard: #c9971f;
+  --color-chart-maroon: #8e2450;
+  --color-chart-purple: #4b3fd1;
+}
+
+/* Dashboard: tarjetas de totales */
+
+.admin-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-stat-box {
+  position: relative;
+  padding: 1.5rem 1rem 1rem;
+  background-color: var(--color-hero-card);
+  border: 1px solid var(--admin-border-soft);
+  border-radius: 0.85rem;
+}
+
+.admin-stat-box__label {
+  position: absolute;
+  top: -0.6rem;
+  left: 0.85rem;
+  padding: 0 0.4rem;
+  background-color: var(--color-bg-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(24, 24, 24, 0.65);
+}
+
+.admin-stat-box__value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.admin-chart-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.admin-chart-row__canvas-wrap {
+  width: 100%;
+  max-width: 15rem;
+}
+
+.admin-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--color-text-dark);
+  width: 100%;
+}
+
+.admin-legend__dot {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.admin-legend li {
+  display: flex;
+  align-items: center;
+}
+
+.admin-bar-wrap {
+  width: 100%;
+  max-width: 32rem;
+}
+
+.admin-gender-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.admin-gender-item__title {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.admin-gender-item__canvas-wrap {
+  width: 8rem;
+  margin: 0 auto 0.5rem;
+}
+
+.admin-gender-item__total {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(24, 24, 24, 0.65);
+}
+
+.admin-gender-item .admin-legend {
+  align-items: center;
+}
+
+.admin-gender-item .admin-legend li {
+  justify-content: center;
+}
+
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .admin-chart-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .admin-chart-row__canvas-wrap {
+    max-width: 13rem;
+  }
+
+  .admin-legend {
+    width: auto;
+  }
+
+  .admin-gender-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

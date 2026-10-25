@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuarios Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/Usuarios.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link is-active" href="Usuarios.html" aria-current="page">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
+                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-usuarios">
+                    <h1 class="admin-view__title">Usuarios registrados</h1>
+
+                    <div class="admin-users-toolbar">
+                        <div class="admin-users-tabs" role="tablist" aria-label="Tipo de usuario">
+                            <button class="admin-users-tab is-active" type="button" role="tab" id="tab-estudiantes" aria-selected="true" aria-controls="panel-estudiantes" data-users-tab="estudiantes">Estudiantes</button>
+                            <button class="admin-users-tab" type="button" role="tab" id="tab-admins" aria-selected="false" aria-controls="panel-admins" data-users-tab="admins">Administradores</button>
+                        </div>
+                        <div class="admin-users-search">
+                            <input type="search" id="usuariosSearch" placeholder="Buscar por nombre, cédula o email..." aria-label="Buscar usuarios">
+                        </div>
+                    </div>
+
+                    <div class="admin-panel-card admin-users-panel" id="panel-estudiantes" role="tabpanel" aria-labelledby="tab-estudiantes">
+                        <div class="admin-users-table-wrap">
+                            <table class="admin-users-table" id="tablaEstudiantes">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Nombre completo</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">País</th>
+                                        <th scope="col">Fecha de registro</th>
+                                        <th scope="col">Curso actual</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyEstudiantes">
+                                    <!-- Filas cargadas desde /api/alumnos (backend SQL) -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="admin-users-empty" id="estudiantesEmpty" hidden>No hay estudiantes registrados todavía.</p>
+                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Alumnos</code> + tabla de usuarios vía backend.</p>
+                    </div>
+
+                    <div class="admin-panel-card admin-users-panel" id="panel-admins" role="tabpanel" aria-labelledby="tab-admins" hidden>
+                        <div class="admin-users-table-wrap">
+                            <table class="admin-users-table" id="tablaAdmins">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Nombre completo</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">País</th>
+                                        <th scope="col">Fecha de registro</th>
+                                        <th scope="col">Cargo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyAdmins">
+                                    <!-- Filas cargadas desde /api/administradores (backend SQL) -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="admin-users-empty" id="adminsEmpty" hidden>No hay administradores registrados todavía.</p>
+                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Administradores</code> + tabla de usuarios vía backend.</p>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/Usuarios.js"></script>
+</body>
+</html>

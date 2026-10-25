@@ -104,6 +104,28 @@
   line-height: 1.45;
   color: rgba(24, 24, 24, 0.65);
 }
+/* Datos del adulto responsable (alumnos menores de 18) */
+.auth-adulto {
+  margin-bottom: 1.35rem;
+}
+
+.auth-adulto__titulo {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary-brown);
+}
+
+.auth-adulto__campos {
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--color-primary-brown);
+}
+
+/* Correo del alumno bloqueado cuando es menor de edad */
+.auth-field__input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 /* Mensaje general del formulario (éxito / error) */
 .auth-form-message {
   min-height: 1.2rem;

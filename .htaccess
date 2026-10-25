@@ -1,0 +1,8 @@
+# Durante el desarrollo: el navegador debe preguntar siempre si los archivos
+# cambiaron antes de usar su copia guardada. Así los cambios de CSS, JS y HTML
+# se ven con una recarga normal (F5), sin tener que borrar la caché.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|html)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
