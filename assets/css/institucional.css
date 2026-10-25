@@ -1,12 +1,8 @@
 :root {
-  --color-heading-primary: #1c5d99;   /* Título "Escuela Técnica N° 1" */
-  --color-heading-secondary: #2e86c1; /* Subtítulos de cada bloque */
+  --color-heading-primary: #1c5d99;
+  --color-heading-secondary: #2e86c1;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Hero con imagen (Bienvenidos a la Escuela Técnica N°1)                     */
-/* -------------------------------------------------------------------------- */
-
+/* Hero con imagen (Bienvenidos a la Escuela Técnica N°1) */
 .inst-hero {
   position: relative;
   max-width: 62rem;
@@ -112,11 +108,7 @@
   padding: 1.25rem;
   background-color: var(--color-hero-card);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Bloque de contenido (historia, vínculos, proyectos...)                     */
-/* -------------------------------------------------------------------------- */
-
+/* Bloque de contenido (historia, vínculos, proyectos...) */
 .inst-content {
   margin-top: 1.5rem;
   padding: 1.5rem 1.25rem;
@@ -164,11 +156,7 @@
 .inst-block__title--short {
   display: inline;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px               */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .inst-hero__media {
     height: 26rem; 

@@ -13,11 +13,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
-
-/* -------------------------------------------------------------------------- */
-/* Título "Polideportivo" con línea celeste                                   */
-/* -------------------------------------------------------------------------- */
-
+/* Título "Polideportivo" con línea celeste */
 .pfig-title {
   display: flex;
   align-items: center;
@@ -39,11 +35,7 @@
   background-color: var(--color-heading-cyan);
   opacity: 0.55;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Grilla de figuras                                                          */
-/* -------------------------------------------------------------------------- */
-
+/* Grilla de figuras */
 .pfig-grid {
   display: flex;
   flex-direction: column;
@@ -112,11 +104,7 @@
 .pfig-item__contacto a:hover {
   opacity: 0.7;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Tablet — min-width 577px                                                   */
-/* -------------------------------------------------------------------------- */
-
+/* Tablet — min-width 577px */
 @media (min-width: 577px) {
   .pfig-card {
     padding: 2rem 2.25rem;
@@ -133,11 +121,7 @@
     max-width: 17rem;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Desktop — min-width 1024px                                                 */
-/* -------------------------------------------------------------------------- */
-
+/* Desktop — min-width 1024px */
 @media (min-width: 1024px) {
   .pfig-card {
     padding: 2.5rem 2.75rem;
