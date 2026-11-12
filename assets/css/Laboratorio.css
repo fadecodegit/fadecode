@@ -130,7 +130,7 @@
   transform: scale(0.92);
 }
 
-/* Circulitos indicadores */
+/* Puntos indicadores */
 
 .lab-carousel__dots {
   display: flex;
@@ -184,8 +184,8 @@
   }
 }
 
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .lab-card {
     max-width: 62rem;
     padding: 2.5rem 2.75rem;
@@ -213,4 +213,9 @@
   .lab-carousel__description {
     font-size: 1rem;
   }
+}
+/* Con una sola foto no se muestran las flechas ni los puntos (lo decide Laboratorio.js) */
+.lab-carousel__arrow[hidden],
+.lab-carousel__dots[hidden] {
+  display: none;
 }

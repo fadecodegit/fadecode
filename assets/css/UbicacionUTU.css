@@ -1,5 +1,5 @@
 :root {
-  --color-heading-secondary: #2e86c1; /* Color secundario de los títulos. */
+  --color-heading-secondary: #2e86c1;
 }
 
 .ubi-card {
@@ -10,7 +10,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
-/* Título "Ubicación" con línea celeste */
+/* Título con línea celeste */
 .ubi-title {
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
   object-position: center;
 }
 
-/* Info (subtítulo + párrafo) */
+/* Subtítulo y párrafo */
 .ubi-info__subtitle {
   margin: 0 0 0.9rem;
   font-size: 1rem;
@@ -84,7 +84,7 @@
   color: var(--color-text-dark);
 }
 
-/* Lista de contacto (pin, teléfono, mail, directora) */
+/* Lista de contacto */
 .ubi-list {
   display: flex;
   flex-direction: column;
@@ -129,8 +129,8 @@
 .ubi-list__text a:hover {
   opacity: 0.7;
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .ubi-card {
     padding: 2.5rem 3rem;
   }
