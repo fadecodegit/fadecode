@@ -1,0 +1,107 @@
+/* En celular cada fila se muestra como una tarjeta */
+.docentes-tabla {
+  display: block;
+  width: 100%;
+  font-size: 0.88rem;
+  color: var(--color-text-dark);
+}
+
+.docentes-tabla thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.docentes-tabla tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.docentes-tabla tr {
+  display: block;
+  padding: 0.8rem 1rem;
+  background-color: var(--color-card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.docentes-tabla td {
+  display: block;
+  padding: 0.1rem 0;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.docentes-tabla__nombre {
+  font-weight: 700;
+}
+
+.docentes-tabla__turno {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .docentes-lista {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .docentes-tabla {
+    display: table;
+    border-collapse: collapse;
+    background-color: var(--color-card-bg);
+  }
+
+  .docentes-tabla thead {
+    position: static;
+    display: table-header-group;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+  }
+
+  .docentes-tabla tbody {
+    display: table-row-group;
+  }
+
+  .docentes-tabla tr {
+    display: table-row;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-offers-accent-soft);
+  }
+
+  .docentes-tabla tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .docentes-tabla th,
+  .docentes-tabla td {
+    display: table-cell;
+    padding: 0.65rem 1rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .docentes-tabla th {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-offers-accent);
+  }
+
+  .docentes-tabla__turno {
+    font-size: inherit;
+  }
+}

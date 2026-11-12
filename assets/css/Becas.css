@@ -1,0 +1,142 @@
+:root {
+  --color-heading-cyan: #1fa7c9;
+  --color-becas-card: #ddeef8;
+  --color-becas-border: #1f9be0;
+}
+
+.becas-card {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-becas-card);
+  border: 2px solid var(--color-becas-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+/* Título con línea celeste */
+.becas-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+}
+
+.becas-title__text {
+  margin: 0;
+  color: var(--color-heading-cyan);
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.becas-title__line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-heading-cyan);
+  opacity: 0.55;
+}
+
+.becas-intro {
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+/* Tarjeta de cada beca */
+.becas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.beca {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.beca__titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.beca__etiqueta {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-becas-card);
+  color: var(--color-heading-cyan);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.beca__texto {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+
+.beca__subtitulo {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading-cyan);
+}
+
+.beca__pasos {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-dark);
+}
+
+.beca__pasos li + li {
+  margin-top: 0.35rem;
+}
+
+.beca__nota {
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  color: rgba(24, 24, 24, 0.6);
+}
+/* Botón Preinscribirse */
+.beca__btn {
+  align-self: center;
+  min-width: 12rem;
+  margin-top: auto;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-brown);
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition-base);
+}
+
+.beca__btn:hover,
+.beca__btn:focus-visible {
+  color: var(--color-text-light);
+  filter: brightness(0.92);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+@media (min-width: 768px) {
+  .becas-card {
+    padding: 2rem 2.25rem;
+  }
+
+  .becas-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

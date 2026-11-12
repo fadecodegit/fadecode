@@ -1,0 +1,45 @@
+/* Logro sin foto: se muestra el isotipo centrado */
+.news-item__image--sin-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-item__image--sin-foto img {
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Botón "Ver todos los logros y reconocimientos" */
+.logros-mas {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.logros-mas__btn {
+  width: 100%;
+  padding: 0.7rem 1.35rem;
+  border: 2px solid var(--color-offers-accent);
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-offers-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.logros-mas__btn:hover,
+.logros-mas__btn:focus-visible {
+  background-color: var(--color-offers-accent);
+  color: #ffffff;
+}
+
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .logros-mas__btn {
+    width: auto;
+  }
+}
