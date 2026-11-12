@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-/* Banner: ícono + título + subtítulo */
+/* Banner: ícono, título y subtítulo */
 
 .oferta-banner {
   display: flex;
@@ -58,7 +58,7 @@
   opacity: 0.85;
 }
 
-/* Contenedor de descripción y secciones. */
+/* Contenedor de la descripción */
 
 .oferta-body {
   padding: 1.5rem 1.25rem;
@@ -74,7 +74,7 @@
   color: var(--color-text-dark);
 }
 
-/* Secciones de la oferta educativa. */
+/* Secciones de la oferta */
 
 .oferta-section {
   margin-bottom: 1.75rem;
@@ -162,7 +162,7 @@
   }
 }
 
-@media (min-width: 577px) and (max-width: 1023.98px) {
+@media (min-width: 577px) and (max-width: 992.98px) {
   .oferta-tabs__control {
     display: flex;
     flex-wrap: wrap;
@@ -196,14 +196,14 @@
     display: none;
   }
 
-  /* Muestra el panel del año que esté seleccionado */
+  /* Panel del año elegido */
   #ofertaAnio1:checked ~ .oferta-tabs__panels #ofertaPanel1,
   #ofertaAnio2:checked ~ .oferta-tabs__panels #ofertaPanel2,
   #ofertaAnio3:checked ~ .oferta-tabs__panels #ofertaPanel3 {
     display: block;
   }
 
-  /* Resalta la pestaña del año que esté seleccionado */
+  /* Pestaña del año elegido */
   #ofertaAnio1:checked ~ .oferta-tabs__control .oferta-tabs__label--1,
   #ofertaAnio2:checked ~ .oferta-tabs__control .oferta-tabs__label--2,
   #ofertaAnio3:checked ~ .oferta-tabs__control .oferta-tabs__label--3 {
@@ -211,9 +211,9 @@
   }
 }
 
-/* Desktop — min-width 1024px */
+/* Desktop — min-width 993px */
 
-@media (min-width: 1024px) {
+@media (min-width: 993px) {
   .oferta-page {
     max-width: 64rem;
   }

@@ -6,15 +6,18 @@
     <title>Ofertas Educativas Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
     <link rel="stylesheet" href="../assets/css/Ofertas.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/Pantallas/sitio.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="../assets/javascript/modoInvierno.js"></script>
 </head>
 <body>
 
     <header class="site-header">
         <div class="container-fluid site-header__inner">
             <div class="site-header__brand-row">
-                <a class="site-brand" href="../html/Institucional.html">
+                <a class="site-brand" href="../html/index.html">
                     <img src="../Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
                 </a>
                 <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
@@ -27,14 +30,34 @@
                 <div class="site-nav-row">
                     <ul class="site-nav-list">
                         <li><a href="../OfertasEducativas/Menu-de-Ofertas.html" class="is-active" aria-current="page">Ofertas Educativas</a></li>
-                        <li><a href="../html/Noticias.html">Noticias</a></li>
                         <li><a href="../html/Eventos.html">Eventos</a></li>
-                        <li><a href="../html/Laboratorio.html">Laboratorio</a></li>
                         <li><a href="../html/Normativas.html">Normativas</a></li>
+                        <li><a href="../html/Estadisticas.html">Estadísticas</a></li>
+                        <li class="dropdown nav-mas">
+                            <button class="nav-mas__toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más secciones">
+                                <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            </button>
+                            <ul class="dropdown-menu nav-mas__menu">
+                                <li><a href="../html/Noticias.html">Noticias</a></li>
+                                <li><a href="../html/Logros.html">Logros</a></li>
+                                <li><a href="../html/Docentes.html">Docentes</a></li>
+                                <li><a href="../html/Laboratorio.html">Laboratorio</a></li>
+                                <li><a href="../html/Becas.html">Becas</a></li>
+                                <li><a href="../html/Sugerencias.html">Sugerencias</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="site-nav-actions">
-                        <a class="btn-nav btn-nav--preinscribir" href="../html/preinscribirse.html">Preinscribirse</a>
+                        <a class="btn-nav btn-nav--login" href="../html/Registrarse.html" data-boton-sesion>Registrarse</a>
                         <a class="btn-nav btn-nav--login" href="../html/iniciarSesion.html">Iniciar sesión</a>
+                        <div class="site-nav-tools">
+                            <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                                <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                            </button>
+                            <button class="modo-toggle" type="button" data-modo-invierno aria-label="Activar modo invierno">
+                                <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,91 +73,91 @@
 
             <div class="offers-grid">
 
-                <a class="offer-item" href="../OfertasEducativas/informatica.html">
+                <a class="offer-item" href="../OfertasEducativas/informatica.html" data-oferta-fija="informatica" data-pagina="informatica.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Informatica.png" alt="Informática" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Informática</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/bienestar-y-salud.html">
+                <a class="offer-item" href="../OfertasEducativas/bienestar-y-salud.html" data-oferta-fija="bienestar-y-salud" data-pagina="bienestar-y-salud.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Salud.png" alt="Bienestar y Salud" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Bienestar y Salud</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/Mecanica.html">
+                <a class="offer-item" href="../OfertasEducativas/Mecanica.html" data-oferta-fija="mecanica" data-pagina="Mecanica.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Mecanica.png" alt="Mecánica" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Mecánica</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/electromecanica.html">
+                <a class="offer-item" href="../html/OfertaEnDesarrollo.html" data-oferta-fija="electromecanica" data-pagina="electromecanica.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Electromecanica.png" alt="Electromecánica" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Electromecánica</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/Agrario.html">
+                <a class="offer-item" href="../OfertasEducativas/Agrario.html" data-oferta-fija="agrario" data-pagina="Agrario.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Agrario.png" alt="Agrario" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Agrario</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/estetica-capilar.html">
+                <a class="offer-item" href="../OfertasEducativas/estetica-capilar.html" data-oferta-fija="estetica-capilar" data-pagina="estetica-capilar.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Estetica.png" alt="Estética Capilar" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Estética Capilar</span>
                 </a>
 
-                <a class="offer-item offer-item--gastronomia" href="../OfertasEducativas/gastronomia.html">
+                <a class="offer-item offer-item--gastronomia" href="../OfertasEducativas/gastronomia.html" data-oferta-fija="gastronomia" data-pagina="gastronomia.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Gastronomia.png" alt="Gastronomía" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Gastronomía</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/administracion.html">
+                <a class="offer-item" href="../OfertasEducativas/administracion.html" data-oferta-fija="administracion" data-pagina="administracion.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Administracion.png" alt="Administración" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Administración</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/deporte-y-recreacion.html">
+                <a class="offer-item" href="../OfertasEducativas/deporte-y-recreacion.html" data-oferta-fija="deporte-y-recreacion" data-pagina="deporte-y-recreacion.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/Deporte.png" alt="Deporte y Recreación" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Deporte y Recreación</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/construccion-muebles-por-diseno.html">
+                <a class="offer-item" href="../OfertasEducativas/construccion-muebles-por-diseno.html" data-oferta-fija="construccion-muebles-por-diseno" data-pagina="construccion-muebles-por-diseno.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/MueblesDiseño.png" alt="Construcción Muebles por Diseño" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Construcción Muebles por Diseño</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/mecanica-en-produccion.html">
+                <a class="offer-item" href="../html/OfertaEnDesarrollo.html" data-oferta-fija="mecanica-en-produccion" data-pagina="mecanica-en-produccion.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/MecanicaProduccion.png" alt="Mecánica en Producción" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Mecánica en Producción</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/instalaciones-electricas.html">
+                <a class="offer-item" href="../OfertasEducativas/instalaciones-electricas.html" data-oferta-fija="instalaciones-electricas" data-pagina="instalaciones-electricas.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/InstalacionesElectricas.png" alt="Instalaciones Eléctricas" width="48" height="48" loading="lazy">
                     </span>
                     <span class="offer-item__label">Instalaciones Eléctricas</span>
                 </a>
 
-                <a class="offer-item" href="../OfertasEducativas/Construccion.html">
+                <a class="offer-item" href="../OfertasEducativas/Construccion.html" data-oferta-fija="construccion" data-pagina="Construccion.html">
                     <span class="offer-item__icon">
                         <img src="../Iconos/Ofertas/construccion.png" alt="Construcción" width="48" height="48" loading="lazy">
                     </span>
@@ -181,38 +204,34 @@
                     </div>
                     <div class="site-footer__contact-item">
                         <img src="../Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
-                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
+                        <span>ubellaunion@gmail.com</span>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3 site-footer__block">
                     <h2 class="site-footer__heading">Redes Sociales</h2>
                     <div class="site-footer__social">
-                        <a class="social-link" href="#" aria-label="Instagram">
+                        <a class="social-link" href="https://www.instagram.com/escuelatecnica1sgo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <img src="../Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link" href="#" aria-label="Facebook">
-                            <img src="../Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        <a class="social-link" href="https://www.facebook.com/pages/Escuela%20T%C3%A9cnica-%20Bella%20Uni%C3%B3n/147248509249237/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="../Iconos/Icon White/facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
-                            <img src="../Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
-                        </a>
-                    </div>
-                    <div class="site-footer__cta-row">
-
-                        <a class="btn-footer-cta" href="../html/Sugerencias.html">Sugerencias</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="site-footer__copyright">
-            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
+            © <span data-anio-actual>2026</span> Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/javascript/anioActual.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
+    <script src="../assets/javascript/sesion.js"></script>
+    <script src="../assets/javascript/menu-ofertas.js"></script>
 </body>
 </html>
-
 
