@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="Admincss/Sugerencias.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link is-active" href="Sugerencias.html" aria-current="page">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-sugerencias">
+                    <h1 class="admin-view__title">Sugerencias recibidas</h1>
+
+                    <div class="admin-panel-card">
+                        <div class="admin-sugerencias__barra">
+                            <input type="search" id="sugerenciasBuscar" placeholder="Buscar por texto, nombre o cédula..." aria-label="Buscar sugerencias" autocomplete="off">
+                        </div>
+                        <p class="admin-sugerencias__aviso" id="sugerenciasAviso" role="status">Cargando...</p>
+                        <ul class="admin-edicion" id="sugerenciasLista"></ul>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <dialog class="admin-modal" id="modalSugerencia" aria-labelledby="modalSugerenciaTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalSugerenciaTitulo">Sugerencia</h2>
+            <p class="admin-modal__subtitle" id="sugerenciaFecha"></p>
+
+            <dl class="admin-sugerencia__datos">
+                <div class="admin-sugerencia__dato">
+                    <dt>Enviada por</dt>
+                    <dd id="sugerenciaAutor"></dd>
+                </div>
+                <div class="admin-sugerencia__dato" id="sugerenciaCedulaFila">
+                    <dt>Cédula</dt>
+                    <dd id="sugerenciaCedula"></dd>
+                </div>
+                <div class="admin-sugerencia__dato" id="sugerenciaCorreoFila">
+                    <dt>Correo</dt>
+                    <dd id="sugerenciaCorreo"></dd>
+                </div>
+            </dl>
+
+            <h3 class="admin-sugerencia__subtitulo">Qué menciona</h3>
+            <p class="admin-sugerencia__texto" id="sugerenciaTexto"></p>
+
+            <p class="admin-form-error" id="sugerenciaError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="sugerenciaCerrar">Cerrar</button>
+                <button class="admin-btn admin-btn--primary" type="button" id="sugerenciaBorrar">Borrar sugerencia</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarSugerencia" aria-labelledby="modalConfirmarSugerenciaTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarSugerenciaTexto">¿Seguro que querés borrar esta sugerencia? No se puede deshacer.</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalSugerenciaBorrada" aria-labelledby="modalSugerenciaBorradaTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalSugerenciaBorradaTexto">Se borró la sugerencia correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/Sugerencias.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
+</body>
+</html>

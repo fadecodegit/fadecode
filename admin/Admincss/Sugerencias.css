@@ -1,0 +1,95 @@
+/* Sugerencias: lista de las recibidas y modal con cada una */
+
+.admin-sugerencias__barra {
+  margin-bottom: 0.75rem;
+}
+
+.admin-sugerencias__barra input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--admin-border-soft);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-card-bg);
+  color: var(--color-text-dark);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.admin-sugerencias__barra input:focus {
+  outline: 2px solid var(--color-offers-accent);
+  outline-offset: 1px;
+}
+
+.admin-sugerencias__aviso {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(24, 24, 24, 0.7);
+}
+
+/* En la lista, la sugerencia se ve en hasta 3 líneas; completa, en el modal */
+#sugerenciasLista .admin-edicion__titulo {
+  font-weight: 500;
+  -webkit-line-clamp: 3;
+}
+
+#sugerenciasLista .admin-edicion__fecha {
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+/* Modal */
+.admin-sugerencia__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(24, 24, 24, 0.04);
+}
+
+.admin-sugerencia__dato {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.admin-sugerencia__dato dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-offers-accent);
+}
+
+.admin-sugerencia__dato dd {
+  margin: 0;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.admin-sugerencia__subtitulo {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.admin-sugerencia__texto {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .admin-sugerencia__dato {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .admin-sugerencia__dato dt {
+    flex: 0 0 7rem;
+    padding-top: 0.1rem;
+  }
+}

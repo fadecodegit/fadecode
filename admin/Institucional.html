@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Institucional Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/Institucional.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +181,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -164,66 +193,89 @@
                     <h1 class="admin-view__title">Institucional — Contenido de la página</h1>
 
                     <div class="admin-form-layout">
-                        <form class="admin-form-card" id="formInstitucional">
-                            <h2 class="admin-form-card__title">Imagen de portada</h2>
+                        <div class="admin-form-card">
+                            <form id="formPortada">
+                                <h2 class="admin-form-card__title">Portada</h2>
 
-                            <div class="admin-field">
-                                <label class="admin-field__label" for="instImagen">Imagen</label>
-                                <div class="admin-file-drop">
-                                    <div class="admin-file-drop__thumb" id="instImagenThumb">
-                                        <img src="" alt="">
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instImagen">Imagen</label>
+                                    <div class="admin-file-drop">
+                                        <div class="admin-file-drop__thumb" id="instImagenThumb">
+                                            <img src="" alt="">
+                                        </div>
+                                        <input type="file" id="instImagen" name="imagen" accept="image/jpeg,image/png,image/webp">
                                     </div>
-                                    <input type="file" id="instImagen" accept="image/*">
+                                    <span class="admin-field__hint">Si no elegís una, queda la imagen actual.</span>
                                 </div>
-                            </div>
 
-                            <div class="admin-field">
-                                <label class="admin-field__label" for="instHeroTitulo">Título (va sobre la imagen)</label>
-                                <input type="text" id="instHeroTitulo" placeholder="Ej: Bienvenidos a la Escuela Técnica N°1">
-                            </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instHeroTitulo">Título</label>
+                                    <input type="text" id="instHeroTitulo" name="titulo" maxlength="120" required>
+                                </div>
 
-                            <div class="admin-field">
-                                <label class="admin-field__label" for="instHeroTexto">Texto de bienvenida (va sobre la imagen)</label>
-                                <textarea id="instHeroTexto" placeholder="Escribí el texto de bienvenida que va sobre la imagen..."></textarea>
-                            </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instHeroTexto">Texto de bienvenida</label>
+                                    <textarea id="instHeroTexto" name="texto" maxlength="1500" rows="6" required></textarea>
+                                </div>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instTituloContenido">Título del contenido</label>
+                                    <input type="text" id="instTituloContenido" name="titulo_contenido" maxlength="120" required>
+                                </div>
+
+                                <p class="admin-form-error" id="portadaError" role="alert" hidden></p>
+
+                                <div class="admin-form-actions">
+                                    <button type="submit" class="admin-btn admin-btn--primary">Guardar portada</button>
+                                    <button type="button" class="admin-btn admin-btn--secondary" id="portadaRestaurar" hidden>Restaurar original</button>
+                                </div>
+                            </form>
 
                             <hr class="admin-form-divider">
 
-                            <h2 class="admin-form-card__title">Agregar sección</h2>
+                            <form id="formSeccion">
+                                <h2 class="admin-form-card__title">Agregar sección</h2>
 
-                            <div class="admin-field">
-                                <label class="admin-field__label" for="instSubtitulo">Subtítulo</label>
-                                <input type="text" id="instSubtitulo" placeholder="Ej: Orígenes e historia">
-                            </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instSubtitulo">Subtítulo</label>
+                                    <input type="text" id="instSubtitulo" name="titulo" maxlength="120" required placeholder="Ej: Orígenes e historia">
+                                </div>
 
-                            <div class="admin-field">
-                                <label class="admin-field__label" for="instTexto">Texto</label>
-                                <textarea id="instTexto" placeholder="Escribí el contenido de esta sección..."></textarea>
-                            </div>
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="instTexto">Texto</label>
+                                    <textarea id="instTexto" name="texto" maxlength="8000" rows="6" required placeholder="Escribí el contenido de esta sección..."></textarea>
+                                    <span class="admin-field__hint">Cada párrafo en una línea.</span>
+                                </div>
 
-                            <div class="admin-form-actions">
-                                <button type="button" class="admin-btn admin-btn--primary" id="instAddBtn">+ Agregar sección</button>
-                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
-                            </div>
+                                <p class="admin-form-error" id="seccionError" role="alert" hidden></p>
 
-                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
-                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
-                            </div>
-                        </form>
+                                <div class="admin-form-actions">
+                                    <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                    <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                                </div>
+                                <div class="admin-form-actions admin-form-actions--editar">
+                                    <button class="admin-btn admin-btn--secondary" id="seccionesEditarBtn" type="button">Editar</button>
+                                </div>
+                            </form>
+                        </div>
 
                         <div class="admin-form-preview">
                             <p class="admin-preview-label">Vista previa</p>
                             <div class="admin-preview-institucional">
-                                <div class="admin-preview-institucional__image" id="previewInstImageWrap">
+                                <div class="admin-preview-institucional__image has-image">
                                     <img id="previewInstImage" src="" alt="">
                                     <div class="admin-preview-institucional__hero">
-                                        <h2 class="admin-preview-institucional__hero-title" id="previewInstHeroTitulo">Título</h2>
-                                        <p class="admin-preview-institucional__hero-text" id="previewInstHeroTexto">Texto de bienvenida.</p>
-                                        <span class="admin-preview-institucional__hero-btn">Ubicación</span>
+                                        <h2 class="admin-preview-institucional__hero-title" id="previewInstHeroTitulo"></h2>
                                     </div>
                                 </div>
+                                <div class="admin-preview-institucional__body">
+                                    <p class="admin-preview-institucional__body-text" id="previewInstHeroTexto"></p>
+                                    <span class="admin-preview-institucional__hero-btn">Ubicación</span>
+                                </div>
                                 <div class="admin-preview-institucional__sections" id="previewInstSections">
-                                    <p class="admin-preview-institucional__empty" id="previewInstEmpty">Todavía no agregaste ninguna sección.</p>
+                                    <h3 class="admin-preview-institucional__content-title" id="previewInstTituloContenido"></h3>
+                                    <p class="admin-preview-institucional__empty" id="previewInstAviso">Cargando...</p>
+                                    <div class="admin-preview-institucional__lista" id="previewInstLista"></div>
                                 </div>
                             </div>
                         </div>
@@ -234,8 +286,61 @@
         </div>
     </div>
 
+    <dialog class="admin-modal" id="modalSecciones" aria-labelledby="modalSeccionesTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalSeccionesTitulo">Secciones de la página</h2>
+            <p class="admin-modal__subtitle">Las que ya estaban se pueden editar, eliminar y restaurar a como eran. Las nuevas se pueden editar o eliminar.</p>
+            <p class="admin-modal__aviso" id="seccionesAviso" role="status" hidden></p>
+            <ul class="admin-edicion" id="seccionesLista"></ul>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="seccionesCerrar">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalSeccion" aria-labelledby="modalSeccionTitulo">
+        <form class="admin-modal__contenido" id="formEditarSeccion">
+            <h2 class="admin-modal__title" id="modalSeccionTitulo">Editar sección</h2>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarSubtitulo">Subtítulo</label>
+                <input type="text" id="editarSubtitulo" name="titulo" maxlength="120" required>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarTexto">Texto</label>
+                <textarea id="editarTexto" name="texto" maxlength="8000" rows="12" required></textarea>
+                <span class="admin-field__hint">Cada párrafo en una línea.</span>
+            </div>
+            <p class="admin-form-error" id="editarSeccionError" role="alert" hidden></p>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="editarSeccionCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarInst" aria-labelledby="modalConfirmarInstTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarInstTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalInstCambios" aria-labelledby="modalInstCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalInstCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
     <script src="Adminjs/Institucional.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

@@ -100,21 +100,8 @@
   color: var(--color-text-dark);
 }
 
-.admin-actividad-item__remove {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  width: 1.6rem;
-  height: 1.6rem;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(24, 24, 24, 0.55);
-  color: #ffffff;
-  font-size: 0.9rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.admin-actividad-item__remove:hover {
-  background-color: rgba(24, 24, 24, 0.75);
+/* La actividad que se está cargando todavía no se subió */
+.admin-actividad-item--borrador {
+  outline: 2px dashed var(--color-offers-accent);
+  outline-offset: 2px;
 }

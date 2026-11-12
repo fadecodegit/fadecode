@@ -84,3 +84,18 @@
   flex-shrink: 0;
   margin-top: 0.1rem;
 }
+
+/* Aviso mientras se cargan los datos actuales */
+.admin-form-aviso {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: rgba(24, 24, 24, 0.7);
+}
+
+/* Subtítulo (solo Ubicación UTU) */
+.admin-preview-anexo__subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}

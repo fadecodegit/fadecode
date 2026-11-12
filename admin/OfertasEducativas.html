@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ofertas Educativas Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/OfertasEducativas.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +181,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -168,35 +197,41 @@
                             <h2 class="admin-form-card__title">Agregar oferta</h2>
 
                             <div class="admin-field">
-                                <label class="admin-field__label" for="ofertaIcono">Ícono</label>
+                                <label class="admin-field__label" for="ofertaIcono">Logo</label>
                                 <div class="admin-file-drop">
                                     <div class="admin-file-drop__thumb" id="ofertaIconoThumb">
                                         <img src="" alt="">
                                     </div>
-                                    <input type="file" id="ofertaIcono" accept="image/*">
+                                    <input type="file" id="ofertaIcono" accept="image/jpeg,image/png,image/webp" required>
                                 </div>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="ofertaNombre">Texto</label>
-                                <input type="text" id="ofertaNombre" placeholder="Ej: Informatica">
+                                <input type="text" id="ofertaNombre" maxlength="80" required placeholder="Ej: Informática">
                             </div>
+
+                            <p class="admin-form-error" id="ofertaError" role="alert" hidden></p>
 
                             <div class="admin-form-actions">
-                                <button type="button" class="admin-btn admin-btn--primary" id="ofertaAddBtn">+ Agregar a la grilla</button>
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
                                 <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
                             </div>
-
-                            <div class="admin-form-actions" style="margin-top: 1.5rem;">
-                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                            <div class="admin-form-actions admin-form-actions--editar">
+                                <button class="admin-btn admin-btn--secondary" id="ofertasEditarBtn" type="button">Editar</button>
                             </div>
                         </form>
 
                         <div class="admin-form-preview">
-                            <p class="admin-preview-label">Vista previa (así se van a ver en Ofertas Educativas)</p>
+                            <p class="admin-preview-label">Vista previa</p>
                             <div class="admin-preview-ofertas">
-                                <div class="admin-preview-ofertas__grid" id="previewOfertasGrid">
-                                    <p class="admin-preview-ofertas__empty" id="previewOfertasEmpty">Todavía no agregaste ninguna oferta.</p>
+                                <div class="admin-preview-ofertas__grid">
+                                    <div class="admin-oferta-item admin-oferta-item--sola">
+                                        <div class="admin-oferta-item__icon" id="previewOfertaIconoWrap">
+                                            <img id="previewOfertaIcono" src="" alt="">
+                                        </div>
+                                        <span class="admin-oferta-item__label" id="previewOfertaNombre">Texto</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -207,8 +242,138 @@
         </div>
     </div>
 
+    <dialog class="admin-modal admin-modal--ancho" id="modalOferta" aria-labelledby="modalOfertaTitulo">
+        <form class="admin-modal__contenido" id="formOferta" enctype="multipart/form-data">
+            <h2 class="admin-modal__title" id="modalOfertaTitulo">Nueva oferta educativa</h2>
+            <p class="admin-modal__subtitle">Completá la página de la oferta. Si no tiene ningún horario, en el menú lleva a "Oferta en desarrollo".</p>
+
+            <h3 class="admin-modal__seccion">Menú y encabezado</h3>
+            <div class="admin-field">
+                <span class="admin-field__label">Logo</span>
+                <div class="admin-file-drop">
+                    <div class="admin-file-drop__thumb has-image" data-miniatura="icono">
+                        <img src="" alt="">
+                    </div>
+                    <input type="file" name="icono" accept="image/jpeg,image/png,image/webp" aria-label="Logo de la oferta">
+                </div>
+                <input type="hidden" name="icono_actual">
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormNombre">Texto debajo del logo</label>
+                <input type="text" id="ofertaFormNombre" name="nombre" maxlength="80" required>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormTitulo">Título de la página</label>
+                <input type="text" id="ofertaFormTitulo" name="titulo" maxlength="120" required placeholder="Ej: Informática – BTP">
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormSubtitulo">Subtítulo</label>
+                <input type="text" id="ofertaFormSubtitulo" name="subtitulo" maxlength="120" required placeholder="Ej: Bachillerato Tecnológico">
+            </div>
+
+            <h3 class="admin-modal__seccion">¿Qué ofrece esta propuesta educativa?</h3>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormOfreceIntro">Texto</label>
+                <textarea id="ofertaFormOfreceIntro" name="ofrece_intro" maxlength="1500" required></textarea>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormOfreceItems">Puntos</label>
+                <textarea id="ofertaFormOfreceItems" name="ofrece_items" maxlength="4000" rows="5" placeholder="Soporte y Hardware: Mantenimiento y reparación de equipos."></textarea>
+                <span class="admin-field__hint">Uno por línea. Lo que va antes de los dos puntos se ve en negrita.</span>
+            </div>
+
+            <h3 class="admin-modal__seccion">¿Qué lograrán los estudiantes al egresar?</h3>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormLogrosIntro">Texto</label>
+                <textarea id="ofertaFormLogrosIntro" name="logros_intro" maxlength="1500" required></textarea>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="ofertaFormLogrosItems">Puntos</label>
+                <textarea id="ofertaFormLogrosItems" name="logros_items" maxlength="4000" rows="5" placeholder="Continuidad educativa: Acceder a carreras terciarias."></textarea>
+                <span class="admin-field__hint">Uno por línea. Lo que va antes de los dos puntos se ve en negrita.</span>
+            </div>
+
+            <h3 class="admin-modal__seccion">Horarios con Materias</h3>
+            <div class="admin-horarios">
+                    <div class="admin-field">
+                        <span class="admin-field__label">Primer año</span>
+                        <div class="admin-file-drop">
+                            <div class="admin-file-drop__thumb" data-miniatura="horario_1">
+                                <img src="" alt="">
+                            </div>
+                            <input type="file" name="horario_1" accept="image/jpeg,image/png,image/webp" aria-label="Horario de primer año">
+                        </div>
+                        <input type="hidden" name="horario_1_actual">
+                        <label class="admin-check"><input type="checkbox" name="quitar_1"> Quitar este horario</label>
+                    </div>
+                    <div class="admin-field">
+                        <span class="admin-field__label">Segundo año</span>
+                        <div class="admin-file-drop">
+                            <div class="admin-file-drop__thumb" data-miniatura="horario_2">
+                                <img src="" alt="">
+                            </div>
+                            <input type="file" name="horario_2" accept="image/jpeg,image/png,image/webp" aria-label="Horario de segundo año">
+                        </div>
+                        <input type="hidden" name="horario_2_actual">
+                        <label class="admin-check"><input type="checkbox" name="quitar_2"> Quitar este horario</label>
+                    </div>
+                    <div class="admin-field">
+                        <span class="admin-field__label">Tercer año</span>
+                        <div class="admin-file-drop">
+                            <div class="admin-file-drop__thumb" data-miniatura="horario_3">
+                                <img src="" alt="">
+                            </div>
+                            <input type="file" name="horario_3" accept="image/jpeg,image/png,image/webp" aria-label="Horario de tercer año">
+                        </div>
+                        <input type="hidden" name="horario_3_actual">
+                        <label class="admin-check"><input type="checkbox" name="quitar_3"> Quitar este horario</label>
+                    </div>
+            </div>
+
+            <p class="admin-form-error" id="ofertaFormError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="ofertaFormCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalOfertas" aria-labelledby="modalOfertasTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalOfertasTitulo">Ofertas educativas</h2>
+            <p class="admin-modal__subtitle">Las que ya estaban se pueden editar, eliminar y restaurar a como eran. Las nuevas se pueden editar o eliminar.</p>
+            <p class="admin-modal__aviso" id="ofertasAviso" role="status"></p>
+            <ul class="admin-edicion" id="ofertasLista"></ul>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="ofertasCerrar">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarOferta" aria-labelledby="modalConfirmarOfertaTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarOfertaTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalOfertaCambios" aria-labelledby="modalOfertaCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalOfertaCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
     <script src="Adminjs/OfertasEducativas.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

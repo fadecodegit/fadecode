@@ -1,4 +1,4 @@
-/* Ofertas Educativas: grilla de ícono + texto */
+/* Ofertas Educativas: ícono y texto */
 
 .admin-preview-ofertas {
   width: 100%;
@@ -14,14 +14,6 @@
   flex-wrap: wrap;
   gap: 1rem 0.75rem;
   justify-content: center;
-}
-
-.admin-preview-ofertas__empty {
-  margin: 0;
-  width: 100%;
-  font-size: 0.82rem;
-  color: rgba(24, 24, 24, 0.5);
-  text-align: center;
 }
 
 .admin-oferta-item {
@@ -58,21 +50,70 @@
   color: var(--color-text-dark);
 }
 
-.admin-oferta-item__remove {
-  position: absolute;
-  top: -0.4rem;
-  right: -0.4rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(24, 24, 24, 0.55);
-  color: #ffffff;
-  font-size: 0.85rem;
-  line-height: 1;
+/* Vista previa de una sola oferta */
+.admin-oferta-item--sola {
+  width: 7rem;
+}
+
+.admin-oferta-item__icon img:not([src]) {
+  visibility: hidden;
+}
+
+/* Modal de la oferta: más ancho, con secciones */
+.admin-modal--ancho {
+  width: min(46rem, calc(100vw - 2rem));
+}
+
+.admin-modal__seccion {
+  margin: 1.5rem 0 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--admin-border-soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+.admin-horarios {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Cada horario en su columna: la imagen arriba y el botón debajo */
+.admin-horarios > .admin-field {
+  min-width: 0;
+}
+
+.admin-horarios .admin-file-drop {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.admin-horarios .admin-file-drop__thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
+
+.admin-horarios .admin-file-drop__thumb img {
+  object-fit: contain;
+}
+
+.admin-horarios .admin-file-drop input[type="file"] {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
   cursor: pointer;
 }
 
-.admin-oferta-item__remove:hover {
-  background-color: rgba(24, 24, 24, 0.75);
+/* Tablet — min-width 577px */
+@media (min-width: 577px) {
+  .admin-horarios {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

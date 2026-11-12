@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubicación UTU Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/Anexo.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +181,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -164,27 +193,36 @@
                     <h1 class="admin-view__title" id="anexoEditorViewTitle">Editar página — Ubicación UTU</h1>
 
                     <div class="admin-form-layout">
-                        <form class="admin-form-card" id="formAnexoEditor">
+                        <form class="admin-form-card" id="formAnexoEditor" action="../backend/ubicaciones.php" enctype="multipart/form-data" data-pagina="ubicacion" data-html="../html/UbicacionUTU.html">
+                            <input type="hidden" name="pagina" value="ubicacion">
+                            <p class="admin-form-aviso" id="anexoAviso" role="status">Cargando los datos actuales...</p>
+
                             <h2 class="admin-form-card__title">Encabezado</h2>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoTitulo">Título</label>
-                                <input type="text" id="anexoTitulo" placeholder="Ej: Tomas Gomensoro">
+                                <input type="text" id="anexoTitulo" name="titulo" maxlength="120" required>
+                            </div>
+
+                            <div class="admin-field" id="anexoSubtituloCampo" hidden>
+                                <label class="admin-field__label" for="anexoSubtitulo">Subtítulo</label>
+                                <input type="text" id="anexoSubtitulo" name="subtitulo" maxlength="120">
                             </div>
 
                             <div class="admin-field">
-                                <label class="admin-field__label" for="anexoImagen">Imagen (mapa o foto)</label>
+                                <label class="admin-field__label" for="anexoImagen">Imagen</label>
                                 <div class="admin-file-drop">
-                                    <div class="admin-file-drop__thumb" id="anexoImagenThumb">
+                                    <div class="admin-file-drop__thumb has-image" id="anexoImagenThumb">
                                         <img src="" alt="">
                                     </div>
-                                    <input type="file" id="anexoImagen" accept="image/*">
+                                    <input type="file" id="anexoImagen" name="imagen" accept="image/jpeg,image/png,image/webp">
                                 </div>
+                                <span class="admin-field__hint">Si no elegís una, queda la imagen actual.</span>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoTexto">Texto</label>
-                                <textarea id="anexoTexto" placeholder="Descripción de la ubicación..."></textarea>
+                                <textarea id="anexoTexto" name="texto" maxlength="1200" rows="7" required></textarea>
                             </div>
 
                             <hr class="admin-form-divider">
@@ -193,27 +231,29 @@
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoLocalizacion">Localización</label>
-                                <input type="text" id="anexoLocalizacion" placeholder="Dirección completa">
+                                <input type="text" id="anexoLocalizacion" name="localizacion" maxlength="200" required>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoTelefono">Teléfono</label>
-                                <input type="text" id="anexoTelefono" placeholder="Ej: 4779 2025">
+                                <input type="text" id="anexoTelefono" name="telefono" maxlength="30" required>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoCorreo">Correo</label>
-                                <input type="text" id="anexoCorreo" placeholder="Ej: ubellaunion@gmail.com">
+                                <input type="email" id="anexoCorreo" name="correo" maxlength="100" required>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="anexoDirector">Director/a</label>
-                                <input type="text" id="anexoDirector" placeholder="Ej: Directora: Cristina Mantuani.">
+                                <input type="text" id="anexoDirector" name="director" maxlength="120" required>
                             </div>
 
+                            <p class="admin-form-error" id="anexoError" role="alert" hidden></p>
+
                             <div class="admin-form-actions">
-                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
-                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                                <button type="submit" class="admin-btn admin-btn--primary">Guardar cambios</button>
+                                <button type="button" class="admin-btn admin-btn--secondary" id="anexoRestaurar" hidden>Restaurar original</button>
                             </div>
                         </form>
 
@@ -229,6 +269,7 @@
                                     <div class="admin-preview-anexo__image" id="previewAnexoImageWrap">
                                         <img id="previewAnexoImage" src="" alt="">
                                     </div>
+                                    <p class="admin-preview-anexo__subtitle" id="previewAnexoSubtitulo" hidden></p>
                                     <p class="admin-preview-anexo__text" id="previewAnexoTexto">Descripción del anexo/ubicación.</p>
                                 </div>
 
@@ -259,8 +300,29 @@
         </div>
     </div>
 
+    <dialog class="admin-aviso" id="modalAnexoRestaurar" aria-labelledby="modalAnexoRestaurarTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalAnexoRestaurarTexto">¿Querés volver a mostrar la página como era originalmente? Se pierden los cambios.</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalAnexoCambios" aria-labelledby="modalAnexoCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalAnexoCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
     <script src="Adminjs/Anexo.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

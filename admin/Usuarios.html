@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Usuarios Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/Usuarios.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +57,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +86,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +156,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +180,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -185,15 +213,15 @@
                                         <th scope="col">País</th>
                                         <th scope="col">Fecha de registro</th>
                                         <th scope="col">Curso actual</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbodyEstudiantes">
-                                    <!-- Filas cargadas desde /api/alumnos (backend SQL) -->
                                 </tbody>
                             </table>
                         </div>
                         <p class="admin-users-empty" id="estudiantesEmpty" hidden>No hay estudiantes registrados todavía.</p>
-                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Alumnos</code> + tabla de usuarios vía backend.</p>
+                        <p class="admin-users-hint" data-users-error hidden></p>
                     </div>
 
                     <div class="admin-panel-card admin-users-panel" id="panel-admins" role="tabpanel" aria-labelledby="tab-admins" hidden>
@@ -208,15 +236,15 @@
                                         <th scope="col">País</th>
                                         <th scope="col">Fecha de registro</th>
                                         <th scope="col">Cargo</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbodyAdmins">
-                                    <!-- Filas cargadas desde /api/administradores (backend SQL) -->
                                 </tbody>
                             </table>
                         </div>
                         <p class="admin-users-empty" id="adminsEmpty" hidden>No hay administradores registrados todavía.</p>
-                        <p class="admin-users-hint">Datos de ejemplo. Conectar con <code>Administradores</code> + tabla de usuarios vía backend.</p>
+                        <p class="admin-users-hint" data-users-error hidden></p>
                     </div>
                 </section>
 
@@ -224,7 +252,87 @@
         </div>
     </div>
 
+    <dialog class="admin-modal" id="modalEditarUsuario" aria-labelledby="modalEditarTitulo">
+        <form class="admin-modal__form" id="formEditarUsuario" method="dialog" novalidate>
+            <h2 class="admin-modal__title" id="modalEditarTitulo">Editar usuario</h2>
+            <p class="admin-modal__subtitle" id="modalEditarSubtitulo"></p>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarNombre">Nombre completo</label>
+                <input type="text" id="editarNombre" name="nombre" maxlength="40" required>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarEmail">Correo electrónico</label>
+                <input type="email" id="editarEmail" name="email" required>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarPais">País</label>
+                <input type="text" id="editarPais" name="pais" required>
+            </div>
+
+            <fieldset class="admin-modal__responsable" id="editarResponsable" hidden>
+                <legend class="admin-modal__legend">Adulto responsable</legend>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarAdultoNombre">Nombre Responsable</label>
+                    <input type="text" id="editarAdultoNombre" name="adulto_nombre" maxlength="40">
+                </div>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarAdultoTelefono">Teléfono</label>
+                    <input type="tel" id="editarAdultoTelefono" name="adulto_telefono" inputmode="tel" maxlength="20">
+                </div>
+
+                <p class="admin-field__hint">El correo del responsable es el correo electrónico de la cuenta.</p>
+            </fieldset>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarNivel">Nivel</label>
+                <select id="editarNivel" name="id_nivel" aria-describedby="editarNivelLista">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <ul class="admin-modal__niveles" id="editarNivelLista">
+                    <li><strong>1</strong> Administrador</li>
+                    <li><strong>2</strong> Alumno</li>
+                    <li><strong>3</strong> Visitante</li>
+                </ul>
+            </div>
+
+            <p class="admin-modal__error" id="modalEditarError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="modalEditarCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar cambios</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarAdmin" aria-labelledby="modalConfirmarTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarTexto">¿Seguro que querés asignar el rol Administrador?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalCambiosGuardados" aria-labelledby="modalGuardadoTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalGuardadoTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/Usuarios.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

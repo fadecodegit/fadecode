@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polideportivo Figuras importantes Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/PolideportivoFiguras.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +181,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -164,7 +193,7 @@
                     <h1 class="admin-view__title">Polideportivo — Figuras importantes</h1>
 
                     <div class="admin-form-layout">
-                        <form class="admin-form-card" id="formFiguras">
+                        <form class="admin-form-card" id="formFiguras" enctype="multipart/form-data">
                             <h2 class="admin-form-card__title">Agregar figura</h2>
 
                             <div class="admin-field">
@@ -173,28 +202,34 @@
                                     <div class="admin-file-drop__thumb" id="figuraFotoThumb">
                                         <img src="" alt="">
                                     </div>
-                                    <input type="file" id="figuraFoto" accept="image/*">
+                                    <input type="file" id="figuraFoto" name="imagen" accept="image/jpeg,image/png,image/webp" required>
                                 </div>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="figuraNombre">Nombre</label>
-                                <input type="text" id="figuraNombre" placeholder="Ej: Cindy Castro">
+                                <input type="text" id="figuraNombre" name="nombre" maxlength="120" required placeholder="Ej: Cindy Castro">
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="figuraCargo">Cargo</label>
-                                <input type="text" id="figuraCargo" placeholder="Ej: Coordinadora Directiva por ANEP">
+                                <input type="text" id="figuraCargo" name="cargo" maxlength="120" required placeholder="Ej: Coordinadora Directiva por ANEP">
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="figuraTelefono">Número de contacto</label>
-                                <input type="text" id="figuraTelefono" placeholder="Ej: 4779-8112">
+                                <input type="text" id="figuraTelefono" name="telefono" maxlength="30" placeholder="Ej: 4779-8112">
+                                <span class="admin-field__hint">Opcional.</span>
                             </div>
 
+                            <p class="admin-form-error" id="figuraError" role="alert" hidden></p>
+
                             <div class="admin-form-actions">
-                                <button type="button" class="admin-btn admin-btn--primary" id="figuraAddBtn">+ Agregar figura</button>
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
                                 <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                            <div class="admin-form-actions admin-form-actions--editar">
+                                <button class="admin-btn admin-btn--secondary" id="figurasEditarBtn" type="button">Editar</button>
                             </div>
                         </form>
 
@@ -202,14 +237,10 @@
                             <p class="admin-preview-label">Vista previa</p>
                             <div class="admin-preview-figuras">
                                 <div class="admin-preview-figuras__grid" id="previewFigurasGrid">
-                                    <p class="admin-preview-figuras__empty" id="previewFigurasEmpty">Todavía no agregaste ninguna figura.</p>
+                                    <p class="admin-preview-figuras__empty" id="previewFigurasAviso">Cargando...</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="admin-form-actions admin-form-actions--wide">
-                        <button type="button" class="admin-btn admin-btn--primary" id="figuraUploadAllBtn">Subir todo</button>
                     </div>
                 </section>
 
@@ -217,8 +248,74 @@
         </div>
     </div>
 
+    <dialog class="admin-modal" id="modalFiguras" aria-labelledby="modalFigurasTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalFigurasTitulo">Figuras importantes</h2>
+            <p class="admin-modal__subtitle">Las que ya estaban se pueden editar, eliminar y restaurar a como eran. Las nuevas se pueden editar o eliminar.</p>
+            <p class="admin-modal__aviso" id="figurasAviso" role="status" hidden></p>
+            <ul class="admin-edicion" id="figurasLista"></ul>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="figurasCerrar">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalFigura" aria-labelledby="modalFiguraTitulo">
+        <form class="admin-modal__contenido" id="formEditarFigura" enctype="multipart/form-data">
+            <h2 class="admin-modal__title" id="modalFiguraTitulo">Editar figura</h2>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarFiguraFoto">Foto</label>
+                <div class="admin-file-drop">
+                    <div class="admin-file-drop__thumb has-image" id="editarFiguraThumb">
+                        <img src="" alt="">
+                    </div>
+                    <input type="file" id="editarFiguraFoto" name="imagen" accept="image/jpeg,image/png,image/webp">
+                </div>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarFiguraNombre">Nombre</label>
+                <input type="text" id="editarFiguraNombre" name="nombre" maxlength="120" required>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarFiguraCargo">Cargo</label>
+                <input type="text" id="editarFiguraCargo" name="cargo" maxlength="120" required>
+            </div>
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarFiguraTelefono">Número de contacto</label>
+                <input type="text" id="editarFiguraTelefono" name="telefono" maxlength="30">
+                <span class="admin-field__hint">Opcional. Si lo dejás vacío, no se muestra.</span>
+            </div>
+            <p class="admin-form-error" id="editarFiguraError" role="alert" hidden></p>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="editarFiguraCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarFigura" aria-labelledby="modalConfirmarFiguraTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarFiguraTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalFiguraCambios" aria-labelledby="modalFiguraCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalFiguraCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
     <script src="Adminjs/PolideportivoFiguras.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Estadísticas: totales y gráficos (Chart.js lee estos colores desde graficos.js) */
+/* Colores de los gráficos */
 
 :root {
   --color-chart-blue: #29abe2;
@@ -9,7 +9,7 @@
   --color-chart-purple: #4b3fd1;
 }
 
-/* Dashboard: tarjetas de totales */
+/* Tarjetas de totales */
 
 .admin-stats-row {
   display: grid;

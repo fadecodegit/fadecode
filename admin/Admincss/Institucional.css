@@ -1,4 +1,4 @@
-/* Institucional: imagen de portada + secciones subtítulo/texto */
+/* Institucional: portada y secciones */
 
 .admin-preview-institucional {
   width: 100%;
@@ -59,14 +59,6 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
-.admin-preview-institucional__hero-text {
-  margin: 0 0 0.35rem;
-  font-size: 0.74rem;
-  line-height: 1.5;
-  white-space: pre-line;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-}
-
 .admin-preview-institucional__hero-btn {
   align-self: flex-start;
   padding: 0.4rem 1.1rem;
@@ -91,16 +83,7 @@
   text-align: center;
 }
 
-.admin-preview-institucional__section-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  margin-bottom: 0.4rem;
-}
-
-/* Subtítulo siempre en el celeste del sistema de diseño: no es editable
-   desde el panel, así se mantiene consistente en toda la página. */
+/* Subtítulo de cada sección */
 .admin-preview-institucional__subtitle {
   margin: 0;
   font-size: 0.95rem;
@@ -116,17 +99,52 @@
   white-space: pre-line;
 }
 
-.admin-preview-institucional__remove {
-  flex-shrink: 0;
-  border: none;
-  background: none;
-  padding: 0;
-  font-size: 1.05rem;
-  line-height: 1;
-  color: rgba(24, 24, 24, 0.4);
-  cursor: pointer;
+/* Texto de bienvenida debajo de la imagen, como en el celular */
+.admin-preview-institucional__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem 0;
 }
 
-.admin-preview-institucional__remove:hover {
-  color: rgba(24, 24, 24, 0.8);
+.admin-preview-institucional__body-text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+.admin-preview-institucional__body .admin-preview-institucional__hero-btn {
+  border: 1px solid var(--admin-border-soft);
+}
+
+/* La página completa puede ser larga: las secciones se recorren dentro */
+.admin-preview-institucional__sections {
+  max-height: 32rem;
+  overflow-y: auto;
+}
+
+.admin-preview-institucional__content-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-align: center;
+}
+
+.admin-preview-institucional__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-preview-institucional__lista .admin-preview-institucional__subtitle {
+  margin-bottom: 0.4rem;
+}
+
+/* La sección que se está escribiendo todavía no se subió */
+.admin-preview-institucional__borrador {
+  padding: 0.75rem;
+  border: 2px dashed var(--color-offers-accent);
+  border-radius: 0.75rem;
 }

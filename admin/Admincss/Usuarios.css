@@ -1,4 +1,4 @@
-/* Ver Usuarios — tablas de estudiantes y administradores */
+/* Tablas de usuarios */
 
 .admin-users-toolbar {
   display: flex;
@@ -95,6 +95,27 @@
   display: none;
 }
 
+.admin-users-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.admin-users-actions .admin-btn {
+  flex: none;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.admin-btn--danger {
+  background-color: transparent;
+  color: #b42318;
+  border: 1px solid rgba(180, 35, 24, 0.35);
+}
+
+.admin-btn--danger:hover {
+  background-color: rgba(180, 35, 24, 0.08);
+}
+
 .admin-users-empty {
   margin: 0;
   padding: 2rem 1.25rem;
@@ -117,6 +138,107 @@
   padding: 0.1rem 0.35rem;
   border-radius: 0.25rem;
   background-color: rgba(24, 24, 24, 0.06);
+}
+
+/* Ventana Editar usuario */
+
+.admin-modal {
+  width: calc(100% - 2rem);
+  max-width: 28rem;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.admin-modal::backdrop {
+  background-color: rgba(24, 24, 24, 0.45);
+}
+
+.admin-modal__form {
+  padding: 1.5rem 1.25rem;
+}
+
+.admin-modal__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+.admin-modal__subtitle {
+  margin: 0.25rem 0 1.25rem;
+  font-size: 0.78rem;
+  color: rgba(24, 24, 24, 0.55);
+}
+
+/* Campos de correo y nivel */
+.admin-modal .admin-field input,
+.admin-modal .admin-field select {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--admin-border-soft);
+  border-radius: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--color-text-dark);
+  background-color: var(--color-hero-card);
+  transition: var(--transition-base);
+}
+
+.admin-modal .admin-field input:focus,
+.admin-modal .admin-field select:focus {
+  outline: none;
+  border-color: var(--color-offers-accent);
+  background-color: var(--color-card-bg);
+}
+
+/* Datos del adulto responsable */
+.admin-modal__responsable {
+  margin: 0 0 1.1rem;
+  padding: 1rem 1rem 0.85rem;
+  border: 1px solid var(--admin-border-soft);
+  border-radius: 0.75rem;
+}
+
+.admin-modal__legend {
+  float: none;
+  width: auto;
+  margin: 0;
+  padding: 0 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
+}
+
+/* Explicación de cada nivel */
+.admin-modal__niveles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.75rem;
+  color: rgba(24, 24, 24, 0.6);
+}
+
+.admin-modal__niveles strong {
+  display: inline-block;
+  min-width: 1.2rem;
+  margin-right: 0.2rem;
+  padding: 0 0.3rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: var(--color-offers-icon-bg);
+  color: var(--color-text-dark);
+}
+
+.admin-modal__error {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  color: #b42318;
 }
 
 @media (min-width: 577px) {
