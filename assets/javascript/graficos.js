@@ -1,27 +1,24 @@
-/**
- * graficos.js
- * -----------------------------------------------------------
- * Dibuja los gráficos de la página Estadísticas del panel
- * (admin/Estadisticas.html) usando Chart.js. Los valores son los
- * mismos que muestran las leyendas del HTML, por eso la
- * leyenda propia de Chart.js queda desactivada.
- * -----------------------------------------------------------
- */
+// Dibuja los gráficos de Estadísticas, en el panel y en el sitio.
 
-// Los colores salen de las variables de Admincss/Estadisticas.css (--color-chart-*)
-const estilos = getComputedStyle(document.documentElement);
-const color = (nombre) => estilos.getPropertyValue(`--color-chart-${nombre}`).trim();
-
-const COLORES = {
-    azul: color("blue"),
-    verde: color("green"),
-    naranja: color("orange"),
-    mostaza: color("mustard"),
-    bordo: color("maroon"),
-    violeta: color("purple")
+// Los colores cambian con el modo invierno
+const VARIABLES = {
+    azul: "blue",
+    verde: "green",
+    naranja: "orange",
+    mostaza: "mustard",
+    bordo: "maroon",
+    violeta: "purple"
 };
 
-// Opciones comunes: sin leyenda (ya está en el HTML) y tooltip con porcentaje
+function colorDe(nombre) {
+    return getComputedStyle(document.documentElement)
+        .getPropertyValue(`--color-chart-${VARIABLES[nombre]}`).trim();
+}
+
+// Convierte el nombre de cada color en el color real
+const pintar = (nombres) => Array.isArray(nombres) ? nombres.map(colorDe) : colorDe(nombres);
+
+// Al pasar el mouse muestra el valor y su porcentaje
 const opcionesBase = {
     responsive: true,
     plugins: {
@@ -41,8 +38,8 @@ const opcionesBase = {
     }
 };
 
-// Crea una dona en el canvas indicado
-function crearDona(idCanvas, etiquetas, valores, colores) {
+// Crea un gráfico de dona
+function crearDona(idCanvas, etiquetas, valores, nombresColor) {
     const canvas = document.getElementById(idCanvas);
     if (!canvas) return;
 
@@ -52,7 +49,8 @@ function crearDona(idCanvas, etiquetas, valores, colores) {
             labels: etiquetas,
             datasets: [{
                 data: valores,
-                backgroundColor: colores,
+                nombresColor,
+                backgroundColor: pintar(nombresColor),
                 borderWidth: 0
             }]
         },
@@ -65,16 +63,16 @@ crearDona(
     "chartEstudiantesPorCurso",
     ["BT", "EMB", "BTP", "CTT", "FPB", "CPI", "Tecnólogo"],
     [413, 297, 216, 95, 85, 25, 15],
-    [COLORES.azul, COLORES.verde, COLORES.naranja, COLORES.mostaza, COLORES.bordo, COLORES.violeta, COLORES.verde]
+    ["azul", "verde", "naranja", "mostaza", "bordo", "violeta", "verde"]
 );
 
-// Docentes por situación laboral: una sola barra horizontal apilada
+// Docentes por situación laboral
 const canvasLaboral = document.getElementById("chartDocentesLaboral");
 if (canvasLaboral) {
     const situaciones = [
-        { nombre: "Interinos", cantidad: 154, color: COLORES.azul },
-        { nombre: "Efectivos", cantidad: 29, color: COLORES.verde },
-        { nombre: "Suplentes", cantidad: 26, color: COLORES.naranja }
+        { nombre: "Interinos", cantidad: 154, color: "azul" },
+        { nombre: "Efectivos", cantidad: 29, color: "verde" },
+        { nombre: "Suplentes", cantidad: 26, color: "naranja" }
     ];
     const totalDocentes = situaciones.reduce((suma, s) => suma + s.cantidad, 0);
 
@@ -85,7 +83,8 @@ if (canvasLaboral) {
             datasets: situaciones.map((s) => ({
                 label: s.nombre,
                 data: [s.cantidad],
-                backgroundColor: s.color,
+                nombresColor: s.color,
+                backgroundColor: pintar(s.color),
                 borderWidth: 0
             }))
         },
@@ -111,8 +110,18 @@ if (canvasLaboral) {
     });
 }
 
-// Distribución por género (hombres / mujeres)
-const coloresGenero = [COLORES.azul, COLORES.naranja];
+// Hombres y mujeres por grupo
+const coloresGenero = ["azul", "naranja"];
 crearDona("chartGeneroDocentes", ["Hombres", "Mujeres"], [92, 117], coloresGenero);
 crearDona("chartGeneroNoDocentes", ["Hombres", "Mujeres"], [3, 12], coloresGenero);
 crearDona("chartGeneroIndirecta", ["Hombres", "Mujeres"], [7, 12], coloresGenero);
+
+// Con el modo invierno se vuelven a pintar los gráficos
+document.addEventListener("cambio-modo", () => {
+    Object.values(Chart.instances).forEach((grafico) => {
+        grafico.data.datasets.forEach((datos) => {
+            datos.backgroundColor = pintar(datos.nombresColor);
+        });
+        grafico.update();
+    });
+});
