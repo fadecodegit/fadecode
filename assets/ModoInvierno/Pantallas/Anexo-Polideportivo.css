@@ -1,0 +1,9 @@
+/* Modo invierno de Anexo Polideportivo */
+
+.modo-invierno {
+  --color-poli-bg: #d6eefa;
+  --color-poli-panel: #f6f9fc;
+  --color-poli-border: rgba(43, 52, 64, 0.08);
+  --color-poli-table-header: #dbe7f2;
+  --color-poli-table-row-alt: #eef4fa;
+}

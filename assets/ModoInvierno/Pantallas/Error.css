@@ -1,0 +1,6 @@
+/* Modo invierno de la página de error */
+
+.modo-invierno {
+  --color-err-card: #f6f9fc;
+  --color-err-border: rgba(43, 52, 64, 0.08);
+}

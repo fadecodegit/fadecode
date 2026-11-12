@@ -59,9 +59,8 @@ ul {
   margin: 0;
   padding: 0;
 }
-/* Header / Navbar */
+/* Encabezado y menú */
 .site-header {
-  /* Por encima del contenido, para que el aviso de "Preinscribirse" no quede tapado */
   position: relative;
   z-index: 100;
   background-color: var(--color-primary-brown);
@@ -145,13 +144,6 @@ ul {
   padding-bottom: 1rem;
 }
 
-.hero-action.is-pressed,
-.btn-nav.is-pressed,
-.social-link.is-pressed {
-  transform: translateY(0);
-  box-shadow: var(--shadow-card);
-}
-
 .site-nav-row {
   display: flex;
   flex-direction: column;
@@ -182,6 +174,49 @@ ul {
   opacity: 0.82;
   text-decoration: underline;
   text-underline-offset: 0.25rem;
+}
+
+/* Botón "+" con más secciones: en celular sus enlaces se listan como los demás */
+.nav-mas__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-white-translucent);
+  transition: var(--transition-base);
+}
+
+.nav-mas__toggle:hover,
+.nav-mas__toggle:focus-visible,
+.nav-mas__toggle[aria-expanded="true"] {
+  background-color: rgba(255, 255, 255, 0.32);
+}
+
+.nav-mas__toggle img {
+  width: 1rem;
+  height: 1rem;
+  filter: brightness(0) invert(1);
+  transition: var(--transition-base);
+}
+
+.nav-mas__toggle[aria-expanded="true"] img {
+  transform: rotate(45deg);
+}
+
+.nav-mas__menu {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
 
 .site-nav-actions {
@@ -215,14 +250,14 @@ ul {
   box-shadow: var(--shadow-card);
 }
 
-/* Aviso que aparece al pasar el cursor por "Preinscribirse" (el texto está acá
-   para no repetirlo en cada página) */
+/* Aviso de Formulario de Interés */
 .btn-nav--preinscribir {
   position: relative;
+  z-index: 2;
 }
 
 .btn-nav--preinscribir::after {
-  content: "La preinscripción no es una inscripción definitiva: tu solicitud se enviará a un administrador, que te avisará por correo electrónico o al teléfono del adulto responsable de la cuenta.";
+  content: "Rellenar el formulario de interés no es una inscripción definitiva: tu solicitud se enviará a un administrador, que te avisará por correo electrónico o al teléfono del adulto responsable de la cuenta.";
   position: absolute;
   top: calc(100% + 0.6rem);
   right: 0;
@@ -245,6 +280,11 @@ ul {
   transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
 }
 
+/* Aviso en portugués */
+.translated-ltr .btn-nav--preinscribir::after {
+  content: "Preencher o formulário de interesse não é uma inscrição definitiva: sua solicitação será enviada a um administrador, que avisará você por e-mail ou pelo telefone do adulto responsável pela conta.";
+}
+
 .btn-nav--preinscribir:hover::after,
 .btn-nav--preinscribir:focus-visible::after {
   opacity: 1;
@@ -257,73 +297,108 @@ ul {
   color: var(--color-text-dark);
 }
 
+/* Botón Registrarse */
+.btn-nav--login[data-boton-sesion] {
+  background-color: rgb(228, 217, 131);
+}
+
 .btn-nav--login:hover,
 .btn-nav--login:active {
   transform: translateY(-2px);
   box-shadow: var(--shadow-card);
 }
-/* Main / Hero */
+
+/* Menú Cuenta */
+.cuenta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cuenta-tarjeta {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 1000;
+  width: 17rem;
+  padding: 0.9rem;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-card-hover);
+  color: var(--color-text-dark);
+  text-align: left;
+}
+
+.cuenta-tarjeta[hidden] {
+  display: none;
+}
+
+.cuenta-tarjeta__datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0 0 0.9rem;
+}
+
+.cuenta-tarjeta__dato dt {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(24, 24, 24, 0.6);
+}
+
+.cuenta-tarjeta__dato dd {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.cuenta-tarjeta__cerrar {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-brown);
+  color: var(--color-text-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.cuenta-tarjeta__cerrar:hover,
+.cuenta-tarjeta__cerrar:focus-visible {
+  opacity: 0.88;
+}
+
+/* "Panel Admin": solo para administradores, encima de "Cerrar sesión" */
+.cuenta-tarjeta__panel {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-primary-brown);
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-primary-brown);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition-base);
+}
+
+.cuenta-tarjeta__panel:hover,
+.cuenta-tarjeta__panel:focus-visible {
+  background-color: var(--color-primary-brown);
+  color: var(--color-text-light);
+}
+/* Contenido principal */
 .site-main {
   flex: 1;
   padding: 1.25rem 1rem 2rem;
 }
 
-.hero-card {
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.75rem 1.25rem 1.5rem;
-  background-color: var(--color-hero-card);
-  border: 1px solid var(--color-hero-card-border);
-  border-radius: var(--radius-xl);
-}
-
-.hero-card__title {
-  margin: 0 0 1.5rem;
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1.35;
-  text-align: center;
-  color: var(--color-text-dark);
-}
-
-.hero-card__title-line {
-  display: block;
-}
-
-.hero-actions {
-  --bs-gutter-y: 0.85rem;
-}
-
-.hero-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 3.75rem;
-  padding: 1rem 1.25rem;
-  border: none;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-card-bg);
-  color: var(--color-text-dark);
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-align: center;
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-base);
-  cursor: pointer;
-}
-
-.hero-action:hover,
-.hero-action:focus-visible,
-.hero-action:active {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
-  color: var(--color-text-dark);
-}
-
-.hero-action--guest {
-  min-height: 4rem;
-}
 /* Footer */
 .site-footer {
   background-color: var(--color-dark-footer);
@@ -343,6 +418,11 @@ ul {
 
 .site-footer__brand .site-brand__logo--footer {
   margin-bottom: 0.85rem;
+}
+
+/* Espacio entre el logo y Vínculos */
+.site-footer__brand {
+  padding-right: 1.5rem;
 }
 
 .site-footer__school {
@@ -420,19 +500,55 @@ ul {
   transform: translateY(-2px);
 }
 
-.social-link--img img {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+/* Botón Sugerencias */
+
+/* Botón de idioma */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--color-text-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-base);
 }
 
-.site-footer__cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.65rem;
-  margin-top: 1.5rem;
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  border-color: var(--color-text-light);
+}
+
+.lang-toggle span {
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-pill);
+  opacity: 0.5;
+}
+
+.lang-toggle span.is-active {
+  opacity: 1;
+  background-color: var(--color-text-light);
+  color: var(--color-text-dark);
+}
+
+/* Ocultar la barra del traductor de Google */
+iframe.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .site-footer__copyright {
@@ -492,17 +608,43 @@ ul {
     display: none;
   }
 
+  .nav-mas {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-mas__toggle {
+    display: inline-flex;
+  }
+
+  .nav-mas__menu {
+    position: absolute;
+    display: none;
+    gap: 0;
+    min-width: 10rem;
+    padding: 0.35rem 0;
+    border-radius: var(--radius-lg);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-card);
+  }
+
+  .nav-mas__menu.show {
+    display: flex;
+  }
+
+  .site-nav-list .nav-mas__menu a {
+    padding: 0.45rem 1rem;
+    color: var(--color-text-dark);
+  }
+
+  .site-nav-list .nav-mas__menu a:hover,
+  .site-nav-list .nav-mas__menu a:focus-visible {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+
   .site-main {
     padding: 2rem 1.5rem 2.5rem;
-  }
-
-  .hero-card {
-    max-width: 90%;
-    padding: 2.25rem 2rem 2rem;
-  }
-
-  .hero-card__title {
-    font-size: 1.55rem;
   }
 
   .site-footer__main {
@@ -513,8 +655,8 @@ ul {
     margin-bottom: 0;
   }
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .site-header__brand-row {
     align-items: center;
     padding-bottom: 0.5rem;
@@ -543,45 +685,13 @@ ul {
     font-size: 0.92rem;
   }
 
-  .hero-card {
-    max-width: 46rem;
-    padding: 2.75rem 2.5rem 2.25rem;
+  /* La marca a la izquierda y las demás columnas repartidas hacia la derecha */
+  .site-footer__main > .row {
+    justify-content: space-between;
   }
 
-  .hero-card__title {
-    font-size: 1.65rem;
-    margin-bottom: 2rem;
-  }
-
-  .hero-card__title--desktop {
-    display: inline;
-  }
-
-  .hero-card__title--mobile {
-    display: none;
-  }
-
-  .hero-action {
-    min-height: 4.25rem;
-    font-size: 1.1rem;
-  }
-
-  .hero-action--guest {
-    min-height: 4.5rem;
-  }
-
-  .site-footer__cta-row {
-    margin-top: 0.5rem;
-  }
-}
-
-/* Mobile title split */
-@media (max-width: 1023.98px) {
-  .hero-card__title--desktop {
-    display: none;
-  }
-
-  .hero-card__title--mobile {
-    display: block;
+  .site-footer__block.col-lg-3 {
+    width: auto;
+    max-width: 20rem;
   }
 }

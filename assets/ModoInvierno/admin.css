@@ -1,0 +1,43 @@
+/* Modo invierno del panel: colores fríos */
+
+.modo-invierno {
+  /* Colores generales */
+  --color-primary-brown: #4f5f72;
+  --color-bg-light: #eef4fa;
+  --color-hero-card: #f6f9fc;
+  --color-hero-card-border: rgba(43, 52, 64, 0.08);
+  --color-card-bg: #ffffff;
+  --color-offers-accent: #0ea5e0;
+  --color-offers-accent-soft: #8fd3f0;
+  --color-offers-icon-bg: #d6eefa;
+  --admin-border-soft: rgba(43, 52, 64, 0.14);
+
+  /* Colores de los gráficos */
+  --color-chart-blue: #03a9f4;
+  --color-chart-green: #1e9e74;
+  --color-chart-orange: #e0592a;
+  --color-chart-mustard: #c27c12;
+  --color-chart-maroon: #9c3556;
+  --color-chart-purple: #5648c4;
+}
+
+/* Etiquetas Crear del menú */
+.modo-invierno .admin-nav__badge {
+  background-color: #4fb6d2;
+  color: #ffffff;
+}
+
+/* Línea debajo de la barra superior */
+.modo-invierno .admin-topbar {
+  border-bottom: 2px solid #2b3440;
+}
+
+/* Recuadros de totales */
+.modo-invierno .admin-stat-box {
+  border-color: #8a6a4f;
+}
+
+/* Nube marcada cuando el modo está activo */
+.modo-invierno .admin-topbar__icon {
+  background-color: rgba(14, 165, 224, 0.15);
+}

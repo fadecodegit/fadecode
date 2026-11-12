@@ -1,0 +1,77 @@
+/* Modo invierno del sitio: colores fríos */
+
+.modo-invierno {
+  --color-primary-brown: #4f5f72;
+  --color-bg-light: #eef4fa;
+  --color-hero-card: #f6f9fc;
+  --color-hero-card-border: rgba(43, 52, 64, 0.08);
+  --color-card-bg: #ffffff;
+  --color-offers-accent: #0ea5e0;
+  --color-offers-accent-soft: #8fd3f0;
+  --color-offers-icon-bg: #d6eefa;
+  --color-offers-icon-bg-hover: #bfe4f7;
+
+  /* Colores de los gráficos */
+  --color-chart-blue: #03a9f4;
+  --color-chart-green: #1e9e74;
+  --color-chart-orange: #e0592a;
+  --color-chart-mustard: #c27c12;
+  --color-chart-maroon: #9c3556;
+  --color-chart-purple: #5648c4;
+}
+
+/* Botón Formulario de Interés */
+.modo-invierno .btn-nav--preinscribir {
+  background-color: #8fd3f0;
+}
+
+/* Botón Registrarse */
+.modo-invierno .btn-nav--login[data-boton-sesion] {
+  background-color: #4fb6d2;
+  color: #ffffff;
+}
+
+/* Botón OK de las ventanas emergentes */
+.modo-invierno .modal-exito__btn:focus-visible {
+  outline-color: rgba(14, 165, 224, 0.35);
+}
+
+/* Fila del idioma y la nube en el menú */
+.site-nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botón de la nube */
+.modo-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+/* Ícono de la nube en blanco */
+.modo-toggle img {
+  width: 1.2rem;
+  height: 1.2rem;
+  filter: brightness(0) invert(1);
+}
+
+.modo-toggle:hover,
+.modo-toggle:focus-visible {
+  border-color: var(--color-text-light);
+}
+
+/* Nube marcada cuando el modo está activo */
+.modo-invierno .modo-toggle {
+  border-color: #8fd3f0;
+  background-color: rgba(14, 165, 224, 0.25);
+}

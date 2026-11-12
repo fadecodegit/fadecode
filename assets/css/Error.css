@@ -116,8 +116,8 @@
     padding: 0.75rem 2rem;
   }
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .err-card {
     max-width: 38rem;
     padding: 4rem 3.5rem;
