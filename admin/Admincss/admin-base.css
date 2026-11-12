@@ -1,4 +1,4 @@
-/* Estructura común del panel: sidebar, topbar, formularios y botones. */
+/* Estructura común del panel */
 
 :root {
   --admin-sidebar-width: 15.5rem;
@@ -14,7 +14,7 @@
   display: flex;
   min-height: 100vh;
 }
-/* Sidebar */
+/* Menú lateral */
 .admin-sidebar {
   display: none;
   flex-direction: column;
@@ -143,13 +143,6 @@
   font-size: 0.82rem;
 }
 
-.admin-sidebar__divider {
-  height: 1px;
-  margin: 0.25rem 0;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: none;
-}
-
 .admin-sidebar__user {
   margin-top: auto;
   display: flex;
@@ -157,14 +150,6 @@
   gap: 0.65rem;
   padding: 0.75rem 0.6rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.admin-sidebar__user-avatar {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  object-fit: cover;
-  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .admin-sidebar__user-info {
@@ -209,7 +194,7 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Menú móvil: el sidebar se abre como panel deslizante */
+/* Menú lateral en celular */
 .admin-sidebar.is-open {
   display: flex;
   position: fixed;
@@ -229,7 +214,7 @@
 .admin-sidebar-backdrop.is-open {
   display: block;
 }
-/* Columna principal + topbar */
+/* Columna principal y barra superior */
 .admin-main {
   flex: 1;
   min-width: 0;
@@ -312,7 +297,7 @@
   background-color: var(--color-offers-icon-bg);
   color: var(--color-offers-accent);
 }
-/* Contenido / vistas */
+/* Contenido */
 .admin-content {
   flex: 1;
   padding: 1.25rem 1rem 2.5rem;
@@ -325,7 +310,7 @@
   color: var(--color-text-dark);
 }
 
-/* Tarjeta blanca genérica (Estadísticas, Usuarios) */
+/* Tarjeta blanca */
 
 .admin-panel-card {
   padding: 1.25rem;
@@ -342,7 +327,7 @@
   color: var(--color-offers-accent);
 }
 
-/* Formularios: Crear Evento / Crear Noticia / Laboratorio / Textos */
+/* Formularios */
 
 .admin-form-layout {
   display: flex;
@@ -468,8 +453,12 @@
   margin-top: 1.5rem;
 }
 
-.admin-form-actions--wide {
-  max-width: 40rem;
+/* Mensaje de error del formulario */
+.admin-form-error {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b42318;
 }
 
 .admin-btn {
@@ -514,11 +503,60 @@
   color: rgba(24, 24, 24, 0.5);
 }
 
-/* Botones tipo interruptor (Normativas, Polideportivo) */
+/* Botones tipo interruptor */
 .admin-toggle-btn.is-active {
   background-color: var(--color-offers-accent);
   border-color: var(--color-offers-accent);
   color: #ffffff;
+}
+
+/* Ventanas de aviso (confirmar y listo) */
+.admin-aviso {
+  width: calc(100% - 2rem);
+  max-width: 30rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.admin-aviso::backdrop {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.modal-exito__caja--chica {
+  gap: 1.25rem;
+  padding: 2rem 1.75rem;
+}
+
+.modal-exito__caja--chica .modal-exito__texto {
+  font-size: 1.15rem;
+}
+
+.admin-aviso__botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.admin-aviso .modal-exito__btn {
+  border: 2px solid var(--color-primary-brown);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.admin-aviso__botones .modal-exito__btn {
+  min-width: 8rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+.modal-exito__btn--secundario,
+.modal-exito__btn--secundario:hover,
+.modal-exito__btn--secundario:focus-visible {
+  background-color: transparent;
+  color: var(--color-primary-brown);
 }
 
 /* Tablet — min-width 577px */
@@ -546,8 +584,8 @@
   }
 }
 
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .admin-sidebar {
     display: flex;
   }
@@ -563,4 +601,26 @@
   .admin-panel-card {
     padding: 1.75rem 2rem;
   }
+}
+
+/* Botón Editar, debajo de "Subir" */
+.admin-form-actions--editar {
+  margin-top: 0.75rem;
+}
+
+.admin-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Lo que tiene el atributo hidden no se ve, aunque su clase le dé otro display */
+.admin-body [hidden] {
+  display: none !important;
+}
+
+/* Separador entre partes de un formulario */
+.admin-form-divider {
+  margin: 2rem 0 1.5rem;
+  border: none;
+  border-top: 1px solid var(--admin-border-soft);
 }

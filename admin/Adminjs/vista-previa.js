@@ -1,29 +1,20 @@
-/**
- * vista-previa.js
- * -----------------------------------------------------------
- * Funciones comunes para las vistas previas en vivo del panel.
- * Cada página (CrearNoticia.js, Laboratorio.js, etc.) carga
- * este archivo antes que el suyo y usa estas funciones.
- * -----------------------------------------------------------
- */
+// Herramientas que comparten todas las pantallas del panel.
 
 const porId = (id) => document.getElementById(id);
 
-// El envío real de los formularios lo conecta backend. Mientras tanto,
-// "Subir" no recarga la página para no perder lo armado en la vista previa.
+// "Subir" no recarga la página, así no se pierde lo cargado
 document.querySelectorAll("form.admin-form-card").forEach((formulario) => {
     formulario.addEventListener("submit", (evento) => evento.preventDefault());
 });
 
-// Ejecuta una función justo después de que el botón "Limpiar" vacía el formulario
+// Hace algo justo después de tocar "Limpiar"
 function alLimpiar(formulario, funcion) {
     if (formulario) {
         formulario.addEventListener("reset", () => setTimeout(funcion));
     }
 }
 
-// Copia lo que se escribe en un campo a un elemento de la vista previa.
-// Si el campo queda vacío, vuelve a mostrar el texto original del HTML.
+// Lo que se escribe en un campo aparece en la vista previa
 function vincularTexto(idCampo, idVista, formato) {
     const campo = porId(idCampo);
     const vista = porId(idVista);
@@ -39,13 +30,13 @@ function vincularTexto(idCampo, idVista, formato) {
     alLimpiar(campo.form, actualizar);
 }
 
-// URL temporal de la imagen elegida en un <input type="file"> (o null)
+// Muestra la imagen elegida antes de subirla
 function urlImagen(campo) {
     const archivo = campo.files && campo.files[0];
     return archivo ? URL.createObjectURL(archivo) : null;
 }
 
-// Pone (o saca) una imagen en un <img>
+// Pone o saca una imagen
 function ponerImagen(imagen, url) {
     if (url) {
         imagen.src = url;
@@ -54,8 +45,7 @@ function ponerImagen(imagen, url) {
     }
 }
 
-// Muestra la imagen elegida en la miniatura del campo y, si se indica,
-// también en la vista previa (contenedor con la clase has-image + <img>)
+// Muestra la imagen elegida en la miniatura y en la vista previa
 function vincularImagen(idCampo, idMiniatura, idContenedorVista, idImagenVista) {
     const campo = porId(idCampo);
     const miniatura = porId(idMiniatura);
@@ -74,8 +64,7 @@ function vincularImagen(idCampo, idMiniatura, idContenedorVista, idImagenVista) 
     alLimpiar(campo.form, () => mostrar(null));
 }
 
-// Vacía solo los campos indicados (no todo el formulario) y avisa a la
-// vista previa para que se actualice
+// Vacía solo los campos indicados
 function limpiarCampos(...ids) {
     ids.forEach((id) => {
         const campo = porId(id);
@@ -85,7 +74,7 @@ function limpiarCampos(...ids) {
     });
 }
 
-// Atajo para crear un elemento con clase y texto
+// Crea un elemento con su clase y su texto
 function crear(etiqueta, clase, texto) {
     const elemento = document.createElement(etiqueta);
     if (clase) elemento.className = clase;
@@ -93,7 +82,7 @@ function crear(etiqueta, clase, texto) {
     return elemento;
 }
 
-// Crea una imagen a partir del archivo elegido en un campo
+// Crea una imagen con el archivo elegido
 function crearImagen(campo) {
     const imagen = document.createElement("img");
     imagen.src = urlImagen(campo);
@@ -101,14 +90,12 @@ function crearImagen(campo) {
     return imagen;
 }
 
-// Agrega una tarjeta a una lista de la vista previa, con su botón "×" para
-// quitarla, y muestra u oculta el mensaje "Todavía no agregaste..."
+// Agrega una tarjeta a la vista previa con su "×" para quitarla
 function agregarALista(idLista, idVacio, tarjeta, botonQuitar) {
     const lista = porId(idLista);
     const vacio = porId(idVacio);
 
     const actualizarVacio = () => {
-        // El mensaje de vacío también es hijo de la lista
         vacio.hidden = lista.children.length > 1;
     };
 
@@ -124,8 +111,7 @@ function agregarALista(idLista, idVacio, tarjeta, botonQuitar) {
     actualizarVacio();
 }
 
-// Botones "Imagen / Texto" o "Texto / Tabla": muestran un bloque u otro.
-// Recibe pares [idBoton, idBloque] y devuelve una función que dice cuál está activo.
+// Botones para elegir qué tipo de bloque se agrega (por ejemplo Imagen / Texto)
 function interruptor(pares) {
     let activo = 0;
 

@@ -1,12 +1,5 @@
-/**
- * menu.js
- * -----------------------------------------------------------
- * Menú lateral del panel, común a todas las páginas:
- *  - Abre y cierra los submenús (Anexos, Polideportivo).
- *  - En celular/tablet, el botón de la barra superior abre el
- *    menú como panel deslizante; tocando el fondo se cierra.
- * -----------------------------------------------------------
- */
+// Menú lateral del panel: abre los submenús, se despliega en celular
+// y muestra el nombre de quien inició sesión.
 
 document.querySelectorAll("[data-toggle]").forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -27,3 +20,29 @@ function abrirMenu(abrir) {
 
 botonMenu.addEventListener("click", () => abrirMenu(!sidebar.classList.contains("is-open")));
 fondo.addEventListener("click", () => abrirMenu(false));
+
+// El botón de la puerta cierra la sesión y vuelve al sitio
+const botonSalir = document.querySelector(".admin-sidebar__logout");
+botonSalir.addEventListener("click", async () => {
+    botonSalir.disabled = true;
+    try {
+        const respuesta = await fetch("../backend/logout.php", { method: "POST" });
+        const datos = await respuesta.json();
+        if (!datos.exito) throw new Error("logout");
+        window.location.href = "../html/index.html";
+    } catch {
+        // Si no se pudo cerrar la sesión, se queda en el panel y avisa
+        botonSalir.disabled = false;
+        window.alert("No se pudo cerrar la sesión. Intentá de nuevo.");
+    }
+});
+
+// Muestra el nombre de quien inició sesión
+fetch("../backend/sesion.php")
+    .then((respuesta) => respuesta.json())
+    .then((datos) => {
+        if (datos.autenticado) {
+            document.querySelector(".admin-sidebar__user-name").textContent = datos.usuario.nom_usuario;
+        }
+    })
+    .catch(() => {});
