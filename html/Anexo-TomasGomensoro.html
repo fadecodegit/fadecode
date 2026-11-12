@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../assets/css/styles.css?v=3">
     <link rel="stylesheet" href="../assets/css/UbicacionUTU.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/Pantallas/sitio.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="../assets/javascript/modoInvierno.js"></script>
 </head>
 <body>
 
@@ -29,14 +32,34 @@
                 <div class="site-nav-row">
                     <ul class="site-nav-list">
                         <li><a href="../OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
-                        <li><a href="Noticias.html">Noticias</a></li>
                         <li><a href="Eventos.html">Eventos</a></li>
-                        <li><a href="Laboratorio.html">Laboratorio</a></li>
                         <li><a href="Normativas.html">Normativas</a></li>
+                        <li><a href="Estadisticas.html">Estadísticas</a></li>
+                        <li class="dropdown nav-mas">
+                            <button class="nav-mas__toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más secciones">
+                                <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            </button>
+                            <ul class="dropdown-menu nav-mas__menu">
+                                <li><a href="Noticias.html">Noticias</a></li>
+                                <li><a href="Logros.html">Logros</a></li>
+                                <li><a href="Docentes.html">Docentes</a></li>
+                                <li><a href="Laboratorio.html">Laboratorio</a></li>
+                                <li><a href="Becas.html">Becas</a></li>
+                                <li><a href="Sugerencias.html">Sugerencias</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="site-nav-actions">
                         <a class="btn-nav btn-nav--login" href="Registrarse.html" data-boton-sesion>Registrarse</a>
                         <a class="btn-nav btn-nav--login" href="iniciarSesion.html">Iniciar sesión</a>
+                        <div class="site-nav-tools">
+                            <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                                <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                            </button>
+                            <button class="modo-toggle" type="button" data-modo-invierno aria-label="Activar modo invierno">
+                                <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,8 +68,7 @@
 
     <main class="site-main">
 
-        <!-- UBICACIÓN -->
-        <section class="ubi-card" aria-labelledby="ubi-heading">
+        <section class="ubi-card" aria-labelledby="ubi-heading" data-pagina="tomas-gomensoro">
 
             <div class="ubi-title">
                 <h1 id="ubi-heading" class="ubi-title__text">Tomas Gomensoro</h1>
@@ -61,14 +83,12 @@
                         alt="Mapa de ubicación de la Escuela Técnica N°1">
                 </div>
 
-                <!-- Información de contacto. -->
                 <div class="ubi-info">
                     <p class="ubi-info__text">
                     Anexo de la Escuela Técnica 1 "Maestro Técnico Sergio González Olaizola", ubicado en la localidad de Tomás Gomensoro, departamento de Artigas. Forma parte de la red de centros educativos técnicos del norte del país, brindando formación orientada a las necesidades productivas de la región, en una comunidad de tradición agropecuaria y ferroviaria situada a 25 km de Bella Unión.
                     </p>
                 </div>
 
-                <!-- Datos de contacto. -->
                 <ul class="ubi-list">
                     <li class="ubi-list__item">
                         <span class="ubi-list__icon" aria-hidden="true">
@@ -144,34 +164,26 @@
                 <div class="col-12 col-md-6 col-lg-3 site-footer__block">
                     <h2 class="site-footer__heading">Redes Sociales</h2>
                     <div class="site-footer__social">
-                        <a class="social-link" href="#" aria-label="Instagram">
+                        <a class="social-link" href="https://www.instagram.com/escuelatecnica1sgo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <img src="../Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link" href="#" aria-label="Facebook">
-                            <img src="../Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        <a class="social-link" href="https://www.facebook.com/pages/Escuela%20T%C3%A9cnica-%20Bella%20Uni%C3%B3n/147248509249237/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="../Iconos/Icon White/facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
-                            <img src="../Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
-                        </a>
-                    </div>
-                    <div class="site-footer__cta-row">
-
-                        <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
-                        <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
-                            <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="site-footer__copyright">
-            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
+            © <span data-anio-actual>2026</span> Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/javascript/anioActual.js"></script>
     <script src="../assets/javascript/traductor.js"></script>
     <script src="../assets/javascript/sesion.js"></script>
+    <script src="../assets/javascript/ubicacion.js"></script>
 </body>
 </html>

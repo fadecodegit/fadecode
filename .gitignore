@@ -1,1 +1,7 @@
+# Configuración local y secretos
+.env
 
+# Correos de prueba y otros archivos que genera el sistema
+storage/*
+!storage/.htaccess
+!storage/.gitkeep

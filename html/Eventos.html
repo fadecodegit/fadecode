@@ -8,6 +8,9 @@
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css?v=3">
     <link rel="stylesheet" href="../assets/css/Eventos.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/Pantallas/sitio.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="../assets/javascript/modoInvierno.js"></script>
 </head>
 <body>
 
@@ -27,14 +30,34 @@
                 <div class="site-nav-row">
                     <ul class="site-nav-list">
                         <li><a href="../OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
-                        <li><a href="Noticias.html">Noticias</a></li>
                         <li><a href="Eventos.html" class="is-active" aria-current="page">Eventos</a></li>
-                        <li><a href="Laboratorio.html">Laboratorio</a></li>
                         <li><a href="Normativas.html">Normativas</a></li>
+                        <li><a href="Estadisticas.html">Estadísticas</a></li>
+                        <li class="dropdown nav-mas">
+                            <button class="nav-mas__toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más secciones">
+                                <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            </button>
+                            <ul class="dropdown-menu nav-mas__menu">
+                                <li><a href="Noticias.html">Noticias</a></li>
+                                <li><a href="Logros.html">Logros</a></li>
+                                <li><a href="Docentes.html">Docentes</a></li>
+                                <li><a href="Laboratorio.html">Laboratorio</a></li>
+                                <li><a href="Becas.html">Becas</a></li>
+                                <li><a href="Sugerencias.html">Sugerencias</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="site-nav-actions">
                         <a class="btn-nav btn-nav--login" href="Registrarse.html" data-boton-sesion>Registrarse</a>
                         <a class="btn-nav btn-nav--login" href="iniciarSesion.html">Iniciar sesión</a>
+                        <div class="site-nav-tools">
+                            <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                                <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                            </button>
+                            <button class="modo-toggle" type="button" data-modo-invierno aria-label="Activar modo invierno">
+                                <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,19 +73,19 @@
 
             <div class="events-grid">
 
-                <article class="event-item">
-                    <div class="event-item__date">Viernes 21 de agosto — Tarde (hora a confirmar)</div>
+                <article class="event-item" data-evento-fijo="fogon">
+                    <div class="event-item__date">Viernes 21 de agosto — Tarde</div>
                     <p class="event-item__description">Fogón de la escuela: una tarde/noche donde los estudiantes se juntan a convivir y compartir alrededor del fuego.</p>
                 </article>
 
-                <article class="event-item">
+                <article class="event-item" data-evento-fijo="pasantias-alur">
                     <div class="event-item__date">Lunes 20 de julio de 2026</div>
                     <p class="event-item__description">Firma del convenio de pasantías con ALUR: siete estudiantes de Mecánica, Electricidad, Gastronomía y Agrario comienzan a formarse en el Complejo Agroindustrial de Bella Unión.</p>
                 </article>
 
-                <article class="event-item">
-                    <div class="event-item__date">5 de junio de 2026</div>
-                    <p class="event-item__description">Plantación de 20 ibirapitás en el Parque Rivera junto al Municipio y ALUR, por el Día Mundial del Medio Ambiente.</p>
+                <article class="event-item event-item--empty">
+                    <div class="event-item__date">Fecha</div>
+                    <p class="event-item__description">Descripcion</p>
                 </article>
 
                 <article class="event-item event-item--empty">
@@ -130,41 +153,33 @@
                     </div>
                     <div class="site-footer__contact-item">
                         <img src="../Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
-                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
+                        <span>ubellaunion@gmail.com</span>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3 site-footer__block">
                     <h2 class="site-footer__heading">Redes Sociales</h2>
                     <div class="site-footer__social">
-                        <a class="social-link" href="#" aria-label="Instagram">
+                        <a class="social-link" href="https://www.instagram.com/escuelatecnica1sgo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <img src="../Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link" href="#" aria-label="Facebook">
-                            <img src="../Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        <a class="social-link" href="https://www.facebook.com/pages/Escuela%20T%C3%A9cnica-%20Bella%20Uni%C3%B3n/147248509249237/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="../Iconos/Icon White/facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
-                            <img src="../Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
-                        </a>
-                    </div>
-                    <div class="site-footer__cta-row">
-
-                        <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
-                        <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
-                            <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="site-footer__copyright">
-            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
+            © <span data-anio-actual>2026</span> Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/javascript/anioActual.js"></script>
     <script src="../assets/javascript/traductor.js"></script>
     <script src="../assets/javascript/sesion.js"></script>
+    <script src="../assets/javascript/eventos.js"></script>
 </body>
 </html>

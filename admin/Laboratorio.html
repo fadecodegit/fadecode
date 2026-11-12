@@ -6,9 +6,12 @@
     <title>Laboratorio Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
     <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/Laboratorio.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
     <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
     <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
@@ -55,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link" href="CrearNormativa.html">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -72,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -128,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -166,7 +193,7 @@
                     <h1 class="admin-view__title">Laboratorio — Imágenes y explicaciones</h1>
 
                     <div class="admin-form-layout">
-                        <form class="admin-form-card" id="formLaboratorio">
+                        <form class="admin-form-card" id="formLaboratorio" enctype="multipart/form-data">
                             <h2 class="admin-form-card__title">Agregar imagen</h2>
 
                             <div class="admin-field">
@@ -175,37 +202,98 @@
                                     <div class="admin-file-drop__thumb" id="labThumb">
                                         <img src="" alt="">
                                     </div>
-                                    <input type="file" id="labImagen" accept="image/*">
+                                    <input type="file" id="labImagen" name="imagen" accept="image/jpeg,image/png,image/webp" required>
                                 </div>
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="labTexto">Texto explicativo</label>
-                                <textarea id="labTexto" placeholder="Explicá qué se hace en esa parte del laboratorio..."></textarea>
+                                <textarea id="labTexto" name="texto" maxlength="700" rows="5" required placeholder="Explicá qué se hace en esa parte del laboratorio..."></textarea>
                             </div>
 
+                            <p class="admin-form-error" id="labError" role="alert" hidden></p>
+
                             <div class="admin-form-actions">
-                                <button type="button" class="admin-btn admin-btn--primary" id="labAddBtn">+ Agregar a la lista</button>
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
                                 <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                            <div class="admin-form-actions admin-form-actions--editar">
+                                <button class="admin-btn admin-btn--secondary" id="laboratorioEditarBtn" type="button">Editar</button>
                             </div>
                         </form>
 
                         <div class="admin-form-preview">
-                            <p class="admin-preview-label">Vista previa (así se van a ver en Laboratorio.html)</p>
+                            <p class="admin-preview-label">Vista previa</p>
                             <div class="admin-lab-gallery" id="labGallery">
-                                <p class="admin-lab-gallery__empty" id="labGalleryEmpty">Todavía no agregaste ninguna imagen.</p>
+                                <p class="admin-lab-gallery__empty" id="labGalleryAviso">Cargando...</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="admin-form-actions admin-form-actions--wide">
-                        <button type="button" class="admin-btn admin-btn--primary" id="labUploadAllBtn">Subir todo</button>
                     </div>
                 </section>
 
             </main>
         </div>
     </div>
+
+    <dialog class="admin-modal" id="modalLaboratorio" aria-labelledby="modalLaboratorioTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalLaboratorioTitulo">Fotos del Laboratorio</h2>
+            <p class="admin-modal__subtitle">Las que ya estaban se pueden editar, eliminar y restaurar a como eran. Las nuevas se pueden editar o eliminar. Todos los cambios se pierden al reiniciar el servidor.</p>
+            <p class="admin-modal__aviso" id="laboratorioAviso" role="status" hidden></p>
+            <ul class="admin-edicion" id="laboratorioLista"></ul>
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="laboratorioCerrar">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalFotoLab" aria-labelledby="modalFotoLabTitulo">
+        <form class="admin-modal__contenido" id="formEditarLaboratorio" enctype="multipart/form-data">
+            <h2 class="admin-modal__title" id="modalFotoLabTitulo">Editar foto</h2>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarLaboratorioImagen">Imagen</label>
+                <div class="admin-file-drop">
+                    <div class="admin-file-drop__thumb has-image" id="editarLaboratorioThumb">
+                        <img src="" alt="">
+                    </div>
+                    <input type="file" id="editarLaboratorioImagen" name="imagen" accept="image/jpeg,image/png,image/webp">
+                </div>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="editarLaboratorioTexto">Texto explicativo</label>
+                <textarea id="editarLaboratorioTexto" name="texto" maxlength="700" rows="7" required></textarea>
+            </div>
+
+            <p class="admin-form-error" id="editarLaboratorioError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="editarLaboratorioCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarLab" aria-labelledby="modalConfirmarLabTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarLabTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalLaboratorioCambios" aria-labelledby="modalLaboratorioCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalLaboratorioCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
 
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
