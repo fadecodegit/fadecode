@@ -6,15 +6,18 @@
     <title>Normativas Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola"</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
     <link rel="stylesheet" href="../assets/css/Normativas.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/Pantallas/sitio.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="../assets/javascript/modoInvierno.js"></script>
 </head>
 <body>
 
     <header class="site-header">
         <div class="container-fluid site-header__inner">
             <div class="site-header__brand-row">
-                <a class="site-brand" href="Institucional.html">
+                <a class="site-brand" href="index.html">
                     <img src="../Recursos UTU/Logo-UTU-Escudo-Dorado-Letras-Blancas-Fondo-Transparente-scaled.png" alt="ANEP UTU Educación Técnico Profesional" class="site-brand__logo" width="320" height="64">
                 </a>
                 <p class="site-school-name">Escuela Técnica 1 &quot;Mtro. Téc. Sergio González Olaizola&quot;</p>
@@ -27,14 +30,34 @@
                 <div class="site-nav-row">
                     <ul class="site-nav-list">
                         <li><a href="../OfertasEducativas/Menu-de-Ofertas.html">Ofertas Educativas</a></li>
-                        <li><a href="Noticias.html">Noticias</a></li>
                         <li><a href="Eventos.html">Eventos</a></li>
-                        <li><a href="Laboratorio.html">Laboratorio</a></li>
                         <li><a class="is-active" href="Normativas.html">Normativas</a></li>
+                        <li><a href="Estadisticas.html">Estadísticas</a></li>
+                        <li class="dropdown nav-mas">
+                            <button class="nav-mas__toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Más secciones">
+                                <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            </button>
+                            <ul class="dropdown-menu nav-mas__menu">
+                                <li><a href="Noticias.html">Noticias</a></li>
+                                <li><a href="Logros.html">Logros</a></li>
+                                <li><a href="Docentes.html">Docentes</a></li>
+                                <li><a href="Laboratorio.html">Laboratorio</a></li>
+                                <li><a href="Becas.html">Becas</a></li>
+                                <li><a href="Sugerencias.html">Sugerencias</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="site-nav-actions">
-                        <a class="btn-nav btn-nav--preinscribir" href="Preinscribirse.html">Preinscribirse</a>
+                        <a class="btn-nav btn-nav--login" href="Registrarse.html" data-boton-sesion>Registrarse</a>
                         <a class="btn-nav btn-nav--login" href="iniciarSesion.html">Iniciar sesión</a>
+                        <div class="site-nav-tools">
+                            <button class="lang-toggle notranslate" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                                <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                            </button>
+                            <button class="modo-toggle" type="button" data-modo-invierno aria-label="Activar modo invierno">
+                                <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -43,7 +66,6 @@
 
     <main class="site-main">
 
-        <!-- NORMATIVAS -->
         <section class="norm-card" aria-labelledby="norm-heading">
 
             <div class="norm-title">
@@ -53,53 +75,57 @@
 
             <div class="norm-content">
 
-                <h2 class="norm-subtitle">Uniforme</h2>
-                <p class="norm-text">
-                    Todo estudiante de la Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola" debe concurrir
-                    a clase utilizando el uniforme correspondiente a su ciclo. El color de la remera identifica
-                    el nivel educativo del estudiante dentro de la institución.
-                </p>
+                <div class="norm-uniforme" data-normativa-fija="uniforme">
 
-                <div class="norm-uniform-grid">
+                    <h2 class="norm-subtitle">Uniforme</h2>
+                    <p class="norm-text">
+                        Todo estudiante de la Escuela Técnica 1 "Mtro. Téc. Sergio González Olaizola" debe concurrir
+                        a clase utilizando el uniforme correspondiente a su ciclo. El color de la remera identifica
+                        el nivel educativo del estudiante dentro de la institución.
+                    </p>
 
-                    <!-- CICLO BÁSICO -->
-                    <article class="norm-uniform-card">
-                        <div class="norm-uniform-card__image-wrapper norm-uniform-card__image-wrapper--basico">
-                            <img class="norm-uniform-card__image" src="../Recursos UTU/remera ciclo basico.jpg" alt="Remera azul del uniforme de Ciclo Básico">
-                        </div>
-                        <div class="norm-uniform-card__body">
-                            <h3 class="norm-uniform-card__title">Ciclo Básico</h3>
-                            <span class="norm-uniform-card__badge norm-uniform-card__badge--basico">Remera azul</span>
-                            <p class="norm-uniform-card__text">
-                                Corresponde a los estudiantes que ingresan a este plan de estudios para
-                                formarse durante los primeros años y prepararse antes de definir el curso
-                                a seguir dentro de la UTU Bella Unión "Sergio González Olaizola".
-                            </p>
-                        </div>
-                    </article>
+                    <div class="norm-uniform-grid">
 
-                    <!-- BACHILLERATO -->
-                    <article class="norm-uniform-card">
-                        <div class="norm-uniform-card__image-wrapper norm-uniform-card__image-wrapper--bachillerato">
-                            <img class="norm-uniform-card__image" src="../Recursos UTU/remera de bachillerato.jpg" alt="Remera bordó del uniforme de Bachillerato">
-                        </div>
-                        <div class="norm-uniform-card__body">
-                            <h3 class="norm-uniform-card__title">Bachillerato</h3>
-                            <span class="norm-uniform-card__badge norm-uniform-card__badge--bachillerato">Remera bordó</span>
-                            <p class="norm-uniform-card__text">
-                                Corresponde a los estudiantes que ya completaron los 3 años del Ciclo Básico
-                                y eligieron el curso que continuarán cursando dentro de la UTU Bella Unión
-                                "Sergio González Olaizola".
-                            </p>
-                        </div>
-                    </article>
+                        <article class="norm-uniform-card">
+                            <div class="norm-uniform-card__image-wrapper norm-uniform-card__image-wrapper--basico">
+                                <img class="norm-uniform-card__image" src="../Recursos UTU/remera ciclo basico.jpg" alt="Remera azul del uniforme de Ciclo Básico">
+                            </div>
+                            <div class="norm-uniform-card__body">
+                                <h3 class="norm-uniform-card__title">Ciclo Básico</h3>
+                                <span class="norm-uniform-card__badge norm-uniform-card__badge--basico">Remera azul</span>
+                                <p class="norm-uniform-card__text">
+                                    Corresponde a los estudiantes que ingresan a este plan de estudios para
+                                    formarse durante los primeros años y prepararse antes de definir el curso
+                                    a seguir dentro de la UTU Bella Unión "Sergio González Olaizola".
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="norm-uniform-card">
+                            <div class="norm-uniform-card__image-wrapper norm-uniform-card__image-wrapper--bachillerato">
+                                <img class="norm-uniform-card__image" src="../Recursos UTU/remera de bachillerato.jpg" alt="Remera bordó del uniforme de Bachillerato">
+                            </div>
+                            <div class="norm-uniform-card__body">
+                                <h3 class="norm-uniform-card__title">Bachillerato</h3>
+                                <span class="norm-uniform-card__badge norm-uniform-card__badge--bachillerato">Remera bordó</span>
+                                <p class="norm-uniform-card__text">
+                                    Corresponde a los estudiantes que ya completaron los 3 años del Ciclo Básico
+                                    y eligieron el curso que continuarán cursando dentro de la UTU Bella Unión
+                                    "Sergio González Olaizola".
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <p class="norm-note">
+                        El uso del uniforme es obligatorio durante el horario de clases y actividades
+                        institucionales, salvo indicación contraria por parte de la dirección del centro.
+                    </p>
 
                 </div>
 
-                <p class="norm-note">
-                    El uso del uniforme es obligatorio durante el horario de clases y actividades
-                    institucionales, salvo indicación contraria por parte de la dirección del centro.
-                </p>
+                <div id="normativasPublicadas"></div>
 
                 <div class="norm-explore">
                     <a class="norm-explore__btn" href="https://www.utu.edu.uy/normativas/" target="_blank" rel="noopener noreferrer">Explorar más</a>
@@ -147,36 +173,33 @@
                     </div>
                     <div class="site-footer__contact-item">
                         <img src="../Iconos/Icon White/mailIcon.PNG" alt="" width="18" height="18" aria-hidden="true">
-                        <a href="mailto:ubellaunion@gmail.com">ubellaunion@gmail.com</a>
+                        <span>ubellaunion@gmail.com</span>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-3 site-footer__block">
                     <h2 class="site-footer__heading">Redes Sociales</h2>
                     <div class="site-footer__social">
-                        <a class="social-link" href="#" aria-label="Instagram">
+                        <a class="social-link" href="https://www.instagram.com/escuelatecnica1sgo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <img src="../Iconos/Icon White/instagram.png" alt="Instagram" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link" href="#" aria-label="Facebook">
-                            <img src="../Iconos/Icon White/Facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
+                        <a class="social-link" href="https://www.facebook.com/pages/Escuela%20T%C3%A9cnica-%20Bella%20Uni%C3%B3n/147248509249237/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <img src="../Iconos/Icon White/facebook.png" alt="Facebook" width="28" height="28" aria-hidden="true">
                         </a>
-                        <a class="social-link social-link--img" href="#" aria-label="WhatsApp">
-                            <img src="../Iconos/icon white/brand-whatsapp.PNG" alt="" width="28" height="28" aria-hidden="true">
-                        </a>
-                    </div>
-                    <div class="site-footer__cta-row">
-
-                        <a class="btn-footer-cta" href="Sugerencias.html">Sugerencias</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="site-footer__copyright">
-            © 2024 Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
+            © <span data-anio-actual>2026</span> Escuela Técnica N° 1 &quot;Mtro. Téc. Sergio González Olaizola&quot; - DGETP | ANEP. Todos los derechos reservados.
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../assets/javascript/anioActual.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
+    <script src="../assets/javascript/sesion.js"></script>
+    <script src="../assets/javascript/normativas.js"></script>
 </body>
 </html>

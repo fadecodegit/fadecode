@@ -102,8 +102,8 @@
   }
 }
 
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .news-card {
     max-width: 68rem;
     padding: 2.25rem 2.5rem;

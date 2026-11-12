@@ -80,8 +80,8 @@
     width: calc(25% - 0.7rem);
   }
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .events-card {
     max-width: 68rem;
     padding: 2.25rem 2.5rem;
