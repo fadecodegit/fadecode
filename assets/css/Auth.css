@@ -45,11 +45,6 @@
   background-color: rgba(24, 24, 24, 0.03);
 }
 
-.auth-field__input.is-invalid {
-  outline: 2px solid #c0392b;
-  background-color: rgba(192, 57, 43, 0.06);
-}
-
 .auth-field__error {
   min-height: 1.1rem;
   margin: 0.4rem 0 0;
@@ -58,20 +53,13 @@
   color: #c0392b;
 }
 
-/* Estilo del campo de edad. */
-.auth-field--age .auth-field__input {
-  width: 4.5rem;
-}
+/* Campo de edad */
 /* Términos y condiciones */
 .auth-terms {
   margin-bottom: 1.35rem;
   padding: 0.75rem;
   border-radius: 0.6rem;
   transition: var(--transition-base);
-}
-
-.auth-terms.is-invalid {
-  background-color: rgba(192, 57, 43, 0.06);
 }
 
 .auth-terms__check {
@@ -104,7 +92,7 @@
   line-height: 1.45;
   color: rgba(24, 24, 24, 0.65);
 }
-/* Datos del adulto responsable (alumnos menores de 18) */
+/* Datos del adulto responsable */
 .auth-adulto {
   margin-bottom: 1.35rem;
 }
@@ -121,22 +109,18 @@
   border-left: 3px solid var(--color-primary-brown);
 }
 
-/* Correo del alumno bloqueado cuando es menor de edad */
+/* Correo bloqueado de un menor */
 .auth-field__input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-/* Mensaje general del formulario (éxito / error) */
+/* Mensaje del formulario */
 .auth-form-message {
   min-height: 1.2rem;
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
-}
-
-.auth-form-message--success {
-  color: #1e7e34;
 }
 
 .auth-form-message--error {
@@ -171,12 +155,12 @@
   background-color: rgba(24, 24, 24, 0.12);
 }
 
-.auth-recaptcha {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
+/* Texto de ayuda */
+.auth-help {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-dark);
 }
 
 .auth-forgot {
@@ -194,8 +178,8 @@
 .auth-forgot a:hover {
   opacity: 0.85;
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .auth-card {
     padding: 2.5rem 2.75rem;
   }

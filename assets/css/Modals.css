@@ -1,6 +1,6 @@
-/* Ventanas emergentes (html/Modals/). Las inserta formularioModal.js. */
+/* Ventanas emergentes */
 
-/* Capa que cubre toda la pantalla: frena los clics pero deja hacer scroll */
+/* Fondo que cubre la pantalla */
 .modal-exito {
   position: fixed;
   inset: 0;
@@ -12,7 +12,7 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Cubo blanco en el centro de la pantalla */
+/* Caja del centro */
 .modal-exito__caja {
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@
   color: var(--color-primary-brown);
 }
 
-/* Botón grande, marrón y redondeado */
+/* Botón OK */
 .modal-exito__btn {
   min-width: 12rem;
   padding: 0.95rem 3rem;
@@ -69,7 +69,7 @@
   transform: translateY(-2px);
 }
 
-/* El botón recibe el foco al abrirse: contorno marrón suave en vez del negro del navegador */
+/* Contorno del botón al recibir el foco */
 .modal-exito__btn:focus-visible {
   outline: 3px solid rgba(184, 139, 92, 0.35);
   outline-offset: 3px;

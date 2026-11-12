@@ -1,5 +1,4 @@
-// Si la fecha de nacimiento indica menos de 18 años, aparecen los datos
-// del adulto responsable y se bloquea el correo del alumno.
+// Si quien se registra es menor de 18, pide los datos de un adulto responsable.
 
 const fechaNacimiento = document.getElementById("reg-fecha-nacimiento");
 const correo = document.getElementById("reg-correo");
@@ -32,5 +31,5 @@ function revisarEdad() {
 
 fechaNacimiento.addEventListener("change", revisarEdad);
 
-// El botón "Limpiar" borra la fecha: se vuelve a revisar después de limpiar
+// Al tocar "Limpiar" se vuelve a revisar la edad
 fechaNacimiento.form.addEventListener("reset", () => setTimeout(revisarEdad));
