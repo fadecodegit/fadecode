@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Logro Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/CrearNoticia.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link is-active" href="CrearLogro.html" aria-current="page">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-logro">
+                    <h1 class="admin-view__title">Crear Logro</h1>
+
+                    <div class="admin-form-layout">
+                        <form class="admin-form-card" id="formLogro" action="../backend/logros.php" method="post" enctype="multipart/form-data">
+                            <h2 class="admin-form-card__title">Datos del logro</h2>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="logroImagen">Imagen opcional</label>
+                                <div class="admin-file-drop">
+                                    <div class="admin-file-drop__thumb" id="logroThumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <input type="file" id="logroImagen" name="imagen" accept="image/jpeg,image/png,image/webp">
+                                </div>
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="logroFecha">Fecha</label>
+                                <input type="text" id="logroFecha" name="fecha" maxlength="40" required placeholder="Ej: 27 de octubre 2026">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="logroTitulo">Título</label>
+                                <input type="text" id="logroTitulo" name="titulo" maxlength="120" required placeholder="Título del logro o reconocimiento">
+                            </div>
+
+                            <div class="admin-field">
+                                <label class="admin-field__label" for="logroTexto">Texto</label>
+                                <textarea id="logroTexto" name="texto" maxlength="600" required placeholder="Describí el logro y quiénes participaron..."></textarea>
+                            </div>
+
+                            <p class="admin-form-error" id="logroError" role="alert" hidden></p>
+
+                            <div class="admin-form-actions">
+                                <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                                <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
+                            </div>
+                            <div class="admin-form-actions admin-form-actions--editar">
+                                <button class="admin-btn admin-btn--secondary" id="logrosEditarBtn" type="button">Editar</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <article class="admin-preview-news">
+                                <div class="admin-preview-news__image" id="previewLogroImageWrap">
+                                    <img id="previewLogroImage" src="" alt="">
+                                </div>
+                                <div class="admin-preview-news__body">
+                                    <span class="admin-preview-news__date" id="previewLogroDate">Fecha</span>
+                                    <h3 class="admin-preview-news__title" id="previewLogroTitle">Título</h3>
+                                    <p class="admin-preview-news__summary" id="previewLogroSummary">Texto del logro.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <dialog class="admin-aviso" id="modalConfirmarLogro" aria-labelledby="modalConfirmarLogroTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarLogroTexto">¿Seguro que querés subir este logro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalLogroSubido" aria-labelledby="modalLogroSubidoTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalLogroSubidoTexto">Se subió el logro correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalEditarLogros" aria-labelledby="modalEditarLogrosTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalEditarLogrosTitulo">Logros</h2>
+
+            <div data-vista-lista>
+                <p class="admin-modal__subtitle">Los subidos se pueden editar o eliminar. Los que ya estaban en la página se pueden editar y restaurar a como eran.</p>
+                <p class="admin-modal__aviso" data-aviso role="status"></p>
+                <ul class="admin-edicion" data-lista></ul>
+                <div class="admin-form-actions">
+                    <button class="admin-btn admin-btn--secondary" type="button" data-cerrar>Cerrar</button>
+                </div>
+            </div>
+
+            <form class="admin-modal__form" data-form enctype="multipart/form-data" hidden>
+                <input type="hidden" name="id">
+                <input type="hidden" name="clave">
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarLogrosImagen">Imagen</label>
+                    <div class="admin-file-drop">
+                        <div class="admin-file-drop__thumb has-image">
+                            <img src="" alt="" data-miniatura>
+                        </div>
+                        <input type="file" id="editarLogrosImagen" name="imagen" accept="image/jpeg,image/png,image/webp">
+                    </div>
+                </div>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarLogrosFecha">Fecha</label>
+                    <input type="text" id="editarLogrosFecha" name="fecha" maxlength="40" required>
+                </div>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarLogrosTitulo">Título</label>
+                    <input type="text" id="editarLogrosTitulo" name="titulo" maxlength="120" required>
+                </div>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarLogrosTexto">Texto</label>
+                    <textarea id="editarLogrosTexto" name="texto" maxlength="600" required></textarea>
+                </div>
+
+                <p class="admin-form-error" data-error role="alert" hidden></p>
+
+                <div class="admin-form-actions">
+                    <button class="admin-btn admin-btn--secondary" type="button" data-volver>Volver</button>
+                    <button class="admin-btn admin-btn--primary" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarEdicionLogros" aria-labelledby="modalConfirmarEdicionLogrosTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarEdicionLogrosTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalCambiosLogros" aria-labelledby="modalCambiosLogrosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalCambiosLogrosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/vista-previa.js"></script>
+    <script src="Adminjs/editar-tarjetas.js"></script>
+    <script src="Adminjs/CrearLogro.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
+</body>
+</html>

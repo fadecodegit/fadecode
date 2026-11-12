@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becas Panel de Administración</title>
+    <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
+    <link rel="stylesheet" href="Admincss/admin-base.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="Admincss/Becas.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
+</head>
+<body class="admin-body">
+
+    <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
+
+    <div class="admin-shell">
+
+        <aside class="admin-sidebar" id="adminSidebar">
+
+            <nav class="admin-sidebar__section">
+                <h2 class="admin-sidebar__heading">Editar</h2>
+                <ul class="admin-nav">
+                    <li>
+                        <a class="admin-nav__link" href="Institucional.html">
+                            <img src="../Iconos/home.png" alt="" aria-hidden="true">
+                            Institucional
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="UbicacionUTU.html">
+                            <img src="../Iconos/map-pin.png" alt="" aria-hidden="true">
+                            Ubicacion UTU
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="OfertasEducativas.html">
+                            <img src="../Iconos/border-all.png" alt="" aria-hidden="true">
+                            Ofertas Educativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Estadisticas.html">
+                            <img src="../Iconos/Icon White/chart-pie-3.PNG" alt="" aria-hidden="true">
+                            Estadísticas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Usuarios.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Ver Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link is-active" href="Becas.html" aria-current="page">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNormativa.html">
+                            <img src="../Iconos/article.png" alt="" aria-hidden="true">
+                            Normativas
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearEvento.html">
+                            <img src="../Iconos/star.png" alt="" aria-hidden="true">
+                            Eventos
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearNoticia.html">
+                            <img src="../Iconos/news.png" alt="" aria-hidden="true">
+                            Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Laboratorio.html">
+                            <img src="../Iconos/flask.png" alt="" aria-hidden="true">
+                            Laboratorio
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li class="admin-nav__group">
+                        <button class="admin-nav__link admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                            <img src="../Iconos/plus.png" alt="" aria-hidden="true">
+                            Anexos
+                            <span class="admin-nav__chevron" aria-hidden="true"></span>
+                        </button>
+                        <ul class="admin-nav__submenu admin-nav__submenu--anexos">
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoTomasGomensoro.html">
+                                    Tomas Gomensoro
+                                </a>
+                            </li>
+                            <li>
+                                <a class="admin-nav__link admin-nav__link--sub" href="AnexoBaltasarBrum.html">
+                                    Baltasar Brum
+                                </a>
+                            </li>
+                            <li class="admin-nav__group">
+                                <button class="admin-nav__link admin-nav__link--sub admin-nav__toggle" type="button" data-toggle aria-expanded="false">
+                                    Polideportivo
+                                    <span class="admin-nav__chevron" aria-hidden="true"></span>
+                                </button>
+                                <ul class="admin-nav__submenu">
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoInicio.html">
+                                            Inicio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoFiguras.html">
+                                            Figuras importantes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="admin-nav__link admin-nav__link--sub2" href="PolideportivoActividades.html">
+                                            Actividades
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="admin-sidebar__user">
+                <div class="admin-sidebar__user-info">
+                    <p class="admin-sidebar__user-name">User</p>
+                    <span class="admin-sidebar__user-role">Admin</span>
+                </div>
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
+                    <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
+                </button>
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu-btn" id="adminMenuBtn" type="button" aria-label="Abrir menú">
+                    <img src="../Iconos/menu.png" alt="" aria-hidden="true">
+                </button>
+
+                <button class="admin-topbar__icon" type="button" aria-label="Estado de guardado en la nube">
+                    <img src="../Iconos/cloud.png" alt="" aria-hidden="true">
+                </button>
+
+                <div class="admin-topbar__spacer"></div>
+
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
+                </button>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-view" id="view-becas">
+                    <h1 class="admin-view__title">Becas — Editar las becas actuales</h1>
+
+                    <div class="admin-form-layout">
+                        <div class="admin-form-card">
+                            <form id="formIntroBecas">
+                                <h2 class="admin-form-card__title">Texto de arriba</h2>
+
+                                <div class="admin-field">
+                                    <label class="admin-field__label" for="becasIntro">Texto</label>
+                                    <textarea id="becasIntro" name="intro" maxlength="1000" rows="5" required></textarea>
+                                </div>
+
+                                <p class="admin-form-error" id="introBecasError" role="alert" hidden></p>
+
+                                <div class="admin-form-actions">
+                                    <button type="submit" class="admin-btn admin-btn--primary">Guardar texto</button>
+                                    <button type="button" class="admin-btn admin-btn--secondary" id="introBecasRestaurar" hidden>Restaurar original</button>
+                                </div>
+                            </form>
+
+                            <hr class="admin-form-divider">
+
+                            <h2 class="admin-form-card__title">Becas</h2>
+                            <p class="admin-becas__aviso" id="becasAviso" role="status">Cargando...</p>
+                            <ul class="admin-edicion" id="becasLista"></ul>
+                        </div>
+
+                        <div class="admin-form-preview">
+                            <p class="admin-preview-label">Vista previa</p>
+                            <div class="admin-preview-becas">
+                                <h2 class="admin-preview-becas__title">Becas</h2>
+                                <p class="admin-preview-becas__intro" id="previewBecasIntro"></p>
+                                <div class="admin-preview-becas__lista" id="previewBecasLista"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <dialog class="admin-modal" id="modalBeca" aria-labelledby="modalBecaTitulo">
+        <form class="admin-modal__contenido" id="formBeca">
+            <h2 class="admin-modal__title" id="modalBecaTitulo">Editar beca</h2>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaTitulo">Nombre de la beca</label>
+                <input type="text" id="becaTitulo" name="titulo" maxlength="120" required>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaEtiqueta">Etiqueta</label>
+                <input type="text" id="becaEtiqueta" name="etiqueta" maxlength="120" required>
+                <span class="admin-field__hint">Ej: Educación media · Ciclo Básico y Bachillerato</span>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaTexto">Texto</label>
+                <textarea id="becaTexto" name="texto" maxlength="2000" rows="6" required></textarea>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaPasos">Pasos para postularte</label>
+                <textarea id="becaPasos" name="pasos" maxlength="3000" rows="7" required></textarea>
+                <span class="admin-field__hint">Un paso por línea. Se numeran solos.</span>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaNota">Nota</label>
+                <textarea id="becaNota" name="nota" maxlength="300" rows="2"></textarea>
+                <span class="admin-field__hint">Opcional. Si la dejás vacía, no se muestra.</span>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="becaEnlace">Enlace del botón "Preinscribirse"</label>
+                <input type="url" id="becaEnlace" name="enlace" maxlength="255" required placeholder="https://">
+            </div>
+
+            <p class="admin-form-error" id="becaError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="becaCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarBeca" aria-labelledby="modalConfirmarBecaTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarBecaTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalBecaCambios" aria-labelledby="modalBecaCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalBecaCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
+    <script src="Adminjs/menu.js"></script>
+    <script src="Adminjs/vista-previa.js"></script>
+    <script src="Adminjs/Becas.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
+</body>
+</html>

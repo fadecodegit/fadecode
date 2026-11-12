@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Normativa Panel de Administración</title>
     <link rel="icon" href="../Recursos UTU/Isotipo-UTU-Color-Dorado-PNG.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="../assets/css/Modals.css">
     <link rel="stylesheet" href="Admincss/admin-base.css">
     <link rel="stylesheet" href="Admincss/CrearNormativa.css">
+    <link rel="stylesheet" href="Admincss/modal-editar.css">
+    <link rel="stylesheet" href="../assets/ModoInvierno/admin.css">
+    <script src="../assets/javascript/csrf.js"></script>
+    <script src="Adminjs/ModoInvierno.js"></script>
 </head>
 <body class="admin-body">
 
@@ -53,6 +58,18 @@
                         </a>
                     </li>
                     <li>
+                        <a class="admin-nav__link" href="Sugerencias.html">
+                            <img src="../Iconos/mailIcon.png" alt="" aria-hidden="true">
+                            Sugerencias
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="Becas.html">
+                            <img src="../Iconos/key.png" alt="" aria-hidden="true">
+                            Becas
+                        </a>
+                    </li>
+                    <li>
                         <a class="admin-nav__link is-active" href="CrearNormativa.html" aria-current="page">
                             <img src="../Iconos/article.png" alt="" aria-hidden="true">
                             Normativas
@@ -70,6 +87,20 @@
                         <a class="admin-nav__link" href="CrearNoticia.html">
                             <img src="../Iconos/news.png" alt="" aria-hidden="true">
                             Noticias
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearLogro.html">
+                            <img src="../Iconos/bulb.png" alt="" aria-hidden="true">
+                            Logros
+                            <span class="admin-nav__badge">Crear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="admin-nav__link" href="CrearDocente.html">
+                            <img src="../Iconos/usericon.png" alt="" aria-hidden="true">
+                            Docentes
                             <span class="admin-nav__badge">Crear</span>
                         </a>
                     </li>
@@ -126,18 +157,16 @@
             </nav>
 
             <div class="admin-sidebar__user">
-                <img class="admin-sidebar__user-avatar" src="../Iconos/usericon.png" alt="">
                 <div class="admin-sidebar__user-info">
                     <p class="admin-sidebar__user-name">User</p>
                     <span class="admin-sidebar__user-role">Admin</span>
                 </div>
-                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión">
+                <button class="admin-sidebar__logout" type="button" aria-label="Cerrar sesión y volver al sitio" title="Cerrar sesión y volver al sitio">
                     <img src="../Iconos/door-exit.png" alt="" aria-hidden="true">
                 </button>
             </div>
 
         </aside>
-
 
         <div class="admin-main">
 
@@ -152,8 +181,8 @@
 
                 <div class="admin-topbar__spacer"></div>
 
-                <button class="admin-topbar__lang" id="langToggle" type="button" aria-label="Cambiar idioma">
-                    <span class="is-active">PO</span><span>/</span><span>ES</span>
+                <button class="admin-topbar__lang notranslate" id="langToggle" type="button" translate="no" data-traductor aria-label="Cambiar idioma: español / portugués">
+                    <span data-idioma="pt">PO</span><span aria-hidden="true">/</span><span data-idioma="es">ES</span>
                 </button>
 
             </header>
@@ -164,17 +193,17 @@
                     <h1 class="admin-view__title">Crear Normativa</h1>
 
                     <div class="admin-form-layout">
-                        <form class="admin-form-card" id="formNormativa">
+                        <form class="admin-form-card" id="formNormativa" action="../backend/normativas.php" method="post" enctype="multipart/form-data">
                             <h2 class="admin-form-card__title">Encabezado de la normativa</h2>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="normativaTitulo">Subtítulo</label>
-                                <input type="text" id="normativaTitulo" placeholder="Ej: Uniforme">
+                                <input type="text" id="normativaTitulo" name="titulo" maxlength="120" required placeholder="Ej: Uniforme">
                             </div>
 
                             <div class="admin-field">
                                 <label class="admin-field__label" for="normativaTextoIntro">Texto</label>
-                                <textarea id="normativaTextoIntro" placeholder="Explicá de qué se trata esta normativa..."></textarea>
+                                <textarea id="normativaTextoIntro" name="texto" maxlength="1000" required placeholder="Explicá de qué se trata esta normativa..."></textarea>
                             </div>
 
                             <hr class="admin-form-divider">
@@ -186,7 +215,6 @@
                                 <button type="button" class="admin-btn admin-btn--secondary admin-toggle-btn" id="normBtnTexto" data-block-type="texto">Texto</button>
                             </div>
 
-                            <!-- Bloque de imagen. -->
                             <div id="normBlockImagen">
                                 <div class="admin-field">
                                     <label class="admin-field__label" for="normImagenArchivo">Imagen</label>
@@ -194,28 +222,27 @@
                                         <div class="admin-file-drop__thumb" id="normImagenThumb">
                                             <img src="" alt="">
                                         </div>
-                                        <input type="file" id="normImagenArchivo" accept="image/*">
+                                        <input type="file" id="normImagenArchivo" accept="image/jpeg,image/png,image/webp">
                                     </div>
                                 </div>
                                 <div class="admin-field">
                                     <label class="admin-field__label" for="normImagenSubtitulo">Subtítulo</label>
-                                    <input type="text" id="normImagenSubtitulo" placeholder="Ej: Ciclo Básico">
+                                    <input type="text" id="normImagenSubtitulo" maxlength="120" placeholder="Ej: Ciclo Básico">
                                 </div>
                                 <div class="admin-field">
                                     <label class="admin-field__label" for="normImagenTexto">Texto</label>
-                                    <textarea id="normImagenTexto" placeholder="Explicá este punto..."></textarea>
+                                    <textarea id="normImagenTexto" maxlength="1000" placeholder="Explicá este punto..."></textarea>
                                 </div>
                             </div>
 
-                            <!-- Bloque de texto. -->
                             <div id="normBlockTexto" hidden>
                                 <div class="admin-field">
                                     <label class="admin-field__label" for="normTextoSubtitulo">Subtítulo</label>
-                                    <input type="text" id="normTextoSubtitulo" placeholder="Ej: Inasistencias">
+                                    <input type="text" id="normTextoSubtitulo" maxlength="120" placeholder="Ej: Inasistencias">
                                 </div>
                                 <div class="admin-field">
                                     <label class="admin-field__label" for="normTextoTexto">Texto</label>
-                                    <textarea id="normTextoTexto" placeholder="Escribí el contenido de este punto..."></textarea>
+                                    <textarea id="normTextoTexto" maxlength="1000" placeholder="Escribí el contenido de este punto..."></textarea>
                                 </div>
                             </div>
 
@@ -224,8 +251,13 @@
                                 <button type="reset" class="admin-btn admin-btn--secondary">Limpiar</button>
                             </div>
 
+                            <p class="admin-form-error" id="normativaError" role="alert" hidden></p>
+
                             <div class="admin-form-actions" style="margin-top: 1.5rem;">
                                 <button type="submit" class="admin-btn admin-btn--primary">Subir</button>
+                            </div>
+                            <div class="admin-form-actions admin-form-actions--editar">
+                                <button class="admin-btn admin-btn--secondary" id="normativasEditarBtn" type="button">Editar</button>
                             </div>
                         </form>
 
@@ -246,8 +278,128 @@
         </div>
     </div>
 
+    <dialog class="admin-aviso" id="modalConfirmarNormativa" aria-labelledby="modalConfirmarNormativaTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarNormativaTexto">¿Seguro que querés subir esta normativa?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalNormativaSubida" aria-labelledby="modalNormativaSubidaTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalNormativaSubidaTexto">Se subió la normativa correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalNormativas" aria-labelledby="modalNormativasTitulo">
+        <div class="admin-modal__contenido">
+            <h2 class="admin-modal__title" id="modalNormativasTitulo">Normativas</h2>
+
+            <div id="normativasVistaLista">
+                <p class="admin-modal__subtitle">Uniforme se puede editar, eliminar y restaurar a como era. Las subidas se pueden editar o eliminar.</p>
+                <p class="admin-modal__aviso" id="normativasAviso" role="status"></p>
+                <ul class="admin-edicion" id="normativasLista"></ul>
+                <div class="admin-form-actions">
+                    <button class="admin-btn admin-btn--secondary" type="button" id="normativasCerrar">Cerrar</button>
+                </div>
+            </div>
+
+            <form class="admin-modal__form" id="formEditarNormativa" enctype="multipart/form-data" hidden>
+                <input type="hidden" id="editarNormativaId" name="id">
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarNormativaTitulo">Subtítulo</label>
+                    <input type="text" id="editarNormativaTitulo" name="titulo" maxlength="120" required>
+                </div>
+
+                <div class="admin-field">
+                    <label class="admin-field__label" for="editarNormativaTexto">Texto</label>
+                    <textarea id="editarNormativaTexto" name="texto" maxlength="1000" required></textarea>
+                </div>
+
+                <div id="editarNormativaBloques"></div>
+
+                <p class="admin-form-error" id="editarNormativaError" role="alert" hidden></p>
+
+                <div class="admin-form-actions">
+                    <button class="admin-btn admin-btn--secondary" type="button" id="editarNormativaVolver">Volver</button>
+                    <button class="admin-btn admin-btn--primary" type="submit">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <dialog class="admin-modal" id="modalUniforme" aria-labelledby="modalUniformeTitulo">
+        <form class="admin-modal__contenido" id="formUniforme" enctype="multipart/form-data">
+            <h2 class="admin-modal__title" id="modalUniformeTitulo">Editar: Uniforme</h2>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="uniformeTitulo">Subtítulo</label>
+                <input type="text" id="uniformeTitulo" name="titulo" maxlength="120" required>
+            </div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="uniformeTexto">Texto</label>
+                <textarea id="uniformeTexto" name="texto" maxlength="1000" rows="4" required></textarea>
+            </div>
+
+            <div id="uniformeTarjetas"></div>
+
+            <div class="admin-field">
+                <label class="admin-field__label" for="uniformeNota">Nota final</label>
+                <textarea id="uniformeNota" name="nota" maxlength="600" rows="3"></textarea>
+                <span class="admin-field__hint">Opcional. Si la dejás vacía, no se muestra.</span>
+            </div>
+
+            <p class="admin-form-error" id="uniformeError" role="alert" hidden></p>
+
+            <div class="admin-form-actions">
+                <button class="admin-btn admin-btn--secondary" type="button" id="uniformeCancelar">Cancelar</button>
+                <button class="admin-btn admin-btn--primary" type="submit">Guardar cambios</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalConfirmarUniforme" aria-labelledby="modalConfirmarUniformeTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalConfirmarUniformeTexto">¿Seguro?</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalEliminarNormativa" aria-labelledby="modalEliminarNormativaTexto">
+        <form class="modal-exito__caja modal-exito__caja--chica" method="dialog">
+            <p class="modal-exito__texto" id="modalEliminarNormativaTexto">¿Seguro que querés eliminar esta normativa? No se puede deshacer.</p>
+            <div class="admin-aviso__botones">
+                <button class="modal-exito__btn modal-exito__btn--secundario" type="submit" value="no">No</button>
+                <button class="modal-exito__btn" type="submit" value="si">Sí</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="admin-aviso" id="modalNormativaCambios" aria-labelledby="modalNormativaCambiosTexto">
+        <form class="modal-exito__caja" method="dialog">
+            <div class="modal-exito__icono">
+                <img src="../Iconos/Ofertas/ModalAccept-black.png" alt="" aria-hidden="true">
+            </div>
+            <p class="modal-exito__texto" id="modalNormativaCambiosTexto">Se guardaron los cambios correctamente</p>
+            <button class="modal-exito__btn" type="submit">OK</button>
+        </form>
+    </dialog>
+
     <script src="Adminjs/menu.js"></script>
     <script src="Adminjs/vista-previa.js"></script>
     <script src="Adminjs/CrearNormativa.js"></script>
+    <script src="../assets/javascript/traductor.js"></script>
 </body>
 </html>

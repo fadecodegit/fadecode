@@ -1,4 +1,4 @@
-/* Normativas: encabezado + bloques (imagen o texto) */
+/* Normativas: encabezado y bloques */
 
 .admin-preview-normativa {
   width: 100%;
@@ -104,4 +104,19 @@
 
 .admin-normativa-block__remove:hover {
   background-color: rgba(24, 24, 24, 0.75);
+}
+
+/* Recuadro de cada bloque en el modal Editar */
+.admin-edicion-bloque {
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 1rem 0.25rem;
+  border: 1px solid var(--admin-border-soft);
+  border-radius: 0.75rem;
+}
+
+.admin-edicion-bloque__titulo {
+  padding: 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-offers-accent);
 }
