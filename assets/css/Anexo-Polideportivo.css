@@ -168,8 +168,8 @@
     flex: 1;
   }
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .poli-card {
     padding: 2.5rem 2.75rem;
   }

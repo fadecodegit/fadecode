@@ -14,7 +14,7 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
 }
-/* Título "Polideportivo" con línea celeste */
+/* Título con línea celeste */
 .pact-title {
   display: flex;
   align-items: center;
@@ -122,8 +122,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-/* Desktop — min-width 1024px */
-@media (min-width: 1024px) {
+/* Desktop — min-width 993px */
+@media (min-width: 993px) {
   .pact-card {
     padding: 2.5rem 2.5rem;
   }
